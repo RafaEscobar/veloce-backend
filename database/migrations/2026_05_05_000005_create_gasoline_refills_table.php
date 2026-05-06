@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('gasoline_refills', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('vehicle_id')->constrained();
+            $table->foreignId('vehicle_id')->constrained()->onDelete('cascade');
             $table->decimal('amount', 10, 2);
             $table->decimal('liters', 8, 2);
             $table->date('date');

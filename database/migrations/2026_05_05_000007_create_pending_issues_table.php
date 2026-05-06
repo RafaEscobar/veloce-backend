@@ -13,8 +13,8 @@ return new class extends Migration
     {
         Schema::create('pending_issues', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('vehicle_id')->constrained();
-            $table->foreignId('issue_status_id')->constrained();
+            $table->foreignId('vehicle_id')->constrained()->onDelete('cascade');
+            $table->foreignId('issue_status_id')->constrained()->onDelete('cascade');
             $table->string('name');
             $table->text('description')->nullable();
             $table->date('date');
