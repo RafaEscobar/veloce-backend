@@ -9,12 +9,14 @@ use App\Http\Resources\VehicleCollection;
 use App\Http\Resources\VehicleResource;
 use App\Models\Vehicle;
 use Illuminate\Http\JsonResponse;
+use Illuminate\Http\Request;
 
 class VehicleController extends Controller
 {
-    public function index(): VehicleCollection
+    public function index(Request $request): VehicleCollection
     {
-        $vehicles = Vehicle::query()
+        $vehicles = $request->user()
+            ->vehicles()
             ->with([
                 'vehicleType',
                 'vehicleStatus',
