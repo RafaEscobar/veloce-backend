@@ -28,7 +28,6 @@ class VehicleController extends Controller
     public function store(StoreVehicleRequest $request): VehicleResource
     {
         $vehicle = Vehicle::create($request->validated());
-
         return new VehicleResource($vehicle);
     }
 
@@ -49,14 +48,12 @@ class VehicleController extends Controller
     public function update(UpdateVehicleRequest $request, Vehicle $vehicle): VehicleResource
     {
         $vehicle->update($request->validated());
-
         return new VehicleResource($vehicle);
     }
 
     public function destroy(Vehicle $vehicle): JsonResponse
     {
         $vehicle->delete();
-
         return response()->json([
             'message' => 'Vehículo eliminado correctamente.',
         ]);
