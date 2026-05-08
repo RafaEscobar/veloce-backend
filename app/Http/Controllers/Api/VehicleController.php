@@ -27,7 +27,14 @@ class VehicleController extends Controller
 
     public function store(StoreVehicleRequest $request): VehicleResource
     {
-        $vehicle = Vehicle::create($request->validated());
+        $validated = $request->validated();
+
+        if ($request->hasFile('photo')) {
+            $validated['photo'] = $request->file('photo')->store('vehicles', 'public');
+        }
+
+        $vehicle = Vehicle::create($validated);
+
         return new VehicleResource($vehicle);
     }
 

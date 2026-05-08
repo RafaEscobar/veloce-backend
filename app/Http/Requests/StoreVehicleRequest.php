@@ -23,7 +23,7 @@ class StoreVehicleRequest extends FormRequest
             'gasoline_type' => ['nullable', 'string', 'max:255'],
             'oil_type' => ['nullable', 'string', 'max:255'],
             'model_name' => ['nullable', 'string', 'max:255'],
-            'photo' => ['nullable', 'string'],
+            'photo' => ['nullable', 'image', 'max:2048'],
             'model_year' => ['nullable', 'integer'],
         ];
     }
@@ -50,7 +50,8 @@ class StoreVehicleRequest extends FormRequest
             'oil_type.max' => 'El campo tipo de aceite no debe superar los 255 caracteres.',
             'model_name.string' => 'El campo modelo debe ser una cadena de texto.',
             'model_name.max' => 'El campo modelo no debe superar los 255 caracteres.',
-            'photo.string' => 'El campo foto debe ser una cadena de texto.',
+            'photo.image' => 'El campo foto debe ser una imagen.',
+            'photo.max' => 'El campo foto no debe superar los 2 MB.',
             'model_year.integer' => 'El campo año del modelo debe ser un número entero.',
         ];
     }
