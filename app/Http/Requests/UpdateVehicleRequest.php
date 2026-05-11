@@ -14,15 +14,15 @@ class UpdateVehicleRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'vehicle_type_id' => ['required', 'exists:vehicle_types,id'],
-            'vehicle_status_id' => ['required', 'exists:vehicle_statuses,id'],
-            'name' => ['required', 'string', 'max:255'],
+            'vehicle_type_id' => ['sometimes', 'exists:vehicle_types,id'],
+            'vehicle_status_id' => ['sometimes', 'exists:vehicle_statuses,id'],
+            'name' => ['sometimes', 'string', 'max:255'],
             'plates' => ['nullable', 'string', 'max:255'],
             'serial_number' => ['nullable', 'string', 'max:255'],
             'gasoline_type' => ['nullable', 'string', 'max:255'],
             'oil_type' => ['nullable', 'string', 'max:255'],
             'model_name' => ['nullable', 'string', 'max:255'],
-            'photo' => ['nullable', 'string'],
+            'photo' => ['sometimes', 'image', 'max:2048'],
             'model_year' => ['nullable', 'integer'],
         ];
     }

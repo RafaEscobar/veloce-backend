@@ -10,6 +10,7 @@ use App\Http\Resources\VehicleResource;
 use App\Models\Vehicle;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 class VehicleController extends Controller
 {
@@ -90,11 +91,21 @@ class VehicleController extends Controller
 
     public function update(UpdateVehicleRequest $request, Vehicle $vehicle): VehicleResource
     {
-        /*
-        | La autorización ocurre automáticamente.
-        | También forzamos que no se pueda cambiar el dueño accidentalmente si se pasara user_id.
-        */
-        $vehicle->update($request->validated());
+        $validated = $request->validated();
+
+        if ($request->hasFile('photo')) {
+            /*
+            | Si se sube una nueva foto, eliminamos la anterior para no dejar
+            | archivos huérfanos en el almacenamiento.
+            */
+            if ($vehicle->photo) {
+                Storage::disk('public')->delete($vehicle->photo);
+            }
+
+            $validated['photo'] = $request->file('photo')->store('vehicles', 'public');
+        }
+
+        $vehicle->update($validated);
 
         return new VehicleResource($vehicle);
     }
@@ -102,8 +113,12 @@ class VehicleController extends Controller
     public function destroy(Vehicle $vehicle): JsonResponse
     {
         /*
-        | La autorización ocurre automáticamente.
+        | Eliminamos la foto asociada antes de borrar el registro
         */
+        if ($vehicle->photo) {
+            Storage::disk('public')->delete($vehicle->photo);
+        }
+
         $vehicle->delete();
 
         return response()->json([
