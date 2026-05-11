@@ -14,7 +14,6 @@ class StoreVehicleRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'user_id' => ['required', 'exists:users,id'],
             'vehicle_type_id' => ['required', 'exists:vehicle_types,id'],
             'vehicle_status_id' => ['required', 'exists:vehicle_statuses,id'],
             'name' => ['required', 'string', 'max:255'],
@@ -31,8 +30,6 @@ class StoreVehicleRequest extends FormRequest
     public function messages(): array
     {
         return [
-            'user_id.required' => 'El campo usuario es obligatorio.',
-            'user_id.exists' => 'El usuario seleccionado no existe.',
             'vehicle_type_id.required' => 'El campo tipo de vehículo es obligatorio.',
             'vehicle_type_id.exists' => 'El tipo de vehículo seleccionado no existe.',
             'vehicle_status_id.required' => 'El campo estado del vehículo es obligatorio.',
