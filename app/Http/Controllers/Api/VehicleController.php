@@ -8,13 +8,11 @@ use App\Http\Requests\UpdateVehicleRequest;
 use App\Http\Resources\VehicleCollection;
 use App\Http\Resources\VehicleResource;
 use App\Models\Vehicle;
-use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
 
 class VehicleController extends Controller
 {
-    use AuthorizesRequests;
 
     public function __construct()
     {
