@@ -16,8 +16,8 @@ return new class extends Migration
             $table->foreignId('vehicle_id')->constrained()->onDelete('cascade');
             $table->decimal('amount', 10, 2);
             $table->decimal('liters', 8, 2);
-            $table->date('date');
-            $table->string('gas_station');
+            $table->date('date')->nullable();
+            $table->string('gas_station')->nullable();
             $table->timestamps();
         });
     }

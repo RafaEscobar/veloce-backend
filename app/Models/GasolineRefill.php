@@ -110,6 +110,7 @@ class GasolineRefill extends Model
     protected function casts(): array
     {
         return [
+            'vehicle_id' => 'integer',
             /*
             |--------------------------------------------------------------------------
             | amount => decimal:2

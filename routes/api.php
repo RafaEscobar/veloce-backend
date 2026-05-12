@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Api\AuthController;
+use App\Http\Controllers\Api\GasolineRefillController;
 use App\Http\Controllers\Api\VehicleController;
 use App\Http\Controllers\Api\VehicleStatusController;
 use App\Http\Controllers\Api\VehicleTypeController;
@@ -14,6 +15,7 @@ Route::post('/login', [AuthController::class, 'login'])
 Route::middleware('auth:sanctum')->group(function () {
     Route::post('/logout', [AuthController::class, 'logout']);
     Route::apiResource('vehicles', VehicleController::class);
+    Route::apiResource('gasoline-refills', GasolineRefillController::class)->except(['show']);
     Route::get('vehicle-types', [VehicleTypeController::class, 'index']);
     Route::get('vehicle-statuses', [VehicleStatusController::class, 'index']);
 });
