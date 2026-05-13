@@ -34,7 +34,7 @@ class StoreMaintenanceRequest extends FormRequest
             'name'                => ['required', 'string', 'max:255'],
             'date'                => ['required', 'date'],
             'cost'                => ['nullable', 'numeric', 'min:0'],
-            'is_reminder_enabled' => ['nullable', 'boolean'],
+            'is_reminder_enabled' => ['sometimes', 'boolean'],
             'notes'               => ['nullable', 'string'],
         ];
     }

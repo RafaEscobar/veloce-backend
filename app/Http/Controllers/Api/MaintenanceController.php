@@ -44,13 +44,16 @@ class MaintenanceController extends Controller
     public function store(StoreMaintenanceRequest $request): MaintenanceResource
     {
         $validated = $request->validated();
-
         /*
         | SEGURIDAD: Verificamos que el vehículo pertenezca al usuario autenticado.
         */
         $request->user()->vehicles()->findOrFail($validated['vehicle_id']);
 
-        $maintenance = Maintenance::create($validated);
+        /*
+        | Creamos el registro y lo recargamos para obtener los datos completos
+        | incluyendo los campos autogenerados como el ID.
+        */
+        $maintenance = Maintenance::create($validated)->refresh();
 
         return new MaintenanceResource($maintenance);
     }
