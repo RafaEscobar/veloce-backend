@@ -19,6 +19,7 @@ class DatabaseSeeder extends Seeder
             VehicleTypeSeeder::class,
             VehicleStatusSeeder::class,
             IssueStatusSeeder::class,
+            IssuePrioritySeeder::class,
         ]);
     }
 }

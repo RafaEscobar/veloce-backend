@@ -15,10 +15,10 @@ return new class extends Migration
             $table->id();
             $table->foreignId('vehicle_id')->constrained()->onDelete('cascade');
             $table->foreignId('issue_status_id')->constrained()->onDelete('cascade');
+            $table->foreignId('priority_id')->constrained('issue_priorities')->onDelete('cascade');
             $table->string('name');
             $table->text('description')->nullable();
             $table->date('date');
-            $table->string('priority');
             $table->timestamps();
         });
     }

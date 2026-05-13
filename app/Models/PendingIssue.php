@@ -13,10 +13,10 @@ class PendingIssue extends Model
     protected $fillable = [
         'vehicle_id',
         'issue_status_id',
+        'priority_id',
         'name',
         'description',
         'date',
-        'priority',
     ];
 
     protected function casts(): array
@@ -34,5 +34,10 @@ class PendingIssue extends Model
     public function issueStatus(): BelongsTo
     {
         return $this->belongsTo(IssueStatus::class);
+    }
+
+    public function issuePriority(): BelongsTo
+    {
+        return $this->belongsTo(IssuePriority::class, 'priority_id');
     }
 }
