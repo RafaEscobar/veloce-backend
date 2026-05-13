@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Api\AuthController;
 use App\Http\Controllers\Api\GasolineRefillController;
+use App\Http\Controllers\Api\IssueStatusController;
 use App\Http\Controllers\Api\MaintenanceController;
 use App\Http\Controllers\Api\VehicleController;
 use App\Http\Controllers\Api\VehicleStatusController;
@@ -20,4 +21,5 @@ Route::middleware('auth:sanctum')->group(function () {
     Route::apiResource('maintenances', MaintenanceController::class)->except(['show']);
     Route::get('vehicle-types', [VehicleTypeController::class, 'index']);
     Route::get('vehicle-statuses', [VehicleStatusController::class, 'index']);
+    Route::get('issue-statuses', [IssueStatusController::class, 'index']);
 });
