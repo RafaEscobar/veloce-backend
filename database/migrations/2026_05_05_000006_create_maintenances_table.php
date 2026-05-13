@@ -16,7 +16,7 @@ return new class extends Migration
             $table->foreignId('vehicle_id')->constrained()->onDelete('cascade');
             $table->string('name');
             $table->date('date');
-            $table->decimal('cost', 10, 2);
+            $table->decimal('cost', 10, 2)->nullable();
             $table->boolean('is_reminder_enabled')->default(false);
             $table->text('notes')->nullable();
             $table->timestamps();
