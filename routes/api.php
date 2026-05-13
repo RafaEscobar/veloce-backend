@@ -6,6 +6,7 @@ use App\Http\Controllers\Api\IssuePriorityController;
 use App\Http\Controllers\Api\IssueStatusController;
 use App\Http\Controllers\Api\MaintenanceController;
 use App\Http\Controllers\Api\PendingIssueController;
+use App\Http\Controllers\Api\ReminderController;
 use App\Http\Controllers\Api\VehicleController;
 use App\Http\Controllers\Api\VehicleStatusController;
 use App\Http\Controllers\Api\VehicleTypeController;
@@ -22,6 +23,7 @@ Route::middleware('auth:sanctum')->group(function () {
     Route::apiResource('gasoline-refills', GasolineRefillController::class)->except(['show']);
     Route::apiResource('maintenances', MaintenanceController::class)->except(['show']);
     Route::apiResource('pending-issues', PendingIssueController::class)->except(['show']);
+    Route::apiResource('reminders', ReminderController::class)->except(['show']);
     Route::get('vehicle-types', [VehicleTypeController::class, 'index']);
     Route::get('vehicle-statuses', [VehicleStatusController::class, 'index']);
     Route::get('issue-statuses', [IssueStatusController::class, 'index']);
