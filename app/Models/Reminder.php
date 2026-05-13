@@ -12,7 +12,6 @@ class Reminder extends Model
 
     protected $fillable = [
         'vehicle_id',
-        'reminder_type_id',
         'name',
         'date',
         'description',
@@ -28,10 +27,5 @@ class Reminder extends Model
     public function vehicle(): BelongsTo
     {
         return $this->belongsTo(Vehicle::class);
-    }
-
-    public function reminderType(): BelongsTo
-    {
-        return $this->belongsTo(ReminderType::class);
     }
 }
