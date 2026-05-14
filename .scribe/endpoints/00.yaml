@@ -177,454 +177,6 @@ endpoints:
     custom: []
     httpMethods:
       - GET
-    uri: api/vehicles
-    metadata:
-      custom: []
-      groupName: Endpoints
-      groupDescription: ''
-      subgroup: ''
-      subgroupDescription: ''
-      title: ''
-      description: ''
-      authenticated: false
-      deprecated: false
-    headers:
-      Content-Type: application/json
-      Accept: application/json
-    urlParameters: []
-    cleanUrlParameters: []
-    queryParameters: []
-    cleanQueryParameters: []
-    bodyParameters: []
-    cleanBodyParameters: []
-    fileParameters: []
-    responses:
-      -
-        custom: []
-        status: 401
-        content: '{"message":"Unauthenticated."}'
-        headers:
-          cache-control: 'no-cache, private'
-          content-type: application/json
-          access-control-allow-origin: '*'
-        description: null
-    responseFields: []
-    auth: []
-    controller: null
-    method: null
-    route: null
-  -
-    custom: []
-    httpMethods:
-      - POST
-    uri: api/vehicles
-    metadata:
-      custom: []
-      groupName: Endpoints
-      groupDescription: ''
-      subgroup: ''
-      subgroupDescription: ''
-      title: ''
-      description: ''
-      authenticated: false
-      deprecated: false
-    headers:
-      Content-Type: multipart/form-data
-      Accept: application/json
-    urlParameters: []
-    cleanUrlParameters: []
-    queryParameters: []
-    cleanQueryParameters: []
-    bodyParameters:
-      vehicle_type_id:
-        custom: []
-        name: vehicle_type_id
-        description: 'The <code>id</code> of an existing record in the vehicle_types table.'
-        required: true
-        example: consequatur
-        type: string
-        enumValues: []
-        exampleWasSpecified: false
-        nullable: false
-        deprecated: false
-      vehicle_status_id:
-        custom: []
-        name: vehicle_status_id
-        description: 'The <code>id</code> of an existing record in the vehicle_statuses table.'
-        required: true
-        example: consequatur
-        type: string
-        enumValues: []
-        exampleWasSpecified: false
-        nullable: false
-        deprecated: false
-      name:
-        custom: []
-        name: name
-        description: 'Must not be greater than 255 characters.'
-        required: true
-        example: mqeopfuudtdsufvyvddqa
-        type: string
-        enumValues: []
-        exampleWasSpecified: false
-        nullable: false
-        deprecated: false
-      plates:
-        custom: []
-        name: plates
-        description: 'Must not be greater than 24 characters.'
-        required: false
-        example: mniihfqcoynlazghdtqt
-        type: string
-        enumValues: []
-        exampleWasSpecified: false
-        nullable: true
-        deprecated: false
-      serial_number:
-        custom: []
-        name: serial_number
-        description: 'Must not be greater than 255 characters.'
-        required: false
-        example: qxbajwbpilpmufinllwlo
-        type: string
-        enumValues: []
-        exampleWasSpecified: false
-        nullable: true
-        deprecated: false
-      gasoline_type:
-        custom: []
-        name: gasoline_type
-        description: 'Must not be greater than 255 characters.'
-        required: false
-        example: auydlsmsjuryvojcybzvr
-        type: string
-        enumValues: []
-        exampleWasSpecified: false
-        nullable: true
-        deprecated: false
-      oil_type:
-        custom: []
-        name: oil_type
-        description: 'Must not be greater than 255 characters.'
-        required: false
-        example: byickznkygloigmkwxphl
-        type: string
-        enumValues: []
-        exampleWasSpecified: false
-        nullable: true
-        deprecated: false
-      model_name:
-        custom: []
-        name: model_name
-        description: 'Must not be greater than 255 characters.'
-        required: false
-        example: vazjrcnfbaqywuxhgjjmz
-        type: string
-        enumValues: []
-        exampleWasSpecified: false
-        nullable: true
-        deprecated: false
-      photo:
-        custom: []
-        name: photo
-        description: 'Must be an image. Must not be greater than 2048 kilobytes.'
-        required: false
-        example: null
-        type: file
-        enumValues: []
-        exampleWasSpecified: false
-        nullable: true
-        deprecated: false
-      model_year:
-        custom: []
-        name: model_year
-        description: ''
-        required: false
-        example: 17
-        type: integer
-        enumValues: []
-        exampleWasSpecified: false
-        nullable: true
-        deprecated: false
-    cleanBodyParameters:
-      vehicle_type_id: consequatur
-      vehicle_status_id: consequatur
-      name: mqeopfuudtdsufvyvddqa
-      plates: mniihfqcoynlazghdtqt
-      serial_number: qxbajwbpilpmufinllwlo
-      gasoline_type: auydlsmsjuryvojcybzvr
-      oil_type: byickznkygloigmkwxphl
-      model_name: vazjrcnfbaqywuxhgjjmz
-      model_year: 17
-    fileParameters:
-      photo: null
-    responses: []
-    responseFields: []
-    auth: []
-    controller: null
-    method: null
-    route: null
-  -
-    custom: []
-    httpMethods:
-      - GET
-    uri: 'api/vehicles/{id}'
-    metadata:
-      custom: []
-      groupName: Endpoints
-      groupDescription: ''
-      subgroup: ''
-      subgroupDescription: ''
-      title: ''
-      description: ''
-      authenticated: false
-      deprecated: false
-    headers:
-      Content-Type: application/json
-      Accept: application/json
-    urlParameters:
-      id:
-        custom: []
-        name: id
-        description: 'The ID of the vehicle.'
-        required: true
-        example: 1
-        type: integer
-        enumValues: []
-        exampleWasSpecified: false
-        nullable: false
-        deprecated: false
-    cleanUrlParameters:
-      id: 1
-    queryParameters: []
-    cleanQueryParameters: []
-    bodyParameters: []
-    cleanBodyParameters: []
-    fileParameters: []
-    responses:
-      -
-        custom: []
-        status: 401
-        content: '{"message":"Unauthenticated."}'
-        headers:
-          cache-control: 'no-cache, private'
-          content-type: application/json
-          access-control-allow-origin: '*'
-        description: null
-    responseFields: []
-    auth: []
-    controller: null
-    method: null
-    route: null
-  -
-    custom: []
-    httpMethods:
-      - PUT
-      - PATCH
-    uri: 'api/vehicles/{id}'
-    metadata:
-      custom: []
-      groupName: Endpoints
-      groupDescription: ''
-      subgroup: ''
-      subgroupDescription: ''
-      title: ''
-      description: ''
-      authenticated: false
-      deprecated: false
-    headers:
-      Content-Type: multipart/form-data
-      Accept: application/json
-    urlParameters:
-      id:
-        custom: []
-        name: id
-        description: 'The ID of the vehicle.'
-        required: true
-        example: 1
-        type: integer
-        enumValues: []
-        exampleWasSpecified: false
-        nullable: false
-        deprecated: false
-    cleanUrlParameters:
-      id: 1
-    queryParameters: []
-    cleanQueryParameters: []
-    bodyParameters:
-      vehicle_type_id:
-        custom: []
-        name: vehicle_type_id
-        description: 'The <code>id</code> of an existing record in the vehicle_types table.'
-        required: false
-        example: null
-        type: string
-        enumValues: []
-        exampleWasSpecified: false
-        nullable: false
-        deprecated: false
-      vehicle_status_id:
-        custom: []
-        name: vehicle_status_id
-        description: 'The <code>id</code> of an existing record in the vehicle_statuses table.'
-        required: false
-        example: null
-        type: string
-        enumValues: []
-        exampleWasSpecified: false
-        nullable: false
-        deprecated: false
-      name:
-        custom: []
-        name: name
-        description: 'Must not be greater than 255 characters.'
-        required: false
-        example: vmqeopfuudtdsufvyvddq
-        type: string
-        enumValues: []
-        exampleWasSpecified: false
-        nullable: false
-        deprecated: false
-      plates:
-        custom: []
-        name: plates
-        description: 'Must not be greater than 255 characters.'
-        required: false
-        example: amniihfqcoynlazghdtqt
-        type: string
-        enumValues: []
-        exampleWasSpecified: false
-        nullable: true
-        deprecated: false
-      serial_number:
-        custom: []
-        name: serial_number
-        description: 'Must not be greater than 255 characters.'
-        required: false
-        example: qxbajwbpilpmufinllwlo
-        type: string
-        enumValues: []
-        exampleWasSpecified: false
-        nullable: true
-        deprecated: false
-      gasoline_type:
-        custom: []
-        name: gasoline_type
-        description: 'Must not be greater than 255 characters.'
-        required: false
-        example: auydlsmsjuryvojcybzvr
-        type: string
-        enumValues: []
-        exampleWasSpecified: false
-        nullable: true
-        deprecated: false
-      oil_type:
-        custom: []
-        name: oil_type
-        description: 'Must not be greater than 255 characters.'
-        required: false
-        example: byickznkygloigmkwxphl
-        type: string
-        enumValues: []
-        exampleWasSpecified: false
-        nullable: true
-        deprecated: false
-      model_name:
-        custom: []
-        name: model_name
-        description: 'Must not be greater than 255 characters.'
-        required: false
-        example: vazjrcnfbaqywuxhgjjmz
-        type: string
-        enumValues: []
-        exampleWasSpecified: false
-        nullable: true
-        deprecated: false
-      photo:
-        custom: []
-        name: photo
-        description: 'Must be an image. Must not be greater than 2048 kilobytes.'
-        required: false
-        example: null
-        type: file
-        enumValues: []
-        exampleWasSpecified: false
-        nullable: false
-        deprecated: false
-      model_year:
-        custom: []
-        name: model_year
-        description: ''
-        required: false
-        example: 17
-        type: integer
-        enumValues: []
-        exampleWasSpecified: false
-        nullable: true
-        deprecated: false
-    cleanBodyParameters:
-      name: vmqeopfuudtdsufvyvddq
-      plates: amniihfqcoynlazghdtqt
-      serial_number: qxbajwbpilpmufinllwlo
-      gasoline_type: auydlsmsjuryvojcybzvr
-      oil_type: byickznkygloigmkwxphl
-      model_name: vazjrcnfbaqywuxhgjjmz
-      model_year: 17
-    fileParameters:
-      photo: null
-    responses: []
-    responseFields: []
-    auth: []
-    controller: null
-    method: null
-    route: null
-  -
-    custom: []
-    httpMethods:
-      - DELETE
-    uri: 'api/vehicles/{id}'
-    metadata:
-      custom: []
-      groupName: Endpoints
-      groupDescription: ''
-      subgroup: ''
-      subgroupDescription: ''
-      title: ''
-      description: ''
-      authenticated: false
-      deprecated: false
-    headers:
-      Content-Type: application/json
-      Accept: application/json
-    urlParameters:
-      id:
-        custom: []
-        name: id
-        description: 'The ID of the vehicle.'
-        required: true
-        example: 1
-        type: integer
-        enumValues: []
-        exampleWasSpecified: false
-        nullable: false
-        deprecated: false
-    cleanUrlParameters:
-      id: 1
-    queryParameters: []
-    cleanQueryParameters: []
-    bodyParameters: []
-    cleanBodyParameters: []
-    fileParameters: []
-    responses: []
-    responseFields: []
-    auth: []
-    controller: null
-    method: null
-    route: null
-  -
-    custom: []
-    httpMethods:
-      - GET
     uri: api/gasoline-refills
     metadata:
       custom: []
@@ -722,7 +274,7 @@ endpoints:
         name: date
         description: 'Must be a valid date.'
         required: false
-        example: '2026-05-14T02:01:19'
+        example: '2026-05-14T02:33:17'
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -743,7 +295,7 @@ endpoints:
       vehicle_id: consequatur
       amount: 45
       liters: 56
-      date: '2026-05-14T02:01:19'
+      date: '2026-05-14T02:33:17'
       gas_station: eopfuudtdsufvyvddqamn
     fileParameters: []
     responses: []
@@ -826,7 +378,7 @@ endpoints:
         name: date
         description: 'Must be a valid date.'
         required: false
-        example: '2026-05-14T02:01:19'
+        example: '2026-05-14T02:33:17'
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -846,7 +398,7 @@ endpoints:
     cleanBodyParameters:
       amount: 73
       liters: 45
-      date: '2026-05-14T02:01:19'
+      date: '2026-05-14T02:33:17'
       gas_station: qeopfuudtdsufvyvddqam
     fileParameters: []
     responses: []
@@ -988,7 +540,7 @@ endpoints:
         name: date
         description: 'Must be a valid date.'
         required: true
-        example: '2026-05-14T02:01:19'
+        example: '2026-05-14T02:33:17'
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -1010,7 +562,7 @@ endpoints:
         name: is_reminder_enabled
         description: ''
         required: false
-        example: false
+        example: true
         type: boolean
         enumValues: []
         exampleWasSpecified: false
@@ -1030,9 +582,9 @@ endpoints:
     cleanBodyParameters:
       vehicle_id: consequatur
       name: mqeopfuudtdsufvyvddqa
-      date: '2026-05-14T02:01:19'
+      date: '2026-05-14T02:33:17'
       cost: 45
-      is_reminder_enabled: false
+      is_reminder_enabled: true
       notes: consequatur
     fileParameters: []
     responses: []
@@ -1104,7 +656,7 @@ endpoints:
         name: date
         description: 'Must be a valid date.'
         required: false
-        example: '2026-05-14T02:01:19'
+        example: '2026-05-14T02:33:17'
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -1145,7 +697,7 @@ endpoints:
         deprecated: false
     cleanBodyParameters:
       name: vmqeopfuudtdsufvyvddq
-      date: '2026-05-14T02:01:19'
+      date: '2026-05-14T02:33:17'
       cost: 1
       is_reminder_enabled: false
       notes: consequatur
@@ -1311,7 +863,7 @@ endpoints:
         name: date
         description: 'Must be a valid date.'
         required: true
-        example: '2026-05-14T02:01:19'
+        example: '2026-05-14T02:33:17'
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -1333,7 +885,7 @@ endpoints:
       issue_status_id: consequatur
       name: mqeopfuudtdsufvyvddqa
       description: 'Dolores dolorum amet iste laborum eius est dolor.'
-      date: '2026-05-14T02:01:19'
+      date: '2026-05-14T02:33:17'
       priority_id: consequatur
     fileParameters: []
     responses: []
@@ -1427,7 +979,7 @@ endpoints:
         name: date
         description: 'Must be a valid date.'
         required: false
-        example: '2026-05-14T02:01:19'
+        example: '2026-05-14T02:33:17'
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -1447,7 +999,7 @@ endpoints:
     cleanBodyParameters:
       name: vmqeopfuudtdsufvyvddq
       description: 'Dolores dolorum amet iste laborum eius est dolor.'
-      date: '2026-05-14T02:01:19'
+      date: '2026-05-14T02:33:17'
     fileParameters: []
     responses: []
     responseFields: []
@@ -1588,7 +1140,7 @@ endpoints:
         name: date
         description: 'Must be a valid date.'
         required: true
-        example: '2026-05-14T02:01:19'
+        example: '2026-05-14T02:33:17'
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -1608,7 +1160,7 @@ endpoints:
     cleanBodyParameters:
       vehicle_id: consequatur
       name: mqeopfuudtdsufvyvddqa
-      date: '2026-05-14T02:01:19'
+      date: '2026-05-14T02:33:17'
       description: 'Dolores dolorum amet iste laborum eius est dolor.'
     fileParameters: []
     responses: []
@@ -1680,7 +1232,7 @@ endpoints:
         name: date
         description: 'Must be a valid date.'
         required: false
-        example: '2026-05-14T02:01:19'
+        example: '2026-05-14T02:33:17'
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -1699,7 +1251,7 @@ endpoints:
         deprecated: false
     cleanBodyParameters:
       name: vmqeopfuudtdsufvyvddq
-      date: '2026-05-14T02:01:19'
+      date: '2026-05-14T02:33:17'
       description: 'Dolores dolorum amet iste laborum eius est dolor.'
     fileParameters: []
     responses: []

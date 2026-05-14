@@ -1,0 +1,463 @@
+name: Vehículos
+description: ''
+endpoints:
+  -
+    custom: []
+    httpMethods:
+      - GET
+    uri: api/vehicles
+    metadata:
+      custom: []
+      groupName: Vehículos
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Lista los vehículos del usuario autenticado.'
+      description: |-
+        Devuelve una colección paginada de todos los vehículos que pertenecen
+        al usuario que realiza la petición, incluyendo sus relaciones (tipo y estado).
+      authenticated: false
+      deprecated: false
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      -
+        custom: []
+        status: 401
+        content: '{"message":"Unauthenticated."}'
+        headers:
+          cache-control: 'no-cache, private'
+          content-type: application/json
+          access-control-allow-origin: '*'
+        description: null
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+  -
+    custom: []
+    httpMethods:
+      - POST
+    uri: api/vehicles
+    metadata:
+      custom: []
+      groupName: Vehículos
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Crea un nuevo vehículo.'
+      description: |-
+        Registra un nuevo vehículo en el sistema asociándolo automáticamente al usuario autenticado.
+        Si se proporciona una foto, la almacena en el disco público.
+      authenticated: false
+      deprecated: false
+    headers:
+      Content-Type: multipart/form-data
+      Accept: application/json
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      vehicle_type_id:
+        custom: []
+        name: vehicle_type_id
+        description: 'ID del tipo de vehículo.'
+        required: true
+        example: 1
+        type: integer
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        deprecated: false
+      vehicle_status_id:
+        custom: []
+        name: vehicle_status_id
+        description: 'ID del estado del vehículo.'
+        required: true
+        example: 1
+        type: integer
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        deprecated: false
+      name:
+        custom: []
+        name: name
+        description: 'Nombre o alias del vehículo.'
+        required: true
+        example: 'Mi Coche'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        deprecated: false
+      plates:
+        custom: []
+        name: plates
+        description: 'Placas del vehículo.'
+        required: false
+        example: ABC-1234
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: true
+        deprecated: false
+      serial_number:
+        custom: []
+        name: serial_number
+        description: 'Número de serie (VIN).'
+        required: false
+        example: 1HGCM82633A000000
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: true
+        deprecated: false
+      gasoline_type:
+        custom: []
+        name: gasoline_type
+        description: 'Tipo de gasolina que utiliza.'
+        required: false
+        example: Magna
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: true
+        deprecated: false
+      oil_type:
+        custom: []
+        name: oil_type
+        description: 'Tipo de aceite que utiliza.'
+        required: false
+        example: 'Sintético 5W-30'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: true
+        deprecated: false
+      model_name:
+        custom: []
+        name: model_name
+        description: 'Nombre del modelo del vehículo.'
+        required: false
+        example: Civic
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: true
+        deprecated: false
+      photo:
+        custom: []
+        name: photo
+        description: 'Foto del vehículo (imagen, máx. 2MB).'
+        required: false
+        example: null
+        type: file
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: true
+        deprecated: false
+      model_year:
+        custom: []
+        name: model_year
+        description: 'Año del modelo del vehículo.'
+        required: false
+        example: 2020
+        type: integer
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: true
+        deprecated: false
+    cleanBodyParameters:
+      vehicle_type_id: 1
+      vehicle_status_id: 1
+      name: 'Mi Coche'
+      plates: ABC-1234
+      serial_number: 1HGCM82633A000000
+      gasoline_type: Magna
+      oil_type: 'Sintético 5W-30'
+      model_name: Civic
+      model_year: 2020
+    fileParameters:
+      photo: null
+    responses: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+  -
+    custom: []
+    httpMethods:
+      - GET
+    uri: 'api/vehicles/{id}'
+    metadata:
+      custom: []
+      groupName: Vehículos
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Muestra los detalles de un vehículo específico.'
+      description: |-
+        Devuelve la información de un vehículo junto con todas sus relaciones cargadas
+        (tipo, estado, cargas de gasolina, mantenimientos, problemas pendientes y recordatorios).
+      authenticated: false
+      deprecated: false
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      id:
+        custom: []
+        name: id
+        description: 'ID del vehículo.'
+        required: true
+        example: 1
+        type: integer
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        deprecated: false
+    cleanUrlParameters:
+      id: 1
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      -
+        custom: []
+        status: 401
+        content: '{"message":"Unauthenticated."}'
+        headers:
+          cache-control: 'no-cache, private'
+          content-type: application/json
+          access-control-allow-origin: '*'
+        description: null
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+  -
+    custom: []
+    httpMethods:
+      - PUT
+      - PATCH
+    uri: 'api/vehicles/{id}'
+    metadata:
+      custom: []
+      groupName: Vehículos
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Actualiza un vehículo existente.'
+      description: |-
+        Modifica los datos de un vehículo perteneciente al usuario autenticado.
+        Si se sube una nueva foto, reemplaza la anterior eliminándola del almacenamiento.
+      authenticated: false
+      deprecated: false
+    headers:
+      Content-Type: multipart/form-data
+      Accept: application/json
+    urlParameters:
+      id:
+        custom: []
+        name: id
+        description: 'ID del vehículo.'
+        required: true
+        example: 1
+        type: integer
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        deprecated: false
+    cleanUrlParameters:
+      id: 1
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      vehicle_type_id:
+        custom: []
+        name: vehicle_type_id
+        description: 'ID del tipo de vehículo.'
+        required: false
+        example: 1
+        type: integer
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        deprecated: false
+      vehicle_status_id:
+        custom: []
+        name: vehicle_status_id
+        description: 'ID del estado del vehículo.'
+        required: false
+        example: 1
+        type: integer
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        deprecated: false
+      name:
+        custom: []
+        name: name
+        description: 'Nombre o alias del vehículo.'
+        required: false
+        example: 'Mi Coche Editado'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        deprecated: false
+      plates:
+        custom: []
+        name: plates
+        description: 'Placas del vehículo.'
+        required: false
+        example: XYZ-9876
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: true
+        deprecated: false
+      serial_number:
+        custom: []
+        name: serial_number
+        description: 'Número de serie (VIN).'
+        required: false
+        example: 1HGCM82633A000000
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: true
+        deprecated: false
+      gasoline_type:
+        custom: []
+        name: gasoline_type
+        description: 'Tipo de gasolina que utiliza.'
+        required: false
+        example: Premium
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: true
+        deprecated: false
+      oil_type:
+        custom: []
+        name: oil_type
+        description: 'Tipo de aceite que utiliza.'
+        required: false
+        example: 'Sintético 10W-40'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: true
+        deprecated: false
+      model_name:
+        custom: []
+        name: model_name
+        description: 'Nombre del modelo del vehículo.'
+        required: false
+        example: Accord
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: true
+        deprecated: false
+      photo:
+        custom: []
+        name: photo
+        description: 'Nueva foto del vehículo (imagen, máx. 2MB).'
+        required: false
+        example: null
+        type: file
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        deprecated: false
+      model_year:
+        custom: []
+        name: model_year
+        description: 'Año del modelo del vehículo.'
+        required: false
+        example: 2022
+        type: integer
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: true
+        deprecated: false
+    cleanBodyParameters:
+      vehicle_type_id: 1
+      vehicle_status_id: 1
+      name: 'Mi Coche Editado'
+      plates: XYZ-9876
+      serial_number: 1HGCM82633A000000
+      gasoline_type: Premium
+      oil_type: 'Sintético 10W-40'
+      model_name: Accord
+      model_year: 2022
+    fileParameters:
+      photo: null
+    responses: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+  -
+    custom: []
+    httpMethods:
+      - DELETE
+    uri: 'api/vehicles/{id}'
+    metadata:
+      custom: []
+      groupName: Vehículos
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Elimina un vehículo.'
+      description: |-
+        Borra el registro del vehículo especificado. También elimina la foto
+        asociada del almacenamiento si existe.
+      authenticated: false
+      deprecated: false
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      id:
+        custom: []
+        name: id
+        description: 'ID del vehículo.'
+        required: true
+        example: 1
+        type: integer
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        deprecated: false
+    cleanUrlParameters:
+      id: 1
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
