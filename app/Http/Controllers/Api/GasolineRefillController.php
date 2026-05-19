@@ -16,6 +16,7 @@ use Illuminate\Http\Request;
  *
  * Proporciona métodos para listar, crear, actualizar y eliminar registros de recargas
  * de gasolina asociados a los vehículos del usuario autenticado.
+ * @group Cargas de gasolina
  */
 class GasolineRefillController extends Controller
 {

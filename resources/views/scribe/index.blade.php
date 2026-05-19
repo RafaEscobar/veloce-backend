@@ -61,45 +61,47 @@
                     <a href="#introduction">Introduction</a>
                 </li>
                             </ul>
+                    <ul id="tocify-header-autenticacion" class="tocify-header">
+                <li class="tocify-item level-1" data-unique="autenticacion">
+                    <a href="#autenticacion">Autenticación</a>
+                </li>
+                                    <ul id="tocify-subheader-autenticacion" class="tocify-subheader">
+                                                    <li class="tocify-item level-2" data-unique="autenticacion-POSTapi-register">
+                                <a href="#autenticacion-POSTapi-register">Registra un nuevo usuario en el sistema.</a>
+                            </li>
+                                                                                <li class="tocify-item level-2" data-unique="autenticacion-POSTapi-login">
+                                <a href="#autenticacion-POSTapi-login">Inicia sesión para un usuario existente en la aplicación.</a>
+                            </li>
+                                                                                <li class="tocify-item level-2" data-unique="autenticacion-POSTapi-logout">
+                                <a href="#autenticacion-POSTapi-logout">Cierra la sesión del usuario autenticado actualmente.</a>
+                            </li>
+                                                                        </ul>
+                            </ul>
+                    <ul id="tocify-header-cargas-de-gasolina" class="tocify-header">
+                <li class="tocify-item level-1" data-unique="cargas-de-gasolina">
+                    <a href="#cargas-de-gasolina">Cargas de gasolina</a>
+                </li>
+                                    <ul id="tocify-subheader-cargas-de-gasolina" class="tocify-subheader">
+                                                    <li class="tocify-item level-2" data-unique="cargas-de-gasolina-GETapi-gasoline-refills">
+                                <a href="#cargas-de-gasolina-GETapi-gasoline-refills">Listado de recargas de gasolina del usuario autenticado.</a>
+                            </li>
+                                                                                <li class="tocify-item level-2" data-unique="cargas-de-gasolina-POSTapi-gasoline-refills">
+                                <a href="#cargas-de-gasolina-POSTapi-gasoline-refills">Almacena una nueva recarga de gasolina.</a>
+                            </li>
+                                                                                <li class="tocify-item level-2" data-unique="cargas-de-gasolina-PUTapi-gasoline-refills--id-">
+                                <a href="#cargas-de-gasolina-PUTapi-gasoline-refills--id-">Actualiza una recarga existente.</a>
+                            </li>
+                                                                                <li class="tocify-item level-2" data-unique="cargas-de-gasolina-DELETEapi-gasoline-refills--id-">
+                                <a href="#cargas-de-gasolina-DELETEapi-gasoline-refills--id-">Elimina una recarga.</a>
+                            </li>
+                                                                        </ul>
+                            </ul>
                     <ul id="tocify-header-endpoints" class="tocify-header">
                 <li class="tocify-item level-1" data-unique="endpoints">
                     <a href="#endpoints">Endpoints</a>
                 </li>
                                     <ul id="tocify-subheader-endpoints" class="tocify-subheader">
-                                                    <li class="tocify-item level-2" data-unique="endpoints-POSTapi-register">
-                                <a href="#endpoints-POSTapi-register">Registra un nuevo usuario en el sistema.</a>
-                            </li>
-                                                                                <li class="tocify-item level-2" data-unique="endpoints-POSTapi-login">
-                                <a href="#endpoints-POSTapi-login">Inicia sesión para un usuario existente en la aplicación.</a>
-                            </li>
-                                                                                <li class="tocify-item level-2" data-unique="endpoints-POSTapi-logout">
-                                <a href="#endpoints-POSTapi-logout">Cierra la sesión del usuario autenticado actualmente.</a>
-                            </li>
-                                                                                <li class="tocify-item level-2" data-unique="endpoints-GETapi-gasoline-refills">
-                                <a href="#endpoints-GETapi-gasoline-refills">Listado de recargas de gasolina del usuario autenticado.</a>
-                            </li>
-                                                                                <li class="tocify-item level-2" data-unique="endpoints-POSTapi-gasoline-refills">
-                                <a href="#endpoints-POSTapi-gasoline-refills">Almacena una nueva recarga de gasolina.</a>
-                            </li>
-                                                                                <li class="tocify-item level-2" data-unique="endpoints-PUTapi-gasoline-refills--id-">
-                                <a href="#endpoints-PUTapi-gasoline-refills--id-">Actualiza una recarga existente.</a>
-                            </li>
-                                                                                <li class="tocify-item level-2" data-unique="endpoints-DELETEapi-gasoline-refills--id-">
-                                <a href="#endpoints-DELETEapi-gasoline-refills--id-">Elimina una recarga.</a>
-                            </li>
-                                                                                <li class="tocify-item level-2" data-unique="endpoints-GETapi-maintenances">
-                                <a href="#endpoints-GETapi-maintenances">Display a listing of the resource.</a>
-                            </li>
-                                                                                <li class="tocify-item level-2" data-unique="endpoints-POSTapi-maintenances">
-                                <a href="#endpoints-POSTapi-maintenances">Store a newly created resource in storage.</a>
-                            </li>
-                                                                                <li class="tocify-item level-2" data-unique="endpoints-PUTapi-maintenances--id-">
-                                <a href="#endpoints-PUTapi-maintenances--id-">Update the specified resource in storage.</a>
-                            </li>
-                                                                                <li class="tocify-item level-2" data-unique="endpoints-DELETEapi-maintenances--id-">
-                                <a href="#endpoints-DELETEapi-maintenances--id-">Remove the specified resource from storage.</a>
-                            </li>
-                                                                                <li class="tocify-item level-2" data-unique="endpoints-GETapi-pending-issues">
+                                                    <li class="tocify-item level-2" data-unique="endpoints-GETapi-pending-issues">
                                 <a href="#endpoints-GETapi-pending-issues">Listado de problemas pendientes del usuario autenticado.</a>
                             </li>
                                                                                 <li class="tocify-item level-2" data-unique="endpoints-POSTapi-pending-issues">
@@ -129,11 +131,44 @@
                                                                                 <li class="tocify-item level-2" data-unique="endpoints-GETapi-vehicle-statuses">
                                 <a href="#endpoints-GETapi-vehicle-statuses">GET api/vehicle-statuses</a>
                             </li>
-                                                                                <li class="tocify-item level-2" data-unique="endpoints-GETapi-issue-statuses">
-                                <a href="#endpoints-GETapi-issue-statuses">GET api/issue-statuses</a>
+                                                                        </ul>
+                            </ul>
+                    <ul id="tocify-header-estados-de-problemas-de-vehiculos" class="tocify-header">
+                <li class="tocify-item level-1" data-unique="estados-de-problemas-de-vehiculos">
+                    <a href="#estados-de-problemas-de-vehiculos">Estados de problemas de vehículos</a>
+                </li>
+                                    <ul id="tocify-subheader-estados-de-problemas-de-vehiculos" class="tocify-subheader">
+                                                    <li class="tocify-item level-2" data-unique="estados-de-problemas-de-vehiculos-GETapi-issue-statuses">
+                                <a href="#estados-de-problemas-de-vehiculos-GETapi-issue-statuses">Listado de estados de problemas de vehículos.</a>
                             </li>
-                                                                                <li class="tocify-item level-2" data-unique="endpoints-GETapi-issue-priorities">
-                                <a href="#endpoints-GETapi-issue-priorities">Listado de prioridades de problemas.</a>
+                                                                        </ul>
+                            </ul>
+                    <ul id="tocify-header-mantenimientos" class="tocify-header">
+                <li class="tocify-item level-1" data-unique="mantenimientos">
+                    <a href="#mantenimientos">Mantenimientos</a>
+                </li>
+                                    <ul id="tocify-subheader-mantenimientos" class="tocify-subheader">
+                                                    <li class="tocify-item level-2" data-unique="mantenimientos-GETapi-maintenances">
+                                <a href="#mantenimientos-GETapi-maintenances">Listado de mantenimientos del usuario autenticado.</a>
+                            </li>
+                                                                                <li class="tocify-item level-2" data-unique="mantenimientos-POSTapi-maintenances">
+                                <a href="#mantenimientos-POSTapi-maintenances">Almacena un nuevo mantenimiento.</a>
+                            </li>
+                                                                                <li class="tocify-item level-2" data-unique="mantenimientos-PUTapi-maintenances--id-">
+                                <a href="#mantenimientos-PUTapi-maintenances--id-">Actualiza un mantenimiento existente.</a>
+                            </li>
+                                                                                <li class="tocify-item level-2" data-unique="mantenimientos-DELETEapi-maintenances--id-">
+                                <a href="#mantenimientos-DELETEapi-maintenances--id-">Elimina un mantenimiento.</a>
+                            </li>
+                                                                        </ul>
+                            </ul>
+                    <ul id="tocify-header-prioridades-de-problemas-de-vehiculos" class="tocify-header">
+                <li class="tocify-item level-1" data-unique="prioridades-de-problemas-de-vehiculos">
+                    <a href="#prioridades-de-problemas-de-vehiculos">Prioridades de problemas de vehículos</a>
+                </li>
+                                    <ul id="tocify-subheader-prioridades-de-problemas-de-vehiculos" class="tocify-subheader">
+                                                    <li class="tocify-item level-2" data-unique="prioridades-de-problemas-de-vehiculos-GETapi-issue-priorities">
+                                <a href="#prioridades-de-problemas-de-vehiculos-GETapi-issue-priorities">Listado de prioridades de problemas de vehículos.</a>
                             </li>
                                                                         </ul>
                             </ul>
@@ -186,11 +221,11 @@ You can switch the language used with the tabs at the top right (or from the nav
 
         
 
-        <h1 id="endpoints">Endpoints</h1>
+        <h1 id="autenticacion">Autenticación</h1>
 
     
 
-                                <h2 id="endpoints-POSTapi-register">Registra un nuevo usuario en el sistema.</h2>
+                                <h2 id="autenticacion-POSTapi-register">Registra un nuevo usuario en el sistema.</h2>
 
 <p>
 </p>
@@ -365,7 +400,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
         </div>
         </form>
 
-                    <h2 id="endpoints-POSTapi-login">Inicia sesión para un usuario existente en la aplicación.</h2>
+                    <h2 id="autenticacion-POSTapi-login">Inicia sesión para un usuario existente en la aplicación.</h2>
 
 <p>
 </p>
@@ -513,7 +548,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
         </div>
         </form>
 
-                    <h2 id="endpoints-POSTapi-logout">Cierra la sesión del usuario autenticado actualmente.</h2>
+                    <h2 id="autenticacion-POSTapi-logout">Cierra la sesión del usuario autenticado actualmente.</h2>
 
 <p>
 <small class="badge badge-darkred">requires authentication</small>
@@ -625,7 +660,11 @@ You can check the Dev Tools console for debugging information.</code></pre>
             </div>
                         </form>
 
-                    <h2 id="endpoints-GETapi-gasoline-refills">Listado de recargas de gasolina del usuario autenticado.</h2>
+                <h1 id="cargas-de-gasolina">Cargas de gasolina</h1>
+
+    
+
+                                <h2 id="cargas-de-gasolina-GETapi-gasoline-refills">Listado de recargas de gasolina del usuario autenticado.</h2>
 
 <p>
 <small class="badge badge-darkred">requires authentication</small>
@@ -753,7 +792,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
             </div>
                         </form>
 
-                    <h2 id="endpoints-POSTapi-gasoline-refills">Almacena una nueva recarga de gasolina.</h2>
+                    <h2 id="cargas-de-gasolina-POSTapi-gasoline-refills">Almacena una nueva recarga de gasolina.</h2>
 
 <p>
 <small class="badge badge-darkred">requires authentication</small>
@@ -942,7 +981,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
         </div>
         </form>
 
-                    <h2 id="endpoints-PUTapi-gasoline-refills--id-">Actualiza una recarga existente.</h2>
+                    <h2 id="cargas-de-gasolina-PUTapi-gasoline-refills--id-">Actualiza una recarga existente.</h2>
 
 <p>
 <small class="badge badge-darkred">requires authentication</small>
@@ -1134,7 +1173,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
         </div>
         </form>
 
-                    <h2 id="endpoints-DELETEapi-gasoline-refills--id-">Elimina una recarga.</h2>
+                    <h2 id="cargas-de-gasolina-DELETEapi-gasoline-refills--id-">Elimina una recarga.</h2>
 
 <p>
 <small class="badge badge-darkred">requires authentication</small>
@@ -1259,697 +1298,11 @@ You can check the Dev Tools console for debugging information.</code></pre>
             </div>
                     </form>
 
-                    <h2 id="endpoints-GETapi-maintenances">Display a listing of the resource.</h2>
+                <h1 id="endpoints">Endpoints</h1>
 
-<p>
-</p>
+    
 
-
-
-<span id="example-requests-GETapi-maintenances">
-<blockquote>Example request:</blockquote>
-
-
-<div class="bash-example">
-    <pre><code class="language-bash">curl --request GET \
-    --get "http://localhost:8000/api/maintenances" \
-    --header "Content-Type: application/json" \
-    --header "Accept: application/json"</code></pre></div>
-
-
-<div class="javascript-example">
-    <pre><code class="language-javascript">const url = new URL(
-    "http://localhost:8000/api/maintenances"
-);
-
-const headers = {
-    "Content-Type": "application/json",
-    "Accept": "application/json",
-};
-
-
-fetch(url, {
-    method: "GET",
-    headers,
-}).then(response =&gt; response.json());</code></pre></div>
-
-</span>
-
-<span id="example-responses-GETapi-maintenances">
-            <blockquote>
-            <p>Example response (401):</p>
-        </blockquote>
-                <details class="annotation">
-            <summary style="cursor: pointer;">
-                <small onclick="textContent = parentElement.parentElement.open ? 'Show headers' : 'Hide headers'">Show headers</small>
-            </summary>
-            <pre><code class="language-http">cache-control: no-cache, private
-content-type: application/json
-access-control-allow-origin: *
- </code></pre></details>         <pre>
-
-<code class="language-json" style="max-height: 300px;">{
-    &quot;message&quot;: &quot;Unauthenticated.&quot;
-}</code>
- </pre>
-    </span>
-<span id="execution-results-GETapi-maintenances" hidden>
-    <blockquote>Received response<span
-                id="execution-response-status-GETapi-maintenances"></span>:
-    </blockquote>
-    <pre class="json"><code id="execution-response-content-GETapi-maintenances"
-      data-empty-response-text="<Empty response>" style="max-height: 400px;"></code></pre>
-</span>
-<span id="execution-error-GETapi-maintenances" hidden>
-    <blockquote>Request failed with error:</blockquote>
-    <pre><code id="execution-error-message-GETapi-maintenances">
-
-Tip: Check that you&#039;re properly connected to the network.
-If you&#039;re a maintainer of ths API, verify that your API is running and you&#039;ve enabled CORS.
-You can check the Dev Tools console for debugging information.</code></pre>
-</span>
-<form id="form-GETapi-maintenances" data-method="GET"
-      data-path="api/maintenances"
-      data-authed="0"
-      data-hasfiles="0"
-      data-isarraybody="0"
-      autocomplete="off"
-      onsubmit="event.preventDefault(); executeTryOut('GETapi-maintenances', this);">
-    <h3>
-        Request&nbsp;&nbsp;&nbsp;
-                    <button type="button"
-                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
-                    id="btn-tryout-GETapi-maintenances"
-                    onclick="tryItOut('GETapi-maintenances');">Try it out ⚡
-            </button>
-            <button type="button"
-                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
-                    id="btn-canceltryout-GETapi-maintenances"
-                    onclick="cancelTryOut('GETapi-maintenances');" hidden>Cancel 🛑
-            </button>&nbsp;&nbsp;
-            <button type="submit"
-                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
-                    id="btn-executetryout-GETapi-maintenances"
-                    data-initial-text="Send Request 💥"
-                    data-loading-text="⏱ Sending..."
-                    hidden>Send Request 💥
-            </button>
-            </h3>
-            <p>
-            <small class="badge badge-green">GET</small>
-            <b><code>api/maintenances</code></b>
-        </p>
-                <h4 class="fancy-heading-panel"><b>Headers</b></h4>
-                                <div style="padding-left: 28px; clear: unset;">
-                <b style="line-height: 2;"><code>Content-Type</code></b>&nbsp;&nbsp;
-&nbsp;
- &nbsp;
- &nbsp;
-                <input type="text" style="display: none"
-                              name="Content-Type"                data-endpoint="GETapi-maintenances"
-               value="application/json"
-               data-component="header">
-    <br>
-<p>Example: <code>application/json</code></p>
-            </div>
-                                <div style="padding-left: 28px; clear: unset;">
-                <b style="line-height: 2;"><code>Accept</code></b>&nbsp;&nbsp;
-&nbsp;
- &nbsp;
- &nbsp;
-                <input type="text" style="display: none"
-                              name="Accept"                data-endpoint="GETapi-maintenances"
-               value="application/json"
-               data-component="header">
-    <br>
-<p>Example: <code>application/json</code></p>
-            </div>
-                        </form>
-
-                    <h2 id="endpoints-POSTapi-maintenances">Store a newly created resource in storage.</h2>
-
-<p>
-</p>
-
-
-
-<span id="example-requests-POSTapi-maintenances">
-<blockquote>Example request:</blockquote>
-
-
-<div class="bash-example">
-    <pre><code class="language-bash">curl --request POST \
-    "http://localhost:8000/api/maintenances" \
-    --header "Content-Type: application/json" \
-    --header "Accept: application/json" \
-    --data "{
-    \"vehicle_id\": \"consequatur\",
-    \"name\": \"mqeopfuudtdsufvyvddqa\",
-    \"date\": \"2026-05-19T15:21:04\",
-    \"cost\": 45,
-    \"is_reminder_enabled\": true,
-    \"notes\": \"consequatur\"
-}"
-</code></pre></div>
-
-
-<div class="javascript-example">
-    <pre><code class="language-javascript">const url = new URL(
-    "http://localhost:8000/api/maintenances"
-);
-
-const headers = {
-    "Content-Type": "application/json",
-    "Accept": "application/json",
-};
-
-let body = {
-    "vehicle_id": "consequatur",
-    "name": "mqeopfuudtdsufvyvddqa",
-    "date": "2026-05-19T15:21:04",
-    "cost": 45,
-    "is_reminder_enabled": true,
-    "notes": "consequatur"
-};
-
-fetch(url, {
-    method: "POST",
-    headers,
-    body: JSON.stringify(body),
-}).then(response =&gt; response.json());</code></pre></div>
-
-</span>
-
-<span id="example-responses-POSTapi-maintenances">
-</span>
-<span id="execution-results-POSTapi-maintenances" hidden>
-    <blockquote>Received response<span
-                id="execution-response-status-POSTapi-maintenances"></span>:
-    </blockquote>
-    <pre class="json"><code id="execution-response-content-POSTapi-maintenances"
-      data-empty-response-text="<Empty response>" style="max-height: 400px;"></code></pre>
-</span>
-<span id="execution-error-POSTapi-maintenances" hidden>
-    <blockquote>Request failed with error:</blockquote>
-    <pre><code id="execution-error-message-POSTapi-maintenances">
-
-Tip: Check that you&#039;re properly connected to the network.
-If you&#039;re a maintainer of ths API, verify that your API is running and you&#039;ve enabled CORS.
-You can check the Dev Tools console for debugging information.</code></pre>
-</span>
-<form id="form-POSTapi-maintenances" data-method="POST"
-      data-path="api/maintenances"
-      data-authed="0"
-      data-hasfiles="0"
-      data-isarraybody="0"
-      autocomplete="off"
-      onsubmit="event.preventDefault(); executeTryOut('POSTapi-maintenances', this);">
-    <h3>
-        Request&nbsp;&nbsp;&nbsp;
-                    <button type="button"
-                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
-                    id="btn-tryout-POSTapi-maintenances"
-                    onclick="tryItOut('POSTapi-maintenances');">Try it out ⚡
-            </button>
-            <button type="button"
-                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
-                    id="btn-canceltryout-POSTapi-maintenances"
-                    onclick="cancelTryOut('POSTapi-maintenances');" hidden>Cancel 🛑
-            </button>&nbsp;&nbsp;
-            <button type="submit"
-                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
-                    id="btn-executetryout-POSTapi-maintenances"
-                    data-initial-text="Send Request 💥"
-                    data-loading-text="⏱ Sending..."
-                    hidden>Send Request 💥
-            </button>
-            </h3>
-            <p>
-            <small class="badge badge-black">POST</small>
-            <b><code>api/maintenances</code></b>
-        </p>
-                <h4 class="fancy-heading-panel"><b>Headers</b></h4>
-                                <div style="padding-left: 28px; clear: unset;">
-                <b style="line-height: 2;"><code>Content-Type</code></b>&nbsp;&nbsp;
-&nbsp;
- &nbsp;
- &nbsp;
-                <input type="text" style="display: none"
-                              name="Content-Type"                data-endpoint="POSTapi-maintenances"
-               value="application/json"
-               data-component="header">
-    <br>
-<p>Example: <code>application/json</code></p>
-            </div>
-                                <div style="padding-left: 28px; clear: unset;">
-                <b style="line-height: 2;"><code>Accept</code></b>&nbsp;&nbsp;
-&nbsp;
- &nbsp;
- &nbsp;
-                <input type="text" style="display: none"
-                              name="Accept"                data-endpoint="POSTapi-maintenances"
-               value="application/json"
-               data-component="header">
-    <br>
-<p>Example: <code>application/json</code></p>
-            </div>
-                                <h4 class="fancy-heading-panel"><b>Body Parameters</b></h4>
-        <div style=" padding-left: 28px;  clear: unset;">
-            <b style="line-height: 2;"><code>vehicle_id</code></b>&nbsp;&nbsp;
-<small>string</small>&nbsp;
- &nbsp;
- &nbsp;
-                <input type="text" style="display: none"
-                              name="vehicle_id"                data-endpoint="POSTapi-maintenances"
-               value="consequatur"
-               data-component="body">
-    <br>
-<p>The <code>id</code> of an existing record in the vehicles table. Example: <code>consequatur</code></p>
-        </div>
-                <div style=" padding-left: 28px;  clear: unset;">
-            <b style="line-height: 2;"><code>name</code></b>&nbsp;&nbsp;
-<small>string</small>&nbsp;
- &nbsp;
- &nbsp;
-                <input type="text" style="display: none"
-                              name="name"                data-endpoint="POSTapi-maintenances"
-               value="mqeopfuudtdsufvyvddqa"
-               data-component="body">
-    <br>
-<p>validation.max. Example: <code>mqeopfuudtdsufvyvddqa</code></p>
-        </div>
-                <div style=" padding-left: 28px;  clear: unset;">
-            <b style="line-height: 2;"><code>date</code></b>&nbsp;&nbsp;
-<small>string</small>&nbsp;
- &nbsp;
- &nbsp;
-                <input type="text" style="display: none"
-                              name="date"                data-endpoint="POSTapi-maintenances"
-               value="2026-05-19T15:21:04"
-               data-component="body">
-    <br>
-<p>validation.date. Example: <code>2026-05-19T15:21:04</code></p>
-        </div>
-                <div style=" padding-left: 28px;  clear: unset;">
-            <b style="line-height: 2;"><code>cost</code></b>&nbsp;&nbsp;
-<small>number</small>&nbsp;
-<i>optional</i> &nbsp;
- &nbsp;
-                <input type="number" style="display: none"
-               step="any"               name="cost"                data-endpoint="POSTapi-maintenances"
-               value="45"
-               data-component="body">
-    <br>
-<p>validation.min. Example: <code>45</code></p>
-        </div>
-                <div style=" padding-left: 28px;  clear: unset;">
-            <b style="line-height: 2;"><code>is_reminder_enabled</code></b>&nbsp;&nbsp;
-<small>boolean</small>&nbsp;
-<i>optional</i> &nbsp;
- &nbsp;
-                <label data-endpoint="POSTapi-maintenances" style="display: none">
-            <input type="radio" name="is_reminder_enabled"
-                   value="true"
-                   data-endpoint="POSTapi-maintenances"
-                   data-component="body"             >
-            <code>true</code>
-        </label>
-        <label data-endpoint="POSTapi-maintenances" style="display: none">
-            <input type="radio" name="is_reminder_enabled"
-                   value="false"
-                   data-endpoint="POSTapi-maintenances"
-                   data-component="body"             >
-            <code>false</code>
-        </label>
-    <br>
-<p>Example: <code>true</code></p>
-        </div>
-                <div style=" padding-left: 28px;  clear: unset;">
-            <b style="line-height: 2;"><code>notes</code></b>&nbsp;&nbsp;
-<small>string</small>&nbsp;
-<i>optional</i> &nbsp;
- &nbsp;
-                <input type="text" style="display: none"
-                              name="notes"                data-endpoint="POSTapi-maintenances"
-               value="consequatur"
-               data-component="body">
-    <br>
-<p>Example: <code>consequatur</code></p>
-        </div>
-        </form>
-
-                    <h2 id="endpoints-PUTapi-maintenances--id-">Update the specified resource in storage.</h2>
-
-<p>
-</p>
-
-
-
-<span id="example-requests-PUTapi-maintenances--id-">
-<blockquote>Example request:</blockquote>
-
-
-<div class="bash-example">
-    <pre><code class="language-bash">curl --request PUT \
-    "http://localhost:8000/api/maintenances/17" \
-    --header "Content-Type: application/json" \
-    --header "Accept: application/json" \
-    --data "{
-    \"name\": \"vmqeopfuudtdsufvyvddq\",
-    \"date\": \"2026-05-19T15:21:04\",
-    \"cost\": 1,
-    \"is_reminder_enabled\": true,
-    \"notes\": \"consequatur\"
-}"
-</code></pre></div>
-
-
-<div class="javascript-example">
-    <pre><code class="language-javascript">const url = new URL(
-    "http://localhost:8000/api/maintenances/17"
-);
-
-const headers = {
-    "Content-Type": "application/json",
-    "Accept": "application/json",
-};
-
-let body = {
-    "name": "vmqeopfuudtdsufvyvddq",
-    "date": "2026-05-19T15:21:04",
-    "cost": 1,
-    "is_reminder_enabled": true,
-    "notes": "consequatur"
-};
-
-fetch(url, {
-    method: "PUT",
-    headers,
-    body: JSON.stringify(body),
-}).then(response =&gt; response.json());</code></pre></div>
-
-</span>
-
-<span id="example-responses-PUTapi-maintenances--id-">
-</span>
-<span id="execution-results-PUTapi-maintenances--id-" hidden>
-    <blockquote>Received response<span
-                id="execution-response-status-PUTapi-maintenances--id-"></span>:
-    </blockquote>
-    <pre class="json"><code id="execution-response-content-PUTapi-maintenances--id-"
-      data-empty-response-text="<Empty response>" style="max-height: 400px;"></code></pre>
-</span>
-<span id="execution-error-PUTapi-maintenances--id-" hidden>
-    <blockquote>Request failed with error:</blockquote>
-    <pre><code id="execution-error-message-PUTapi-maintenances--id-">
-
-Tip: Check that you&#039;re properly connected to the network.
-If you&#039;re a maintainer of ths API, verify that your API is running and you&#039;ve enabled CORS.
-You can check the Dev Tools console for debugging information.</code></pre>
-</span>
-<form id="form-PUTapi-maintenances--id-" data-method="PUT"
-      data-path="api/maintenances/{id}"
-      data-authed="0"
-      data-hasfiles="0"
-      data-isarraybody="0"
-      autocomplete="off"
-      onsubmit="event.preventDefault(); executeTryOut('PUTapi-maintenances--id-', this);">
-    <h3>
-        Request&nbsp;&nbsp;&nbsp;
-                    <button type="button"
-                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
-                    id="btn-tryout-PUTapi-maintenances--id-"
-                    onclick="tryItOut('PUTapi-maintenances--id-');">Try it out ⚡
-            </button>
-            <button type="button"
-                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
-                    id="btn-canceltryout-PUTapi-maintenances--id-"
-                    onclick="cancelTryOut('PUTapi-maintenances--id-');" hidden>Cancel 🛑
-            </button>&nbsp;&nbsp;
-            <button type="submit"
-                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
-                    id="btn-executetryout-PUTapi-maintenances--id-"
-                    data-initial-text="Send Request 💥"
-                    data-loading-text="⏱ Sending..."
-                    hidden>Send Request 💥
-            </button>
-            </h3>
-            <p>
-            <small class="badge badge-darkblue">PUT</small>
-            <b><code>api/maintenances/{id}</code></b>
-        </p>
-            <p>
-            <small class="badge badge-purple">PATCH</small>
-            <b><code>api/maintenances/{id}</code></b>
-        </p>
-                <h4 class="fancy-heading-panel"><b>Headers</b></h4>
-                                <div style="padding-left: 28px; clear: unset;">
-                <b style="line-height: 2;"><code>Content-Type</code></b>&nbsp;&nbsp;
-&nbsp;
- &nbsp;
- &nbsp;
-                <input type="text" style="display: none"
-                              name="Content-Type"                data-endpoint="PUTapi-maintenances--id-"
-               value="application/json"
-               data-component="header">
-    <br>
-<p>Example: <code>application/json</code></p>
-            </div>
-                                <div style="padding-left: 28px; clear: unset;">
-                <b style="line-height: 2;"><code>Accept</code></b>&nbsp;&nbsp;
-&nbsp;
- &nbsp;
- &nbsp;
-                <input type="text" style="display: none"
-                              name="Accept"                data-endpoint="PUTapi-maintenances--id-"
-               value="application/json"
-               data-component="header">
-    <br>
-<p>Example: <code>application/json</code></p>
-            </div>
-                        <h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
-                    <div style="padding-left: 28px; clear: unset;">
-                <b style="line-height: 2;"><code>id</code></b>&nbsp;&nbsp;
-<small>integer</small>&nbsp;
- &nbsp;
- &nbsp;
-                <input type="number" style="display: none"
-               step="any"               name="id"                data-endpoint="PUTapi-maintenances--id-"
-               value="17"
-               data-component="url">
-    <br>
-<p>The ID of the maintenance. Example: <code>17</code></p>
-            </div>
-                            <h4 class="fancy-heading-panel"><b>Body Parameters</b></h4>
-        <div style=" padding-left: 28px;  clear: unset;">
-            <b style="line-height: 2;"><code>vehicle_id</code></b>&nbsp;&nbsp;
-<small>string</small>&nbsp;
-<i>optional</i> &nbsp;
- &nbsp;
-                <input type="text" style="display: none"
-                              name="vehicle_id"                data-endpoint="PUTapi-maintenances--id-"
-               value=""
-               data-component="body">
-    <br>
-<p>The <code>id</code> of an existing record in the vehicles table.</p>
-        </div>
-                <div style=" padding-left: 28px;  clear: unset;">
-            <b style="line-height: 2;"><code>name</code></b>&nbsp;&nbsp;
-<small>string</small>&nbsp;
-<i>optional</i> &nbsp;
- &nbsp;
-                <input type="text" style="display: none"
-                              name="name"                data-endpoint="PUTapi-maintenances--id-"
-               value="vmqeopfuudtdsufvyvddq"
-               data-component="body">
-    <br>
-<p>validation.max. Example: <code>vmqeopfuudtdsufvyvddq</code></p>
-        </div>
-                <div style=" padding-left: 28px;  clear: unset;">
-            <b style="line-height: 2;"><code>date</code></b>&nbsp;&nbsp;
-<small>string</small>&nbsp;
-<i>optional</i> &nbsp;
- &nbsp;
-                <input type="text" style="display: none"
-                              name="date"                data-endpoint="PUTapi-maintenances--id-"
-               value="2026-05-19T15:21:04"
-               data-component="body">
-    <br>
-<p>validation.date. Example: <code>2026-05-19T15:21:04</code></p>
-        </div>
-                <div style=" padding-left: 28px;  clear: unset;">
-            <b style="line-height: 2;"><code>cost</code></b>&nbsp;&nbsp;
-<small>number</small>&nbsp;
-<i>optional</i> &nbsp;
- &nbsp;
-                <input type="number" style="display: none"
-               step="any"               name="cost"                data-endpoint="PUTapi-maintenances--id-"
-               value="1"
-               data-component="body">
-    <br>
-<p>validation.min. Example: <code>1</code></p>
-        </div>
-                <div style=" padding-left: 28px;  clear: unset;">
-            <b style="line-height: 2;"><code>is_reminder_enabled</code></b>&nbsp;&nbsp;
-<small>boolean</small>&nbsp;
-<i>optional</i> &nbsp;
- &nbsp;
-                <label data-endpoint="PUTapi-maintenances--id-" style="display: none">
-            <input type="radio" name="is_reminder_enabled"
-                   value="true"
-                   data-endpoint="PUTapi-maintenances--id-"
-                   data-component="body"             >
-            <code>true</code>
-        </label>
-        <label data-endpoint="PUTapi-maintenances--id-" style="display: none">
-            <input type="radio" name="is_reminder_enabled"
-                   value="false"
-                   data-endpoint="PUTapi-maintenances--id-"
-                   data-component="body"             >
-            <code>false</code>
-        </label>
-    <br>
-<p>Example: <code>true</code></p>
-        </div>
-                <div style=" padding-left: 28px;  clear: unset;">
-            <b style="line-height: 2;"><code>notes</code></b>&nbsp;&nbsp;
-<small>string</small>&nbsp;
-<i>optional</i> &nbsp;
- &nbsp;
-                <input type="text" style="display: none"
-                              name="notes"                data-endpoint="PUTapi-maintenances--id-"
-               value="consequatur"
-               data-component="body">
-    <br>
-<p>Example: <code>consequatur</code></p>
-        </div>
-        </form>
-
-                    <h2 id="endpoints-DELETEapi-maintenances--id-">Remove the specified resource from storage.</h2>
-
-<p>
-</p>
-
-
-
-<span id="example-requests-DELETEapi-maintenances--id-">
-<blockquote>Example request:</blockquote>
-
-
-<div class="bash-example">
-    <pre><code class="language-bash">curl --request DELETE \
-    "http://localhost:8000/api/maintenances/17" \
-    --header "Content-Type: application/json" \
-    --header "Accept: application/json"</code></pre></div>
-
-
-<div class="javascript-example">
-    <pre><code class="language-javascript">const url = new URL(
-    "http://localhost:8000/api/maintenances/17"
-);
-
-const headers = {
-    "Content-Type": "application/json",
-    "Accept": "application/json",
-};
-
-
-fetch(url, {
-    method: "DELETE",
-    headers,
-}).then(response =&gt; response.json());</code></pre></div>
-
-</span>
-
-<span id="example-responses-DELETEapi-maintenances--id-">
-</span>
-<span id="execution-results-DELETEapi-maintenances--id-" hidden>
-    <blockquote>Received response<span
-                id="execution-response-status-DELETEapi-maintenances--id-"></span>:
-    </blockquote>
-    <pre class="json"><code id="execution-response-content-DELETEapi-maintenances--id-"
-      data-empty-response-text="<Empty response>" style="max-height: 400px;"></code></pre>
-</span>
-<span id="execution-error-DELETEapi-maintenances--id-" hidden>
-    <blockquote>Request failed with error:</blockquote>
-    <pre><code id="execution-error-message-DELETEapi-maintenances--id-">
-
-Tip: Check that you&#039;re properly connected to the network.
-If you&#039;re a maintainer of ths API, verify that your API is running and you&#039;ve enabled CORS.
-You can check the Dev Tools console for debugging information.</code></pre>
-</span>
-<form id="form-DELETEapi-maintenances--id-" data-method="DELETE"
-      data-path="api/maintenances/{id}"
-      data-authed="0"
-      data-hasfiles="0"
-      data-isarraybody="0"
-      autocomplete="off"
-      onsubmit="event.preventDefault(); executeTryOut('DELETEapi-maintenances--id-', this);">
-    <h3>
-        Request&nbsp;&nbsp;&nbsp;
-                    <button type="button"
-                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
-                    id="btn-tryout-DELETEapi-maintenances--id-"
-                    onclick="tryItOut('DELETEapi-maintenances--id-');">Try it out ⚡
-            </button>
-            <button type="button"
-                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
-                    id="btn-canceltryout-DELETEapi-maintenances--id-"
-                    onclick="cancelTryOut('DELETEapi-maintenances--id-');" hidden>Cancel 🛑
-            </button>&nbsp;&nbsp;
-            <button type="submit"
-                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
-                    id="btn-executetryout-DELETEapi-maintenances--id-"
-                    data-initial-text="Send Request 💥"
-                    data-loading-text="⏱ Sending..."
-                    hidden>Send Request 💥
-            </button>
-            </h3>
-            <p>
-            <small class="badge badge-red">DELETE</small>
-            <b><code>api/maintenances/{id}</code></b>
-        </p>
-                <h4 class="fancy-heading-panel"><b>Headers</b></h4>
-                                <div style="padding-left: 28px; clear: unset;">
-                <b style="line-height: 2;"><code>Content-Type</code></b>&nbsp;&nbsp;
-&nbsp;
- &nbsp;
- &nbsp;
-                <input type="text" style="display: none"
-                              name="Content-Type"                data-endpoint="DELETEapi-maintenances--id-"
-               value="application/json"
-               data-component="header">
-    <br>
-<p>Example: <code>application/json</code></p>
-            </div>
-                                <div style="padding-left: 28px; clear: unset;">
-                <b style="line-height: 2;"><code>Accept</code></b>&nbsp;&nbsp;
-&nbsp;
- &nbsp;
- &nbsp;
-                <input type="text" style="display: none"
-                              name="Accept"                data-endpoint="DELETEapi-maintenances--id-"
-               value="application/json"
-               data-component="header">
-    <br>
-<p>Example: <code>application/json</code></p>
-            </div>
-                        <h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
-                    <div style="padding-left: 28px; clear: unset;">
-                <b style="line-height: 2;"><code>id</code></b>&nbsp;&nbsp;
-<small>integer</small>&nbsp;
- &nbsp;
- &nbsp;
-                <input type="number" style="display: none"
-               step="any"               name="id"                data-endpoint="DELETEapi-maintenances--id-"
-               value="17"
-               data-component="url">
-    <br>
-<p>The ID of the maintenance. Example: <code>17</code></p>
-            </div>
-                    </form>
-
-                    <h2 id="endpoints-GETapi-pending-issues">Listado de problemas pendientes del usuario autenticado.</h2>
+                                <h2 id="endpoints-GETapi-pending-issues">Listado de problemas pendientes del usuario autenticado.</h2>
 
 <p>
 </p>
@@ -2097,7 +1450,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
     \"issue_status_id\": \"consequatur\",
     \"name\": \"mqeopfuudtdsufvyvddqa\",
     \"description\": \"Dolores dolorum amet iste laborum eius est dolor.\",
-    \"date\": \"2026-05-19T15:21:04\",
+    \"date\": \"2026-05-19T15:50:08\",
     \"priority_id\": \"consequatur\"
 }"
 </code></pre></div>
@@ -2118,7 +1471,7 @@ let body = {
     "issue_status_id": "consequatur",
     "name": "mqeopfuudtdsufvyvddqa",
     "description": "Dolores dolorum amet iste laborum eius est dolor.",
-    "date": "2026-05-19T15:21:04",
+    "date": "2026-05-19T15:50:08",
     "priority_id": "consequatur"
 };
 
@@ -2259,10 +1612,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="date"                data-endpoint="POSTapi-pending-issues"
-               value="2026-05-19T15:21:04"
+               value="2026-05-19T15:50:08"
                data-component="body">
     <br>
-<p>validation.date. Example: <code>2026-05-19T15:21:04</code></p>
+<p>validation.date. Example: <code>2026-05-19T15:50:08</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>priority_id</code></b>&nbsp;&nbsp;
@@ -2297,7 +1650,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
     --data "{
     \"name\": \"vmqeopfuudtdsufvyvddq\",
     \"description\": \"Dolores dolorum amet iste laborum eius est dolor.\",
-    \"date\": \"2026-05-19T15:21:04\"
+    \"date\": \"2026-05-19T15:50:08\"
 }"
 </code></pre></div>
 
@@ -2315,7 +1668,7 @@ const headers = {
 let body = {
     "name": "vmqeopfuudtdsufvyvddq",
     "description": "Dolores dolorum amet iste laborum eius est dolor.",
-    "date": "2026-05-19T15:21:04"
+    "date": "2026-05-19T15:50:08"
 };
 
 fetch(url, {
@@ -2472,10 +1825,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="date"                data-endpoint="PUTapi-pending-issues--id-"
-               value="2026-05-19T15:21:04"
+               value="2026-05-19T15:50:08"
                data-component="body">
     <br>
-<p>validation.date. Example: <code>2026-05-19T15:21:04</code></p>
+<p>validation.date. Example: <code>2026-05-19T15:50:08</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>priority_id</code></b>&nbsp;&nbsp;
@@ -2761,7 +2114,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
     --data "{
     \"vehicle_id\": \"consequatur\",
     \"name\": \"mqeopfuudtdsufvyvddqa\",
-    \"date\": \"2026-05-19T15:21:04\",
+    \"date\": \"2026-05-19T15:50:08\",
     \"description\": \"Dolores dolorum amet iste laborum eius est dolor.\"
 }"
 </code></pre></div>
@@ -2780,7 +2133,7 @@ const headers = {
 let body = {
     "vehicle_id": "consequatur",
     "name": "mqeopfuudtdsufvyvddqa",
-    "date": "2026-05-19T15:21:04",
+    "date": "2026-05-19T15:50:08",
     "description": "Dolores dolorum amet iste laborum eius est dolor."
 };
 
@@ -2897,10 +2250,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="date"                data-endpoint="POSTapi-reminders"
-               value="2026-05-19T15:21:04"
+               value="2026-05-19T15:50:08"
                data-component="body">
     <br>
-<p>validation.date. Example: <code>2026-05-19T15:21:04</code></p>
+<p>validation.date. Example: <code>2026-05-19T15:50:08</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>description</code></b>&nbsp;&nbsp;
@@ -2934,7 +2287,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
     --header "Accept: application/json" \
     --data "{
     \"name\": \"vmqeopfuudtdsufvyvddq\",
-    \"date\": \"2026-05-19T15:21:04\",
+    \"date\": \"2026-05-19T15:50:08\",
     \"description\": \"Dolores dolorum amet iste laborum eius est dolor.\"
 }"
 </code></pre></div>
@@ -2952,7 +2305,7 @@ const headers = {
 
 let body = {
     "name": "vmqeopfuudtdsufvyvddq",
-    "date": "2026-05-19T15:21:04",
+    "date": "2026-05-19T15:50:08",
     "description": "Dolores dolorum amet iste laborum eius est dolor."
 };
 
@@ -3086,10 +2439,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="date"                data-endpoint="PUTapi-reminders--id-"
-               value="2026-05-19T15:21:04"
+               value="2026-05-19T15:50:08"
                data-component="body">
     <br>
-<p>validation.date. Example: <code>2026-05-19T15:21:04</code></p>
+<p>validation.date. Example: <code>2026-05-19T15:50:08</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>description</code></b>&nbsp;&nbsp;
@@ -3483,9 +2836,14 @@ You can check the Dev Tools console for debugging information.</code></pre>
             </div>
                         </form>
 
-                    <h2 id="endpoints-GETapi-issue-statuses">GET api/issue-statuses</h2>
+                <h1 id="estados-de-problemas-de-vehiculos">Estados de problemas de vehículos</h1>
+
+    
+
+                                <h2 id="estados-de-problemas-de-vehiculos-GETapi-issue-statuses">Listado de estados de problemas de vehículos.</h2>
 
 <p>
+<small class="badge badge-darkred">requires authentication</small>
 </p>
 
 
@@ -3554,7 +2912,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 </span>
 <form id="form-GETapi-issue-statuses" data-method="GET"
       data-path="api/issue-statuses"
-      data-authed="0"
+      data-authed="1"
       data-hasfiles="0"
       data-isarraybody="0"
       autocomplete="off"
@@ -3610,9 +2968,714 @@ You can check the Dev Tools console for debugging information.</code></pre>
             </div>
                         </form>
 
-                    <h2 id="endpoints-GETapi-issue-priorities">Listado de prioridades de problemas.</h2>
+                <h1 id="mantenimientos">Mantenimientos</h1>
+
+    
+
+                                <h2 id="mantenimientos-GETapi-maintenances">Listado de mantenimientos del usuario autenticado.</h2>
 
 <p>
+<small class="badge badge-darkred">requires authentication</small>
+</p>
+
+
+
+<span id="example-requests-GETapi-maintenances">
+<blockquote>Example request:</blockquote>
+
+
+<div class="bash-example">
+    <pre><code class="language-bash">curl --request GET \
+    --get "http://localhost:8000/api/maintenances" \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json"</code></pre></div>
+
+
+<div class="javascript-example">
+    <pre><code class="language-javascript">const url = new URL(
+    "http://localhost:8000/api/maintenances"
+);
+
+const headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+
+fetch(url, {
+    method: "GET",
+    headers,
+}).then(response =&gt; response.json());</code></pre></div>
+
+</span>
+
+<span id="example-responses-GETapi-maintenances">
+            <blockquote>
+            <p>Example response (401):</p>
+        </blockquote>
+                <details class="annotation">
+            <summary style="cursor: pointer;">
+                <small onclick="textContent = parentElement.parentElement.open ? 'Show headers' : 'Hide headers'">Show headers</small>
+            </summary>
+            <pre><code class="language-http">cache-control: no-cache, private
+content-type: application/json
+access-control-allow-origin: *
+ </code></pre></details>         <pre>
+
+<code class="language-json" style="max-height: 300px;">{
+    &quot;message&quot;: &quot;Unauthenticated.&quot;
+}</code>
+ </pre>
+    </span>
+<span id="execution-results-GETapi-maintenances" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-GETapi-maintenances"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-GETapi-maintenances"
+      data-empty-response-text="<Empty response>" style="max-height: 400px;"></code></pre>
+</span>
+<span id="execution-error-GETapi-maintenances" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-GETapi-maintenances">
+
+Tip: Check that you&#039;re properly connected to the network.
+If you&#039;re a maintainer of ths API, verify that your API is running and you&#039;ve enabled CORS.
+You can check the Dev Tools console for debugging information.</code></pre>
+</span>
+<form id="form-GETapi-maintenances" data-method="GET"
+      data-path="api/maintenances"
+      data-authed="1"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('GETapi-maintenances', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-GETapi-maintenances"
+                    onclick="tryItOut('GETapi-maintenances');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-GETapi-maintenances"
+                    onclick="cancelTryOut('GETapi-maintenances');" hidden>Cancel 🛑
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-GETapi-maintenances"
+                    data-initial-text="Send Request 💥"
+                    data-loading-text="⏱ Sending..."
+                    hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-green">GET</small>
+            <b><code>api/maintenances</code></b>
+        </p>
+                <h4 class="fancy-heading-panel"><b>Headers</b></h4>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Content-Type</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Content-Type"                data-endpoint="GETapi-maintenances"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Accept</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Accept"                data-endpoint="GETapi-maintenances"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                        </form>
+
+                    <h2 id="mantenimientos-POSTapi-maintenances">Almacena un nuevo mantenimiento.</h2>
+
+<p>
+<small class="badge badge-darkred">requires authentication</small>
+</p>
+
+
+
+<span id="example-requests-POSTapi-maintenances">
+<blockquote>Example request:</blockquote>
+
+
+<div class="bash-example">
+    <pre><code class="language-bash">curl --request POST \
+    "http://localhost:8000/api/maintenances" \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json" \
+    --data "{
+    \"vehicle_id\": 1,
+    \"name\": \"Cambio de aceite y filtro\",
+    \"date\": \"2026-05-19\",
+    \"cost\": 120.5,
+    \"is_reminder_enabled\": true,
+    \"notes\": \"Se usó aceite sintético 5W-30.\"
+}"
+</code></pre></div>
+
+
+<div class="javascript-example">
+    <pre><code class="language-javascript">const url = new URL(
+    "http://localhost:8000/api/maintenances"
+);
+
+const headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+let body = {
+    "vehicle_id": 1,
+    "name": "Cambio de aceite y filtro",
+    "date": "2026-05-19",
+    "cost": 120.5,
+    "is_reminder_enabled": true,
+    "notes": "Se usó aceite sintético 5W-30."
+};
+
+fetch(url, {
+    method: "POST",
+    headers,
+    body: JSON.stringify(body),
+}).then(response =&gt; response.json());</code></pre></div>
+
+</span>
+
+<span id="example-responses-POSTapi-maintenances">
+</span>
+<span id="execution-results-POSTapi-maintenances" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-POSTapi-maintenances"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-POSTapi-maintenances"
+      data-empty-response-text="<Empty response>" style="max-height: 400px;"></code></pre>
+</span>
+<span id="execution-error-POSTapi-maintenances" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-POSTapi-maintenances">
+
+Tip: Check that you&#039;re properly connected to the network.
+If you&#039;re a maintainer of ths API, verify that your API is running and you&#039;ve enabled CORS.
+You can check the Dev Tools console for debugging information.</code></pre>
+</span>
+<form id="form-POSTapi-maintenances" data-method="POST"
+      data-path="api/maintenances"
+      data-authed="1"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('POSTapi-maintenances', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-POSTapi-maintenances"
+                    onclick="tryItOut('POSTapi-maintenances');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-POSTapi-maintenances"
+                    onclick="cancelTryOut('POSTapi-maintenances');" hidden>Cancel 🛑
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-POSTapi-maintenances"
+                    data-initial-text="Send Request 💥"
+                    data-loading-text="⏱ Sending..."
+                    hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-black">POST</small>
+            <b><code>api/maintenances</code></b>
+        </p>
+                <h4 class="fancy-heading-panel"><b>Headers</b></h4>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Content-Type</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Content-Type"                data-endpoint="POSTapi-maintenances"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Accept</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Accept"                data-endpoint="POSTapi-maintenances"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                                <h4 class="fancy-heading-panel"><b>Body Parameters</b></h4>
+        <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>vehicle_id</code></b>&nbsp;&nbsp;
+<small>integer</small>&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="number" style="display: none"
+               step="any"               name="vehicle_id"                data-endpoint="POSTapi-maintenances"
+               value="1"
+               data-component="body">
+    <br>
+<p>ID del vehículo al que pertenece el mantenimiento. Example: <code>1</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>name</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="name"                data-endpoint="POSTapi-maintenances"
+               value="Cambio de aceite y filtro"
+               data-component="body">
+    <br>
+<p>Nombre o tipo de mantenimiento. Example: <code>Cambio de aceite y filtro</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>date</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="date"                data-endpoint="POSTapi-maintenances"
+               value="2026-05-19"
+               data-component="body">
+    <br>
+<p>Fecha del mantenimiento en formato AAAA-MM-DD. Example: <code>2026-05-19</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>cost</code></b>&nbsp;&nbsp;
+<small>number</small>&nbsp;
+<i>optional</i> &nbsp;
+ &nbsp;
+                <input type="number" style="display: none"
+               step="any"               name="cost"                data-endpoint="POSTapi-maintenances"
+               value="120.5"
+               data-component="body">
+    <br>
+<p>Monto total del costo del mantenimiento. Example: <code>120.5</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>is_reminder_enabled</code></b>&nbsp;&nbsp;
+<small>boolean</small>&nbsp;
+<i>optional</i> &nbsp;
+ &nbsp;
+                <label data-endpoint="POSTapi-maintenances" style="display: none">
+            <input type="radio" name="is_reminder_enabled"
+                   value="true"
+                   data-endpoint="POSTapi-maintenances"
+                   data-component="body"             >
+            <code>true</code>
+        </label>
+        <label data-endpoint="POSTapi-maintenances" style="display: none">
+            <input type="radio" name="is_reminder_enabled"
+                   value="false"
+                   data-endpoint="POSTapi-maintenances"
+                   data-component="body"             >
+            <code>false</code>
+        </label>
+    <br>
+<p>Indica si se debe habilitar un recordatorio para este mantenimiento. Example: <code>true</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>notes</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+<i>optional</i> &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="notes"                data-endpoint="POSTapi-maintenances"
+               value="Se usó aceite sintético 5W-30."
+               data-component="body">
+    <br>
+<p>Notas adicionales sobre el mantenimiento realizado. Example: <code>Se usó aceite sintético 5W-30.</code></p>
+        </div>
+        </form>
+
+                    <h2 id="mantenimientos-PUTapi-maintenances--id-">Actualiza un mantenimiento existente.</h2>
+
+<p>
+<small class="badge badge-darkred">requires authentication</small>
+</p>
+
+
+
+<span id="example-requests-PUTapi-maintenances--id-">
+<blockquote>Example request:</blockquote>
+
+
+<div class="bash-example">
+    <pre><code class="language-bash">curl --request PUT \
+    "http://localhost:8000/api/maintenances/1" \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json" \
+    --data "{
+    \"vehicle_id\": 1,
+    \"name\": \"Cambio de aceite y filtro\",
+    \"date\": \"2026-05-19\",
+    \"cost\": 130,
+    \"is_reminder_enabled\": false,
+    \"notes\": \"Se usó aceite sintético 5W-30.\"
+}"
+</code></pre></div>
+
+
+<div class="javascript-example">
+    <pre><code class="language-javascript">const url = new URL(
+    "http://localhost:8000/api/maintenances/1"
+);
+
+const headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+let body = {
+    "vehicle_id": 1,
+    "name": "Cambio de aceite y filtro",
+    "date": "2026-05-19",
+    "cost": 130,
+    "is_reminder_enabled": false,
+    "notes": "Se usó aceite sintético 5W-30."
+};
+
+fetch(url, {
+    method: "PUT",
+    headers,
+    body: JSON.stringify(body),
+}).then(response =&gt; response.json());</code></pre></div>
+
+</span>
+
+<span id="example-responses-PUTapi-maintenances--id-">
+</span>
+<span id="execution-results-PUTapi-maintenances--id-" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-PUTapi-maintenances--id-"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-PUTapi-maintenances--id-"
+      data-empty-response-text="<Empty response>" style="max-height: 400px;"></code></pre>
+</span>
+<span id="execution-error-PUTapi-maintenances--id-" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-PUTapi-maintenances--id-">
+
+Tip: Check that you&#039;re properly connected to the network.
+If you&#039;re a maintainer of ths API, verify that your API is running and you&#039;ve enabled CORS.
+You can check the Dev Tools console for debugging information.</code></pre>
+</span>
+<form id="form-PUTapi-maintenances--id-" data-method="PUT"
+      data-path="api/maintenances/{id}"
+      data-authed="1"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('PUTapi-maintenances--id-', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-PUTapi-maintenances--id-"
+                    onclick="tryItOut('PUTapi-maintenances--id-');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-PUTapi-maintenances--id-"
+                    onclick="cancelTryOut('PUTapi-maintenances--id-');" hidden>Cancel 🛑
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-PUTapi-maintenances--id-"
+                    data-initial-text="Send Request 💥"
+                    data-loading-text="⏱ Sending..."
+                    hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-darkblue">PUT</small>
+            <b><code>api/maintenances/{id}</code></b>
+        </p>
+            <p>
+            <small class="badge badge-purple">PATCH</small>
+            <b><code>api/maintenances/{id}</code></b>
+        </p>
+                <h4 class="fancy-heading-panel"><b>Headers</b></h4>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Content-Type</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Content-Type"                data-endpoint="PUTapi-maintenances--id-"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Accept</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Accept"                data-endpoint="PUTapi-maintenances--id-"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                        <h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
+                    <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>id</code></b>&nbsp;&nbsp;
+<small>integer</small>&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="number" style="display: none"
+               step="any"               name="id"                data-endpoint="PUTapi-maintenances--id-"
+               value="1"
+               data-component="url">
+    <br>
+<p>ID del registro de mantenimiento. Example: <code>1</code></p>
+            </div>
+                            <h4 class="fancy-heading-panel"><b>Body Parameters</b></h4>
+        <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>vehicle_id</code></b>&nbsp;&nbsp;
+<small>integer</small>&nbsp;
+<i>optional</i> &nbsp;
+ &nbsp;
+                <input type="number" style="display: none"
+               step="any"               name="vehicle_id"                data-endpoint="PUTapi-maintenances--id-"
+               value="1"
+               data-component="body">
+    <br>
+<p>ID del vehículo al que pertenece el mantenimiento. Example: <code>1</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>name</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+<i>optional</i> &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="name"                data-endpoint="PUTapi-maintenances--id-"
+               value="Cambio de aceite y filtro"
+               data-component="body">
+    <br>
+<p>Nombre o tipo de mantenimiento. Example: <code>Cambio de aceite y filtro</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>date</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+<i>optional</i> &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="date"                data-endpoint="PUTapi-maintenances--id-"
+               value="2026-05-19"
+               data-component="body">
+    <br>
+<p>Fecha del mantenimiento en formato AAAA-MM-DD. Example: <code>2026-05-19</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>cost</code></b>&nbsp;&nbsp;
+<small>number</small>&nbsp;
+<i>optional</i> &nbsp;
+ &nbsp;
+                <input type="number" style="display: none"
+               step="any"               name="cost"                data-endpoint="PUTapi-maintenances--id-"
+               value="130"
+               data-component="body">
+    <br>
+<p>Monto total del costo del mantenimiento. Example: <code>130</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>is_reminder_enabled</code></b>&nbsp;&nbsp;
+<small>boolean</small>&nbsp;
+<i>optional</i> &nbsp;
+ &nbsp;
+                <label data-endpoint="PUTapi-maintenances--id-" style="display: none">
+            <input type="radio" name="is_reminder_enabled"
+                   value="true"
+                   data-endpoint="PUTapi-maintenances--id-"
+                   data-component="body"             >
+            <code>true</code>
+        </label>
+        <label data-endpoint="PUTapi-maintenances--id-" style="display: none">
+            <input type="radio" name="is_reminder_enabled"
+                   value="false"
+                   data-endpoint="PUTapi-maintenances--id-"
+                   data-component="body"             >
+            <code>false</code>
+        </label>
+    <br>
+<p>Indica si se debe habilitar un recordatorio para este mantenimiento. Example: <code>false</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>notes</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+<i>optional</i> &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="notes"                data-endpoint="PUTapi-maintenances--id-"
+               value="Se usó aceite sintético 5W-30."
+               data-component="body">
+    <br>
+<p>Notas adicionales sobre el mantenimiento realizado. Example: <code>Se usó aceite sintético 5W-30.</code></p>
+        </div>
+        </form>
+
+                    <h2 id="mantenimientos-DELETEapi-maintenances--id-">Elimina un mantenimiento.</h2>
+
+<p>
+<small class="badge badge-darkred">requires authentication</small>
+</p>
+
+
+
+<span id="example-requests-DELETEapi-maintenances--id-">
+<blockquote>Example request:</blockquote>
+
+
+<div class="bash-example">
+    <pre><code class="language-bash">curl --request DELETE \
+    "http://localhost:8000/api/maintenances/1" \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json"</code></pre></div>
+
+
+<div class="javascript-example">
+    <pre><code class="language-javascript">const url = new URL(
+    "http://localhost:8000/api/maintenances/1"
+);
+
+const headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+
+fetch(url, {
+    method: "DELETE",
+    headers,
+}).then(response =&gt; response.json());</code></pre></div>
+
+</span>
+
+<span id="example-responses-DELETEapi-maintenances--id-">
+</span>
+<span id="execution-results-DELETEapi-maintenances--id-" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-DELETEapi-maintenances--id-"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-DELETEapi-maintenances--id-"
+      data-empty-response-text="<Empty response>" style="max-height: 400px;"></code></pre>
+</span>
+<span id="execution-error-DELETEapi-maintenances--id-" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-DELETEapi-maintenances--id-">
+
+Tip: Check that you&#039;re properly connected to the network.
+If you&#039;re a maintainer of ths API, verify that your API is running and you&#039;ve enabled CORS.
+You can check the Dev Tools console for debugging information.</code></pre>
+</span>
+<form id="form-DELETEapi-maintenances--id-" data-method="DELETE"
+      data-path="api/maintenances/{id}"
+      data-authed="1"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('DELETEapi-maintenances--id-', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-DELETEapi-maintenances--id-"
+                    onclick="tryItOut('DELETEapi-maintenances--id-');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-DELETEapi-maintenances--id-"
+                    onclick="cancelTryOut('DELETEapi-maintenances--id-');" hidden>Cancel 🛑
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-DELETEapi-maintenances--id-"
+                    data-initial-text="Send Request 💥"
+                    data-loading-text="⏱ Sending..."
+                    hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-red">DELETE</small>
+            <b><code>api/maintenances/{id}</code></b>
+        </p>
+                <h4 class="fancy-heading-panel"><b>Headers</b></h4>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Content-Type</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Content-Type"                data-endpoint="DELETEapi-maintenances--id-"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Accept</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Accept"                data-endpoint="DELETEapi-maintenances--id-"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                        <h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
+                    <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>id</code></b>&nbsp;&nbsp;
+<small>integer</small>&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="number" style="display: none"
+               step="any"               name="id"                data-endpoint="DELETEapi-maintenances--id-"
+               value="1"
+               data-component="url">
+    <br>
+<p>ID del registro de mantenimiento. Example: <code>1</code></p>
+            </div>
+                    </form>
+
+                <h1 id="prioridades-de-problemas-de-vehiculos">Prioridades de problemas de vehículos</h1>
+
+    
+
+                                <h2 id="prioridades-de-problemas-de-vehiculos-GETapi-issue-priorities">Listado de prioridades de problemas de vehículos.</h2>
+
+<p>
+<small class="badge badge-darkred">requires authentication</small>
 </p>
 
 
@@ -3681,7 +3744,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 </span>
 <form id="form-GETapi-issue-priorities" data-method="GET"
       data-path="api/issue-priorities"
-      data-authed="0"
+      data-authed="1"
       data-hasfiles="0"
       data-isarraybody="0"
       autocomplete="off"
@@ -3895,7 +3958,7 @@ Si se proporciona una foto, la almacena en el disco público.</p>
     --form "oil_type=Sintético 5W-30"\
     --form "model_name=Civic"\
     --form "model_year=2020"\
-    --form "photo=@/tmp/phpOKFtaM" </code></pre></div>
+    --form "photo=@/tmp/phpxLY3kN" </code></pre></div>
 
 
 <div class="javascript-example">
@@ -4108,7 +4171,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
                value=""
                data-component="body">
     <br>
-<p>Foto del vehículo (imagen, máx. 2MB). Example: <code>/tmp/phpOKFtaM</code></p>
+<p>Foto del vehículo (imagen, máx. 2MB). Example: <code>/tmp/phpxLY3kN</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>model_year</code></b>&nbsp;&nbsp;
@@ -4291,7 +4354,7 @@ Si se sube una nueva foto, reemplaza la anterior eliminándola del almacenamient
     --form "oil_type=Sintético 10W-40"\
     --form "model_name=Accord"\
     --form "model_year=2022"\
-    --form "photo=@/tmp/phppw1iyI" </code></pre></div>
+    --form "photo=@/tmp/phpSBHYKQ" </code></pre></div>
 
 
 <div class="javascript-example">
@@ -4521,7 +4584,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
                value=""
                data-component="body">
     <br>
-<p>Nueva foto del vehículo (imagen, máx. 2MB). Example: <code>/tmp/phppw1iyI</code></p>
+<p>Nueva foto del vehículo (imagen, máx. 2MB). Example: <code>/tmp/phpSBHYKQ</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>model_year</code></b>&nbsp;&nbsp;

@@ -17,6 +17,7 @@ use Illuminate\Validation\ValidationException;
  *
  * Proporciona métodos para registrar nuevos usuarios, iniciar sesión y cerrar sesión,
  * gestionando los tokens de acceso de los usuarios mediante Sanctum.
+ * @group Autenticación
  */
 class AuthController extends Controller
 {

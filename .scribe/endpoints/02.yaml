@@ -1,0 +1,269 @@
+name: 'Cargas de gasolina'
+description: ''
+endpoints:
+  -
+    custom: []
+    httpMethods:
+      - GET
+    uri: api/gasoline-refills
+    metadata:
+      custom: []
+      groupName: 'Cargas de gasolina'
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Listado de recargas de gasolina del usuario autenticado.'
+      description: ''
+      authenticated: true
+      deprecated: false
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      -
+        custom: []
+        status: 401
+        content: '{"message":"Unauthenticated."}'
+        headers:
+          cache-control: 'no-cache, private'
+          content-type: application/json
+          access-control-allow-origin: '*'
+        description: null
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+  -
+    custom: []
+    httpMethods:
+      - POST
+    uri: api/gasoline-refills
+    metadata:
+      custom: []
+      groupName: 'Cargas de gasolina'
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Almacena una nueva recarga de gasolina.'
+      description: ''
+      authenticated: true
+      deprecated: false
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      vehicle_id:
+        custom: []
+        name: vehicle_id
+        description: 'ID del vehículo al que pertenece la recarga.'
+        required: true
+        example: 1
+        type: integer
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        deprecated: false
+      amount:
+        custom: []
+        name: amount
+        description: 'Monto total gastado en la recarga.'
+        required: true
+        example: 45.5
+        type: number
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        deprecated: false
+      liters:
+        custom: []
+        name: liters
+        description: 'Cantidad de litros de gasolina recargados.'
+        required: true
+        example: 25.4
+        type: number
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        deprecated: false
+      date:
+        custom: []
+        name: date
+        description: 'Fecha de la recarga en formato AAAA-MM-DD.'
+        required: false
+        example: '2026-05-19'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: true
+        deprecated: false
+      gas_station:
+        custom: []
+        name: gas_station
+        description: 'Nombre o ubicación de la gasolinera.'
+        required: false
+        example: 'Repsol Centro'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: true
+        deprecated: false
+    cleanBodyParameters:
+      vehicle_id: 1
+      amount: 45.5
+      liters: 25.4
+      date: '2026-05-19'
+      gas_station: 'Repsol Centro'
+    fileParameters: []
+    responses: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+  -
+    custom: []
+    httpMethods:
+      - PUT
+      - PATCH
+    uri: 'api/gasoline-refills/{id}'
+    metadata:
+      custom: []
+      groupName: 'Cargas de gasolina'
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Actualiza una recarga existente.'
+      description: ''
+      authenticated: true
+      deprecated: false
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      id:
+        custom: []
+        name: id
+        description: 'ID del registro de gasolina.'
+        required: true
+        example: 1
+        type: integer
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        deprecated: false
+    cleanUrlParameters:
+      id: 1
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      amount:
+        custom: []
+        name: amount
+        description: 'Monto total gastado en la recarga.'
+        required: false
+        example: 50.0
+        type: number
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        deprecated: false
+      liters:
+        custom: []
+        name: liters
+        description: 'Cantidad de litros de gasolina recargados.'
+        required: false
+        example: 28.0
+        type: number
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        deprecated: false
+      date:
+        custom: []
+        name: date
+        description: 'Fecha de la recarga en formato AAAA-MM-DD.'
+        required: false
+        example: '2026-05-19'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: true
+        deprecated: false
+      gas_station:
+        custom: []
+        name: gas_station
+        description: 'Nombre o ubicación de la gasolinera.'
+        required: false
+        example: 'Repsol Centro'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: true
+        deprecated: false
+    cleanBodyParameters:
+      amount: 50.0
+      liters: 28.0
+      date: '2026-05-19'
+      gas_station: 'Repsol Centro'
+    fileParameters: []
+    responses: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+  -
+    custom: []
+    httpMethods:
+      - DELETE
+    uri: 'api/gasoline-refills/{id}'
+    metadata:
+      custom: []
+      groupName: 'Cargas de gasolina'
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Elimina una recarga.'
+      description: ''
+      authenticated: true
+      deprecated: false
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      id:
+        custom: []
+        name: id
+        description: 'ID del registro de gasolina.'
+        required: true
+        example: 1
+        type: integer
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        deprecated: false
+    cleanUrlParameters:
+      id: 1
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null

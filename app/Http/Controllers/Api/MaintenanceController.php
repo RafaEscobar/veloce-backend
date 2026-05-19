@@ -11,6 +11,14 @@ use App\Http\Resources\MaintenanceResource;
 use App\Models\Maintenance;
 use Illuminate\Http\JsonResponse;
 
+/**
+ * Controlador para la gestión de mantenimientos de los vehículos de la API.
+ *
+ * Proporciona métodos para listar, crear, actualizar y eliminar registros de mantenimientos
+ * asociados a los vehículos del usuario autenticado.
+ *
+ * @group Mantenimientos
+ */
 class MaintenanceController extends Controller
 {
     public function __construct()
@@ -27,7 +35,14 @@ class MaintenanceController extends Controller
     }
 
     /**
-     * Display a listing of the resource.
+     * Listado de mantenimientos del usuario autenticado.
+     *
+     * @authenticated
+     * Recupera un listado paginado de todos los mantenimientos registrados
+     * para los vehículos del usuario autenticado, ordenados de forma descendente por fecha de creación.
+     *
+     * @param Request $request Objeto de petición actual.
+     * @return MaintenanceCollection Colección paginada de mantenimientos.
      */
     public function index(Request $request): MaintenanceCollection
     {
@@ -39,7 +54,21 @@ class MaintenanceController extends Controller
     }
 
     /**
-     * Store a newly created resource in storage.
+     * Almacena un nuevo mantenimiento.
+     *
+     * @authenticated
+     * Crea un nuevo registro de mantenimiento asociado a un vehículo específico del usuario.
+     * Verifica que el vehículo pertenezca al usuario antes de proceder a la creación.
+     *
+     * @bodyParam vehicle_id int required ID del vehículo al que pertenece el mantenimiento. Example: 1
+     * @bodyParam name string required Nombre o tipo de mantenimiento. Example: Cambio de aceite y filtro
+     * @bodyParam date string required Fecha del mantenimiento en formato AAAA-MM-DD. Example: 2026-05-19
+     * @bodyParam cost float Monto total del costo del mantenimiento. Example: 120.50
+     * @bodyParam is_reminder_enabled boolean Indica si se debe habilitar un recordatorio para este mantenimiento. Example: true
+     * @bodyParam notes string Notas adicionales sobre el mantenimiento realizado. Example: Se usó aceite sintético 5W-30.
+     *
+     * @param StoreMaintenanceRequest $request Objeto de petición con los datos de mantenimiento validados.
+     * @return MaintenanceResource Recurso del mantenimiento creado.
      */
     public function store(StoreMaintenanceRequest $request): MaintenanceResource
     {
@@ -59,7 +88,24 @@ class MaintenanceController extends Controller
     }
 
     /**
-     * Update the specified resource in storage.
+     * Actualiza un mantenimiento existente.
+     *
+     * @authenticated
+     * Modifica los datos de un mantenimiento previamente registrado.
+     * Si se intenta cambiar el vehículo, verifica que el nuevo vehículo pertenezca al usuario autenticado.
+     *
+     * @urlParam id integer required ID del registro de mantenimiento. Example: 1
+     *
+     * @bodyParam vehicle_id int ID del vehículo al que pertenece el mantenimiento. Example: 1
+     * @bodyParam name string Nombre o tipo de mantenimiento. Example: Cambio de aceite y filtro
+     * @bodyParam date string Fecha del mantenimiento en formato AAAA-MM-DD. Example: 2026-05-19
+     * @bodyParam cost float Monto total del costo del mantenimiento. Example: 130.00
+     * @bodyParam is_reminder_enabled boolean Indica si se debe habilitar un recordatorio para este mantenimiento. Example: false
+     * @bodyParam notes string Notas adicionales sobre el mantenimiento realizado. Example: Se usó aceite sintético 5W-30.
+     *
+     * @param UpdateMaintenanceRequest $request Objeto de petición con los datos a actualizar.
+     * @param Maintenance $maintenance Modelo del mantenimiento a actualizar.
+     * @return MaintenanceResource Recurso del mantenimiento modificado.
      */
     public function update(UpdateMaintenanceRequest $request, Maintenance $maintenance): MaintenanceResource
     {
@@ -79,7 +125,16 @@ class MaintenanceController extends Controller
     }
 
     /**
-     * Remove the specified resource from storage.
+     * Elimina un mantenimiento.
+     *
+     * @authenticated
+     * Elimina de la base de datos el registro de mantenimiento especificado.
+     * La autorización del recurso se realiza automáticamente a través de la Policy vinculada.
+     *
+     * @urlParam id integer required ID del registro de mantenimiento. Example: 1
+     *
+     * @param Maintenance $maintenance Modelo del mantenimiento a eliminar.
+     * @return JsonResponse Respuesta JSON que confirma la eliminación correcta del mantenimiento.
      */
     public function destroy(Maintenance $maintenance): JsonResponse
     {
@@ -90,5 +145,6 @@ class MaintenanceController extends Controller
         ]);
     }
 }
+
 
 
