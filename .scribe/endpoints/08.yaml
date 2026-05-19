@@ -1,18 +1,18 @@
-name: 'Tipos de vehículos'
+name: 'Estados de problemas de vehículos'
 description: ''
 endpoints:
   -
     custom: []
     httpMethods:
       - GET
-    uri: api/vehicle-types
+    uri: api/issue-statuses
     metadata:
       custom: []
-      groupName: 'Tipos de vehículos'
+      groupName: 'Estados de problemas de vehículos'
       groupDescription: ''
       subgroup: ''
       subgroupDescription: ''
-      title: 'Listado de tipos de vehículos.'
+      title: 'Listado de estados de problemas de vehículos.'
       description: ''
       authenticated: true
       deprecated: false
