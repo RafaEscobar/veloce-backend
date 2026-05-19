@@ -56,9 +56,9 @@
     </div>
 
     <div id="toc">
-                    <ul id="tocify-header-introduction" class="tocify-header">
-                <li class="tocify-item level-1" data-unique="introduction">
-                    <a href="#introduction">Introduction</a>
+                    <ul id="tocify-header-introduccion" class="tocify-header">
+                <li class="tocify-item level-1" data-unique="introduccion">
+                    <a href="#introduccion">Introducción</a>
                 </li>
                             </ul>
                     <ul id="tocify-header-autenticacion" class="tocify-header">
@@ -231,14 +231,21 @@
 <div class="page-wrapper">
     <div class="dark-box"></div>
     <div class="content">
-        <h1 id="introduction">Introduction</h1>
+        <h1 id="introduccion">Introducción</h1>
+<p>Bienvenido a la documentación de la API de <strong>Veloce</strong>, una plataforma integral diseñada para la gestión, el control y el seguimiento del mantenimiento de vehículos.</p>
+<p>A través de esta API, los usuarios autenticados pueden administrar de forma detallada sus vehículos y llevar el registro de:</p>
+<ul>
+<li><strong>Gestión de Vehículos</strong>: Registro de automóviles, motocicletas y otros medios de transporte con sus respectivos estados y tipos.</li>
+<li><strong>Control de Mantenimientos</strong>: Historial detallado de servicios preventivos y correctivos, incluyendo costos asociados y notas de taller.</li>
+<li><strong>Cargas de Gasolina</strong>: Registro y monitorización del consumo de combustible y gastos relacionados.</li>
+<li><strong>Problemas Pendientes</strong>: Reporte, seguimiento de prioridad y estado de fallos o averías identificadas en los vehículos.</li>
+<li><strong>Recordatorios</strong>: Programación de alertas para tareas o eventos periódicos (como la renovación de seguros, verificación, etc.).</li>
+</ul>
 <aside>
-    <strong>Base URL</strong>: <code>http://localhost:8000</code>
+    <strong>URL Base</strong>: <code>http://localhost:8000</code>
 </aside>
-<pre><code>This documentation aims to provide all the information you need to work with our API.
-
-&lt;aside&gt;As you scroll, you'll see code examples for working with the API in different programming languages in the dark area to the right (or as part of the content on mobile).
-You can switch the language used with the tabs at the top right (or from the nav menu at the top left on mobile).&lt;/aside&gt;</code></pre>
+<p>Esta documentación está diseñada para proporcionar todos los detalles técnicos necesarios para realizar integraciones y consumir los endpoints de la API de forma efectiva.</p>
+<aside>A medida que te desplaces por la página, verás ejemplos de solicitudes y respuestas en diferentes lenguajes de programación en el panel lateral derecho (o dentro del flujo del contenido en pantallas móviles). Puedes alternar entre lenguajes usando las pestañas de la esquina superior derecha.</aside>
 
         
 
@@ -4009,7 +4016,7 @@ Si se proporciona una foto, la almacena en el disco público.</p>
     --form "oil_type=Sintético 5W-30"\
     --form "model_name=Civic"\
     --form "model_year=2020"\
-    --form "photo=@/tmp/phpU2fZMj" </code></pre></div>
+    --form "photo=@/tmp/phpE1uxo4" </code></pre></div>
 
 
 <div class="javascript-example">
@@ -4222,7 +4229,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
                value=""
                data-component="body">
     <br>
-<p>Foto del vehículo (imagen, máx. 2MB). Example: <code>/tmp/phpU2fZMj</code></p>
+<p>Foto del vehículo (imagen, máx. 2MB). Example: <code>/tmp/phpE1uxo4</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>model_year</code></b>&nbsp;&nbsp;
@@ -4405,7 +4412,7 @@ Si se sube una nueva foto, reemplaza la anterior eliminándola del almacenamient
     --form "oil_type=Sintético 10W-40"\
     --form "model_name=Accord"\
     --form "model_year=2022"\
-    --form "photo=@/tmp/phpHws0eP" </code></pre></div>
+    --form "photo=@/tmp/php4U6QeR" </code></pre></div>
 
 
 <div class="javascript-example">
@@ -4635,7 +4642,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
                value=""
                data-component="body">
     <br>
-<p>Nueva foto del vehículo (imagen, máx. 2MB). Example: <code>/tmp/phpHws0eP</code></p>
+<p>Nueva foto del vehículo (imagen, máx. 2MB). Example: <code>/tmp/php4U6QeR</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>model_year</code></b>&nbsp;&nbsp;
