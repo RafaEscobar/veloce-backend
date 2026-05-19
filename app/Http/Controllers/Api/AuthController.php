@@ -88,7 +88,7 @@ class AuthController extends Controller
 
     /**
      * Cierra la sesión del usuario autenticado actualmente.
-     *
+     * @authenticated
      * Revoca y elimina todos los tokens de acceso personal asociados al usuario,
      * invalidando así cualquier sesión activa generada previamente con la API.
      *

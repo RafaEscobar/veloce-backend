@@ -152,10 +152,8 @@ endpoints:
       subgroup: ''
       subgroupDescription: ''
       title: 'Cierra la sesión del usuario autenticado actualmente.'
-      description: |-
-        Revoca y elimina todos los tokens de acceso personal asociados al usuario,
-        invalidando así cualquier sesión activa generada previamente con la API.
-      authenticated: false
+      description: ''
+      authenticated: true
       deprecated: false
     headers:
       Content-Type: application/json
@@ -250,7 +248,7 @@ endpoints:
       amount:
         custom: []
         name: amount
-        description: 'Must be at least 0.'
+        description: validation.min.
         required: true
         example: 45
         type: number
@@ -261,7 +259,7 @@ endpoints:
       liters:
         custom: []
         name: liters
-        description: 'Must be at least 0.'
+        description: validation.min.
         required: true
         example: 56
         type: number
@@ -272,9 +270,9 @@ endpoints:
       date:
         custom: []
         name: date
-        description: 'Must be a valid date.'
+        description: validation.date.
         required: false
-        example: '2026-05-14T02:33:17'
+        example: '2026-05-19T15:14:29'
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -283,7 +281,7 @@ endpoints:
       gas_station:
         custom: []
         name: gas_station
-        description: 'Must not be greater than 255 characters.'
+        description: validation.max.
         required: false
         example: eopfuudtdsufvyvddqamn
         type: string
@@ -295,7 +293,7 @@ endpoints:
       vehicle_id: consequatur
       amount: 45
       liters: 56
-      date: '2026-05-14T02:33:17'
+      date: '2026-05-19T15:14:29'
       gas_station: eopfuudtdsufvyvddqamn
     fileParameters: []
     responses: []
@@ -354,7 +352,7 @@ endpoints:
       amount:
         custom: []
         name: amount
-        description: 'Must be at least 0.'
+        description: validation.min.
         required: false
         example: 73
         type: number
@@ -365,7 +363,7 @@ endpoints:
       liters:
         custom: []
         name: liters
-        description: 'Must be at least 0.'
+        description: validation.min.
         required: false
         example: 45
         type: number
@@ -376,9 +374,9 @@ endpoints:
       date:
         custom: []
         name: date
-        description: 'Must be a valid date.'
+        description: validation.date.
         required: false
-        example: '2026-05-14T02:33:17'
+        example: '2026-05-19T15:14:29'
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -387,7 +385,7 @@ endpoints:
       gas_station:
         custom: []
         name: gas_station
-        description: 'Must not be greater than 255 characters.'
+        description: validation.max.
         required: false
         example: qeopfuudtdsufvyvddqam
         type: string
@@ -398,7 +396,7 @@ endpoints:
     cleanBodyParameters:
       amount: 73
       liters: 45
-      date: '2026-05-14T02:33:17'
+      date: '2026-05-19T15:14:29'
       gas_station: qeopfuudtdsufvyvddqam
     fileParameters: []
     responses: []
@@ -527,7 +525,7 @@ endpoints:
       name:
         custom: []
         name: name
-        description: 'Must not be greater than 255 characters.'
+        description: validation.max.
         required: true
         example: mqeopfuudtdsufvyvddqa
         type: string
@@ -538,9 +536,9 @@ endpoints:
       date:
         custom: []
         name: date
-        description: 'Must be a valid date.'
+        description: validation.date.
         required: true
-        example: '2026-05-14T02:33:17'
+        example: '2026-05-19T15:14:29'
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -549,7 +547,7 @@ endpoints:
       cost:
         custom: []
         name: cost
-        description: 'Must be at least 0.'
+        description: validation.min.
         required: false
         example: 45
         type: number
@@ -582,7 +580,7 @@ endpoints:
     cleanBodyParameters:
       vehicle_id: consequatur
       name: mqeopfuudtdsufvyvddqa
-      date: '2026-05-14T02:33:17'
+      date: '2026-05-19T15:14:29'
       cost: 45
       is_reminder_enabled: true
       notes: consequatur
@@ -643,7 +641,7 @@ endpoints:
       name:
         custom: []
         name: name
-        description: 'Must not be greater than 255 characters.'
+        description: validation.max.
         required: false
         example: vmqeopfuudtdsufvyvddq
         type: string
@@ -654,9 +652,9 @@ endpoints:
       date:
         custom: []
         name: date
-        description: 'Must be a valid date.'
+        description: validation.date.
         required: false
-        example: '2026-05-14T02:33:17'
+        example: '2026-05-19T15:14:29'
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -665,7 +663,7 @@ endpoints:
       cost:
         custom: []
         name: cost
-        description: 'Must be at least 0.'
+        description: validation.min.
         required: false
         example: 1
         type: number
@@ -678,7 +676,7 @@ endpoints:
         name: is_reminder_enabled
         description: ''
         required: false
-        example: false
+        example: true
         type: boolean
         enumValues: []
         exampleWasSpecified: false
@@ -697,9 +695,9 @@ endpoints:
         deprecated: false
     cleanBodyParameters:
       name: vmqeopfuudtdsufvyvddq
-      date: '2026-05-14T02:33:17'
+      date: '2026-05-19T15:14:29'
       cost: 1
-      is_reminder_enabled: false
+      is_reminder_enabled: true
       notes: consequatur
     fileParameters: []
     responses: []
@@ -839,7 +837,7 @@ endpoints:
       name:
         custom: []
         name: name
-        description: 'Must not be greater than 255 characters.'
+        description: validation.max.
         required: true
         example: mqeopfuudtdsufvyvddqa
         type: string
@@ -861,9 +859,9 @@ endpoints:
       date:
         custom: []
         name: date
-        description: 'Must be a valid date.'
+        description: validation.date.
         required: true
-        example: '2026-05-14T02:33:17'
+        example: '2026-05-19T15:14:29'
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -885,7 +883,7 @@ endpoints:
       issue_status_id: consequatur
       name: mqeopfuudtdsufvyvddqa
       description: 'Dolores dolorum amet iste laborum eius est dolor.'
-      date: '2026-05-14T02:33:17'
+      date: '2026-05-19T15:14:29'
       priority_id: consequatur
     fileParameters: []
     responses: []
@@ -955,7 +953,7 @@ endpoints:
       name:
         custom: []
         name: name
-        description: 'Must not be greater than 255 characters.'
+        description: validation.max.
         required: false
         example: vmqeopfuudtdsufvyvddq
         type: string
@@ -977,9 +975,9 @@ endpoints:
       date:
         custom: []
         name: date
-        description: 'Must be a valid date.'
+        description: validation.date.
         required: false
-        example: '2026-05-14T02:33:17'
+        example: '2026-05-19T15:14:29'
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -999,7 +997,7 @@ endpoints:
     cleanBodyParameters:
       name: vmqeopfuudtdsufvyvddq
       description: 'Dolores dolorum amet iste laborum eius est dolor.'
-      date: '2026-05-14T02:33:17'
+      date: '2026-05-19T15:14:29'
     fileParameters: []
     responses: []
     responseFields: []
@@ -1127,7 +1125,7 @@ endpoints:
       name:
         custom: []
         name: name
-        description: 'Must not be greater than 255 characters.'
+        description: validation.max.
         required: true
         example: mqeopfuudtdsufvyvddqa
         type: string
@@ -1138,9 +1136,9 @@ endpoints:
       date:
         custom: []
         name: date
-        description: 'Must be a valid date.'
+        description: validation.date.
         required: true
-        example: '2026-05-14T02:33:17'
+        example: '2026-05-19T15:14:29'
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -1160,7 +1158,7 @@ endpoints:
     cleanBodyParameters:
       vehicle_id: consequatur
       name: mqeopfuudtdsufvyvddqa
-      date: '2026-05-14T02:33:17'
+      date: '2026-05-19T15:14:29'
       description: 'Dolores dolorum amet iste laborum eius est dolor.'
     fileParameters: []
     responses: []
@@ -1219,7 +1217,7 @@ endpoints:
       name:
         custom: []
         name: name
-        description: 'Must not be greater than 255 characters.'
+        description: validation.max.
         required: false
         example: vmqeopfuudtdsufvyvddq
         type: string
@@ -1230,9 +1228,9 @@ endpoints:
       date:
         custom: []
         name: date
-        description: 'Must be a valid date.'
+        description: validation.date.
         required: false
-        example: '2026-05-14T02:33:17'
+        example: '2026-05-19T15:14:29'
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -1251,7 +1249,7 @@ endpoints:
         deprecated: false
     cleanBodyParameters:
       name: vmqeopfuudtdsufvyvddq
-      date: '2026-05-14T02:33:17'
+      date: '2026-05-19T15:14:29'
       description: 'Dolores dolorum amet iste laborum eius est dolor.'
     fileParameters: []
     responses: []

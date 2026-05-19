@@ -61,11 +61,6 @@
                     <a href="#introduction">Introduction</a>
                 </li>
                             </ul>
-                    <ul id="tocify-header-authenticating-requests" class="tocify-header">
-                <li class="tocify-item level-1" data-unique="authenticating-requests">
-                    <a href="#authenticating-requests">Authenticating requests</a>
-                </li>
-                            </ul>
                     <ul id="tocify-header-endpoints" class="tocify-header">
                 <li class="tocify-item level-1" data-unique="endpoints">
                     <a href="#endpoints">Endpoints</a>
@@ -173,7 +168,7 @@
     </ul>
 
     <ul class="toc-footer" id="last-updated">
-        <li>Last updated: May 14, 2026</li>
+        <li>Last updated: May 19, 2026</li>
     </ul>
 </div>
 
@@ -189,8 +184,7 @@
 &lt;aside&gt;As you scroll, you'll see code examples for working with the API in different programming languages in the dark area to the right (or as part of the content on mobile).
 You can switch the language used with the tabs at the top right (or from the nav menu at the top left on mobile).&lt;/aside&gt;</code></pre>
 
-        <h1 id="authenticating-requests">Authenticating requests</h1>
-<p>This API is not authenticated.</p>
+        
 
         <h1 id="endpoints">Endpoints</h1>
 
@@ -522,10 +516,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
                     <h2 id="endpoints-POSTapi-logout">Cierra la sesión del usuario autenticado actualmente.</h2>
 
 <p>
+<small class="badge badge-darkred">requires authentication</small>
 </p>
 
-<p>Revoca y elimina todos los tokens de acceso personal asociados al usuario,
-invalidando así cualquier sesión activa generada previamente con la API.</p>
+
 
 <span id="example-requests-POSTapi-logout">
 <blockquote>Example request:</blockquote>
@@ -575,7 +569,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 </span>
 <form id="form-POSTapi-logout" data-method="POST"
       data-path="api/logout"
-      data-authed="0"
+      data-authed="1"
       data-hasfiles="0"
       data-isarraybody="0"
       autocomplete="off"
@@ -778,7 +772,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
     \"vehicle_id\": \"consequatur\",
     \"amount\": 45,
     \"liters\": 56,
-    \"date\": \"2026-05-14T02:33:17\",
+    \"date\": \"2026-05-19T15:14:29\",
     \"gas_station\": \"eopfuudtdsufvyvddqamn\"
 }"
 </code></pre></div>
@@ -798,7 +792,7 @@ let body = {
     "vehicle_id": "consequatur",
     "amount": 45,
     "liters": 56,
-    "date": "2026-05-14T02:33:17",
+    "date": "2026-05-19T15:14:29",
     "gas_station": "eopfuudtdsufvyvddqamn"
 };
 
@@ -906,7 +900,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
                value="45"
                data-component="body">
     <br>
-<p>Must be at least 0. Example: <code>45</code></p>
+<p>validation.min. Example: <code>45</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>liters</code></b>&nbsp;&nbsp;
@@ -918,7 +912,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
                value="56"
                data-component="body">
     <br>
-<p>Must be at least 0. Example: <code>56</code></p>
+<p>validation.min. Example: <code>56</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>date</code></b>&nbsp;&nbsp;
@@ -927,10 +921,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="date"                data-endpoint="POSTapi-gasoline-refills"
-               value="2026-05-14T02:33:17"
+               value="2026-05-19T15:14:29"
                data-component="body">
     <br>
-<p>Must be a valid date. Example: <code>2026-05-14T02:33:17</code></p>
+<p>validation.date. Example: <code>2026-05-19T15:14:29</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>gas_station</code></b>&nbsp;&nbsp;
@@ -942,7 +936,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
                value="eopfuudtdsufvyvddqamn"
                data-component="body">
     <br>
-<p>Must not be greater than 255 characters. Example: <code>eopfuudtdsufvyvddqamn</code></p>
+<p>validation.max. Example: <code>eopfuudtdsufvyvddqamn</code></p>
         </div>
         </form>
 
@@ -965,7 +959,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
     --data "{
     \"amount\": 73,
     \"liters\": 45,
-    \"date\": \"2026-05-14T02:33:17\",
+    \"date\": \"2026-05-19T15:14:29\",
     \"gas_station\": \"qeopfuudtdsufvyvddqam\"
 }"
 </code></pre></div>
@@ -984,7 +978,7 @@ const headers = {
 let body = {
     "amount": 73,
     "liters": 45,
-    "date": "2026-05-14T02:33:17",
+    "date": "2026-05-19T15:14:29",
     "gas_station": "qeopfuudtdsufvyvddqam"
 };
 
@@ -1109,7 +1103,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
                value="73"
                data-component="body">
     <br>
-<p>Must be at least 0. Example: <code>73</code></p>
+<p>validation.min. Example: <code>73</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>liters</code></b>&nbsp;&nbsp;
@@ -1121,7 +1115,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
                value="45"
                data-component="body">
     <br>
-<p>Must be at least 0. Example: <code>45</code></p>
+<p>validation.min. Example: <code>45</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>date</code></b>&nbsp;&nbsp;
@@ -1130,10 +1124,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="date"                data-endpoint="PUTapi-gasoline-refills--id-"
-               value="2026-05-14T02:33:17"
+               value="2026-05-19T15:14:29"
                data-component="body">
     <br>
-<p>Must be a valid date. Example: <code>2026-05-14T02:33:17</code></p>
+<p>validation.date. Example: <code>2026-05-19T15:14:29</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>gas_station</code></b>&nbsp;&nbsp;
@@ -1145,7 +1139,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
                value="qeopfuudtdsufvyvddqam"
                data-component="body">
     <br>
-<p>Must not be greater than 255 characters. Example: <code>qeopfuudtdsufvyvddqam</code></p>
+<p>validation.max. Example: <code>qeopfuudtdsufvyvddqam</code></p>
         </div>
         </form>
 
@@ -1419,7 +1413,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
     --data "{
     \"vehicle_id\": \"consequatur\",
     \"name\": \"mqeopfuudtdsufvyvddqa\",
-    \"date\": \"2026-05-14T02:33:17\",
+    \"date\": \"2026-05-19T15:14:29\",
     \"cost\": 45,
     \"is_reminder_enabled\": true,
     \"notes\": \"consequatur\"
@@ -1440,7 +1434,7 @@ const headers = {
 let body = {
     "vehicle_id": "consequatur",
     "name": "mqeopfuudtdsufvyvddqa",
-    "date": "2026-05-14T02:33:17",
+    "date": "2026-05-19T15:14:29",
     "cost": 45,
     "is_reminder_enabled": true,
     "notes": "consequatur"
@@ -1550,7 +1544,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
                value="mqeopfuudtdsufvyvddqa"
                data-component="body">
     <br>
-<p>Must not be greater than 255 characters. Example: <code>mqeopfuudtdsufvyvddqa</code></p>
+<p>validation.max. Example: <code>mqeopfuudtdsufvyvddqa</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>date</code></b>&nbsp;&nbsp;
@@ -1559,10 +1553,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="date"                data-endpoint="POSTapi-maintenances"
-               value="2026-05-14T02:33:17"
+               value="2026-05-19T15:14:29"
                data-component="body">
     <br>
-<p>Must be a valid date. Example: <code>2026-05-14T02:33:17</code></p>
+<p>validation.date. Example: <code>2026-05-19T15:14:29</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>cost</code></b>&nbsp;&nbsp;
@@ -1574,7 +1568,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
                value="45"
                data-component="body">
     <br>
-<p>Must be at least 0. Example: <code>45</code></p>
+<p>validation.min. Example: <code>45</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>is_reminder_enabled</code></b>&nbsp;&nbsp;
@@ -1630,9 +1624,9 @@ You can check the Dev Tools console for debugging information.</code></pre>
     --header "Accept: application/json" \
     --data "{
     \"name\": \"vmqeopfuudtdsufvyvddq\",
-    \"date\": \"2026-05-14T02:33:17\",
+    \"date\": \"2026-05-19T15:14:29\",
     \"cost\": 1,
-    \"is_reminder_enabled\": false,
+    \"is_reminder_enabled\": true,
     \"notes\": \"consequatur\"
 }"
 </code></pre></div>
@@ -1650,9 +1644,9 @@ const headers = {
 
 let body = {
     "name": "vmqeopfuudtdsufvyvddq",
-    "date": "2026-05-14T02:33:17",
+    "date": "2026-05-19T15:14:29",
     "cost": 1,
-    "is_reminder_enabled": false,
+    "is_reminder_enabled": true,
     "notes": "consequatur"
 };
 
@@ -1777,7 +1771,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
                value="vmqeopfuudtdsufvyvddq"
                data-component="body">
     <br>
-<p>Must not be greater than 255 characters. Example: <code>vmqeopfuudtdsufvyvddq</code></p>
+<p>validation.max. Example: <code>vmqeopfuudtdsufvyvddq</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>date</code></b>&nbsp;&nbsp;
@@ -1786,10 +1780,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="date"                data-endpoint="PUTapi-maintenances--id-"
-               value="2026-05-14T02:33:17"
+               value="2026-05-19T15:14:29"
                data-component="body">
     <br>
-<p>Must be a valid date. Example: <code>2026-05-14T02:33:17</code></p>
+<p>validation.date. Example: <code>2026-05-19T15:14:29</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>cost</code></b>&nbsp;&nbsp;
@@ -1801,7 +1795,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
                value="1"
                data-component="body">
     <br>
-<p>Must be at least 0. Example: <code>1</code></p>
+<p>validation.min. Example: <code>1</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>is_reminder_enabled</code></b>&nbsp;&nbsp;
@@ -1823,7 +1817,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
             <code>false</code>
         </label>
     <br>
-<p>Example: <code>false</code></p>
+<p>Example: <code>true</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>notes</code></b>&nbsp;&nbsp;
@@ -2111,7 +2105,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
     \"issue_status_id\": \"consequatur\",
     \"name\": \"mqeopfuudtdsufvyvddqa\",
     \"description\": \"Dolores dolorum amet iste laborum eius est dolor.\",
-    \"date\": \"2026-05-14T02:33:17\",
+    \"date\": \"2026-05-19T15:14:29\",
     \"priority_id\": \"consequatur\"
 }"
 </code></pre></div>
@@ -2132,7 +2126,7 @@ let body = {
     "issue_status_id": "consequatur",
     "name": "mqeopfuudtdsufvyvddqa",
     "description": "Dolores dolorum amet iste laborum eius est dolor.",
-    "date": "2026-05-14T02:33:17",
+    "date": "2026-05-19T15:14:29",
     "priority_id": "consequatur"
 };
 
@@ -2252,7 +2246,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
                value="mqeopfuudtdsufvyvddqa"
                data-component="body">
     <br>
-<p>Must not be greater than 255 characters. Example: <code>mqeopfuudtdsufvyvddqa</code></p>
+<p>validation.max. Example: <code>mqeopfuudtdsufvyvddqa</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>description</code></b>&nbsp;&nbsp;
@@ -2273,10 +2267,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="date"                data-endpoint="POSTapi-pending-issues"
-               value="2026-05-14T02:33:17"
+               value="2026-05-19T15:14:29"
                data-component="body">
     <br>
-<p>Must be a valid date. Example: <code>2026-05-14T02:33:17</code></p>
+<p>validation.date. Example: <code>2026-05-19T15:14:29</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>priority_id</code></b>&nbsp;&nbsp;
@@ -2311,7 +2305,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
     --data "{
     \"name\": \"vmqeopfuudtdsufvyvddq\",
     \"description\": \"Dolores dolorum amet iste laborum eius est dolor.\",
-    \"date\": \"2026-05-14T02:33:17\"
+    \"date\": \"2026-05-19T15:14:29\"
 }"
 </code></pre></div>
 
@@ -2329,7 +2323,7 @@ const headers = {
 let body = {
     "name": "vmqeopfuudtdsufvyvddq",
     "description": "Dolores dolorum amet iste laborum eius est dolor.",
-    "date": "2026-05-14T02:33:17"
+    "date": "2026-05-19T15:14:29"
 };
 
 fetch(url, {
@@ -2465,7 +2459,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
                value="vmqeopfuudtdsufvyvddq"
                data-component="body">
     <br>
-<p>Must not be greater than 255 characters. Example: <code>vmqeopfuudtdsufvyvddq</code></p>
+<p>validation.max. Example: <code>vmqeopfuudtdsufvyvddq</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>description</code></b>&nbsp;&nbsp;
@@ -2486,10 +2480,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="date"                data-endpoint="PUTapi-pending-issues--id-"
-               value="2026-05-14T02:33:17"
+               value="2026-05-19T15:14:29"
                data-component="body">
     <br>
-<p>Must be a valid date. Example: <code>2026-05-14T02:33:17</code></p>
+<p>validation.date. Example: <code>2026-05-19T15:14:29</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>priority_id</code></b>&nbsp;&nbsp;
@@ -2775,7 +2769,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
     --data "{
     \"vehicle_id\": \"consequatur\",
     \"name\": \"mqeopfuudtdsufvyvddqa\",
-    \"date\": \"2026-05-14T02:33:17\",
+    \"date\": \"2026-05-19T15:14:29\",
     \"description\": \"Dolores dolorum amet iste laborum eius est dolor.\"
 }"
 </code></pre></div>
@@ -2794,7 +2788,7 @@ const headers = {
 let body = {
     "vehicle_id": "consequatur",
     "name": "mqeopfuudtdsufvyvddqa",
-    "date": "2026-05-14T02:33:17",
+    "date": "2026-05-19T15:14:29",
     "description": "Dolores dolorum amet iste laborum eius est dolor."
 };
 
@@ -2902,7 +2896,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
                value="mqeopfuudtdsufvyvddqa"
                data-component="body">
     <br>
-<p>Must not be greater than 255 characters. Example: <code>mqeopfuudtdsufvyvddqa</code></p>
+<p>validation.max. Example: <code>mqeopfuudtdsufvyvddqa</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>date</code></b>&nbsp;&nbsp;
@@ -2911,10 +2905,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="date"                data-endpoint="POSTapi-reminders"
-               value="2026-05-14T02:33:17"
+               value="2026-05-19T15:14:29"
                data-component="body">
     <br>
-<p>Must be a valid date. Example: <code>2026-05-14T02:33:17</code></p>
+<p>validation.date. Example: <code>2026-05-19T15:14:29</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>description</code></b>&nbsp;&nbsp;
@@ -2948,7 +2942,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
     --header "Accept: application/json" \
     --data "{
     \"name\": \"vmqeopfuudtdsufvyvddq\",
-    \"date\": \"2026-05-14T02:33:17\",
+    \"date\": \"2026-05-19T15:14:29\",
     \"description\": \"Dolores dolorum amet iste laborum eius est dolor.\"
 }"
 </code></pre></div>
@@ -2966,7 +2960,7 @@ const headers = {
 
 let body = {
     "name": "vmqeopfuudtdsufvyvddq",
-    "date": "2026-05-14T02:33:17",
+    "date": "2026-05-19T15:14:29",
     "description": "Dolores dolorum amet iste laborum eius est dolor."
 };
 
@@ -3091,7 +3085,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
                value="vmqeopfuudtdsufvyvddq"
                data-component="body">
     <br>
-<p>Must not be greater than 255 characters. Example: <code>vmqeopfuudtdsufvyvddq</code></p>
+<p>validation.max. Example: <code>vmqeopfuudtdsufvyvddq</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>date</code></b>&nbsp;&nbsp;
@@ -3100,10 +3094,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="date"                data-endpoint="PUTapi-reminders--id-"
-               value="2026-05-14T02:33:17"
+               value="2026-05-19T15:14:29"
                data-component="body">
     <br>
-<p>Must be a valid date. Example: <code>2026-05-14T02:33:17</code></p>
+<p>validation.date. Example: <code>2026-05-19T15:14:29</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>description</code></b>&nbsp;&nbsp;
@@ -3909,7 +3903,7 @@ Si se proporciona una foto, la almacena en el disco público.</p>
     --form "oil_type=Sintético 5W-30"\
     --form "model_name=Civic"\
     --form "model_year=2020"\
-    --form "photo=@/tmp/phpxozFPl" </code></pre></div>
+    --form "photo=@/tmp/phpglGqvc" </code></pre></div>
 
 
 <div class="javascript-example">
@@ -4122,7 +4116,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
                value=""
                data-component="body">
     <br>
-<p>Foto del vehículo (imagen, máx. 2MB). Example: <code>/tmp/phpxozFPl</code></p>
+<p>Foto del vehículo (imagen, máx. 2MB). Example: <code>/tmp/phpglGqvc</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>model_year</code></b>&nbsp;&nbsp;
@@ -4305,7 +4299,7 @@ Si se sube una nueva foto, reemplaza la anterior eliminándola del almacenamient
     --form "oil_type=Sintético 10W-40"\
     --form "model_name=Accord"\
     --form "model_year=2022"\
-    --form "photo=@/tmp/phpC5vHOm" </code></pre></div>
+    --form "photo=@/tmp/phpbQFPLp" </code></pre></div>
 
 
 <div class="javascript-example">
@@ -4535,7 +4529,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
                value=""
                data-component="body">
     <br>
-<p>Nueva foto del vehículo (imagen, máx. 2MB). Example: <code>/tmp/phpC5vHOm</code></p>
+<p>Nueva foto del vehículo (imagen, máx. 2MB). Example: <code>/tmp/phpbQFPLp</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>model_year</code></b>&nbsp;&nbsp;
