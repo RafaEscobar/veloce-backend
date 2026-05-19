@@ -11,6 +11,12 @@ use App\Models\GasolineRefill;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
 
+/**
+ * Controlador para la gestión de recargas de gasolina de los vehículos de la API.
+ *
+ * Proporciona métodos para listar, crear, actualizar y eliminar registros de recargas
+ * de gasolina asociados a los vehículos del usuario autenticado.
+ */
 class GasolineRefillController extends Controller
 {
     public function __construct()
@@ -28,6 +34,13 @@ class GasolineRefillController extends Controller
 
     /**
      * Listado de recargas de gasolina del usuario autenticado.
+     *
+     * @authenticated
+     * Recupera un listado paginado de todas las recargas de gasolina registradas
+     * para los vehículos del usuario autenticado, ordenadas de forma descendente por fecha de creación.
+     *
+     * @param Request $request Objeto de petición actual.
+     * @return GasolineRefillCollection Colección paginada de recargas de gasolina.
      */
     public function index(Request $request): GasolineRefillCollection
     {
@@ -43,6 +56,19 @@ class GasolineRefillController extends Controller
 
     /**
      * Almacena una nueva recarga de gasolina.
+     *
+     * @authenticated
+     * Crea un nuevo registro de recarga de gasolina asociado a un vehículo específico del usuario.
+     * Verifica que el vehículo pertenezca al usuario antes de proceder a la creación.
+     *
+     * @bodyParam vehicle_id int required ID del vehículo al que pertenece la recarga. Example: 1
+     * @bodyParam amount float required Monto total gastado en la recarga. Example: 45.50
+     * @bodyParam liters float required Cantidad de litros de gasolina recargados. Example: 25.4
+     * @bodyParam date string Fecha de la recarga en formato AAAA-MM-DD. Example: 2026-05-19
+     * @bodyParam gas_station string Nombre o ubicación de la gasolinera. Example: Repsol Centro
+     *
+     * @param StoreGasolineRefillRequest $request Objeto de petición con los datos de recarga validados.
+     * @return GasolineRefillResource Recurso de la recarga de gasolina creada.
      */
     public function store(StoreGasolineRefillRequest $request): GasolineRefillResource
     {
@@ -61,6 +87,21 @@ class GasolineRefillController extends Controller
 
     /**
      * Actualiza una recarga existente.
+     *
+     * @authenticated
+     * Modifica los datos de una recarga de gasolina previamente registrada.
+     * Si se intenta cambiar el vehículo, verifica que el nuevo vehículo pertenezca al usuario autenticado.
+     *
+     * @urlParam id integer required ID del registro de gasolina. Example: 1
+     *
+     * @bodyParam amount float Monto total gastado en la recarga. Example: 50.00
+     * @bodyParam liters float Cantidad de litros de gasolina recargados. Example: 28.0
+     * @bodyParam date string Fecha de la recarga en formato AAAA-MM-DD. Example: 2026-05-19
+     * @bodyParam gas_station string Nombre o ubicación de la gasolinera. Example: Repsol Centro
+     *
+     * @param UpdateGasolineRefillRequest $request Objeto de petición con los datos a actualizar.
+     * @param GasolineRefill $gasolineRefill Modelo de la recarga a actualizar.
+     * @return GasolineRefillResource Recurso de la recarga de gasolina modificada.
      */
     public function update(UpdateGasolineRefillRequest $request, GasolineRefill $gasolineRefill): GasolineRefillResource
     {
@@ -81,6 +122,15 @@ class GasolineRefillController extends Controller
 
     /**
      * Elimina una recarga.
+     *
+     * @authenticated
+     * Elimina de la base de datos el registro de recarga de gasolina especificado.
+     * La autorización del recurso se realiza automáticamente a través de la Policy vinculada.
+     *
+     * @urlParam id integer required ID del registro de gasolina. Example: 1
+     *
+     * @param GasolineRefill $gasolineRefill Modelo de la recarga de gasolina a eliminar.
+     * @return JsonResponse Respuesta JSON que confirma la eliminación correcta de la recarga.
      */
     public function destroy(GasolineRefill $gasolineRefill): JsonResponse
     {

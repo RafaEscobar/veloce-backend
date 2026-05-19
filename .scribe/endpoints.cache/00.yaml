@@ -186,7 +186,7 @@ endpoints:
       subgroupDescription: ''
       title: 'Listado de recargas de gasolina del usuario autenticado.'
       description: ''
-      authenticated: false
+      authenticated: true
       deprecated: false
     headers:
       Content-Type: application/json
@@ -226,7 +226,7 @@ endpoints:
       subgroupDescription: ''
       title: 'Almacena una nueva recarga de gasolina.'
       description: ''
-      authenticated: false
+      authenticated: true
       deprecated: false
     headers:
       Content-Type: application/json
@@ -239,64 +239,64 @@ endpoints:
       vehicle_id:
         custom: []
         name: vehicle_id
-        description: 'The <code>id</code> of an existing record in the vehicles table.'
+        description: 'ID del vehículo al que pertenece la recarga.'
         required: true
-        example: consequatur
-        type: string
+        example: 1
+        type: integer
         enumValues: []
-        exampleWasSpecified: false
+        exampleWasSpecified: true
         nullable: false
         deprecated: false
       amount:
         custom: []
         name: amount
-        description: validation.min.
+        description: 'Monto total gastado en la recarga.'
         required: true
-        example: 45
+        example: 45.5
         type: number
         enumValues: []
-        exampleWasSpecified: false
+        exampleWasSpecified: true
         nullable: false
         deprecated: false
       liters:
         custom: []
         name: liters
-        description: validation.min.
+        description: 'Cantidad de litros de gasolina recargados.'
         required: true
-        example: 56
+        example: 25.4
         type: number
         enumValues: []
-        exampleWasSpecified: false
+        exampleWasSpecified: true
         nullable: false
         deprecated: false
       date:
         custom: []
         name: date
-        description: validation.date.
+        description: 'Fecha de la recarga en formato AAAA-MM-DD.'
         required: false
-        example: '2026-05-19T15:14:29'
+        example: '2026-05-19'
         type: string
         enumValues: []
-        exampleWasSpecified: false
+        exampleWasSpecified: true
         nullable: true
         deprecated: false
       gas_station:
         custom: []
         name: gas_station
-        description: validation.max.
+        description: 'Nombre o ubicación de la gasolinera.'
         required: false
-        example: eopfuudtdsufvyvddqamn
+        example: 'Repsol Centro'
         type: string
         enumValues: []
-        exampleWasSpecified: false
+        exampleWasSpecified: true
         nullable: true
         deprecated: false
     cleanBodyParameters:
-      vehicle_id: consequatur
-      amount: 45
-      liters: 56
-      date: '2026-05-19T15:14:29'
-      gas_station: eopfuudtdsufvyvddqamn
+      vehicle_id: 1
+      amount: 45.5
+      liters: 25.4
+      date: '2026-05-19'
+      gas_station: 'Repsol Centro'
     fileParameters: []
     responses: []
     responseFields: []
@@ -318,7 +318,7 @@ endpoints:
       subgroupDescription: ''
       title: 'Actualiza una recarga existente.'
       description: ''
-      authenticated: false
+      authenticated: true
       deprecated: false
     headers:
       Content-Type: application/json
@@ -327,79 +327,68 @@ endpoints:
       id:
         custom: []
         name: id
-        description: 'The ID of the gasoline refill.'
+        description: 'ID del registro de gasolina.'
         required: true
-        example: 17
+        example: 1
         type: integer
         enumValues: []
-        exampleWasSpecified: false
+        exampleWasSpecified: true
         nullable: false
         deprecated: false
     cleanUrlParameters:
-      id: 17
+      id: 1
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters:
-      vehicle_id:
-        custom: []
-        name: vehicle_id
-        description: 'The <code>id</code> of an existing record in the vehicles table.'
-        required: false
-        example: null
-        type: string
-        enumValues: []
-        exampleWasSpecified: false
-        nullable: false
-        deprecated: false
       amount:
         custom: []
         name: amount
-        description: validation.min.
+        description: 'Monto total gastado en la recarga.'
         required: false
-        example: 73
+        example: 50.0
         type: number
         enumValues: []
-        exampleWasSpecified: false
+        exampleWasSpecified: true
         nullable: false
         deprecated: false
       liters:
         custom: []
         name: liters
-        description: validation.min.
+        description: 'Cantidad de litros de gasolina recargados.'
         required: false
-        example: 45
+        example: 28.0
         type: number
         enumValues: []
-        exampleWasSpecified: false
+        exampleWasSpecified: true
         nullable: false
         deprecated: false
       date:
         custom: []
         name: date
-        description: validation.date.
+        description: 'Fecha de la recarga en formato AAAA-MM-DD.'
         required: false
-        example: '2026-05-19T15:14:29'
+        example: '2026-05-19'
         type: string
         enumValues: []
-        exampleWasSpecified: false
+        exampleWasSpecified: true
         nullable: true
         deprecated: false
       gas_station:
         custom: []
         name: gas_station
-        description: validation.max.
+        description: 'Nombre o ubicación de la gasolinera.'
         required: false
-        example: qeopfuudtdsufvyvddqam
+        example: 'Repsol Centro'
         type: string
         enumValues: []
-        exampleWasSpecified: false
+        exampleWasSpecified: true
         nullable: true
         deprecated: false
     cleanBodyParameters:
-      amount: 73
-      liters: 45
-      date: '2026-05-19T15:14:29'
-      gas_station: qeopfuudtdsufvyvddqam
+      amount: 50.0
+      liters: 28.0
+      date: '2026-05-19'
+      gas_station: 'Repsol Centro'
     fileParameters: []
     responses: []
     responseFields: []
@@ -420,7 +409,7 @@ endpoints:
       subgroupDescription: ''
       title: 'Elimina una recarga.'
       description: ''
-      authenticated: false
+      authenticated: true
       deprecated: false
     headers:
       Content-Type: application/json
@@ -429,16 +418,16 @@ endpoints:
       id:
         custom: []
         name: id
-        description: 'The ID of the gasoline refill.'
+        description: 'ID del registro de gasolina.'
         required: true
-        example: 17
+        example: 1
         type: integer
         enumValues: []
-        exampleWasSpecified: false
+        exampleWasSpecified: true
         nullable: false
         deprecated: false
     cleanUrlParameters:
-      id: 17
+      id: 1
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -540,7 +529,7 @@ endpoints:
         name: date
         description: validation.date.
         required: true
-        example: '2026-05-19T15:14:29'
+        example: '2026-05-19T15:21:04'
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -582,7 +571,7 @@ endpoints:
     cleanBodyParameters:
       vehicle_id: consequatur
       name: mqeopfuudtdsufvyvddqa
-      date: '2026-05-19T15:14:29'
+      date: '2026-05-19T15:21:04'
       cost: 45
       is_reminder_enabled: true
       notes: consequatur
@@ -656,7 +645,7 @@ endpoints:
         name: date
         description: validation.date.
         required: false
-        example: '2026-05-19T15:14:29'
+        example: '2026-05-19T15:21:04'
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -697,7 +686,7 @@ endpoints:
         deprecated: false
     cleanBodyParameters:
       name: vmqeopfuudtdsufvyvddq
-      date: '2026-05-19T15:14:29'
+      date: '2026-05-19T15:21:04'
       cost: 1
       is_reminder_enabled: true
       notes: consequatur
@@ -863,7 +852,7 @@ endpoints:
         name: date
         description: validation.date.
         required: true
-        example: '2026-05-19T15:14:29'
+        example: '2026-05-19T15:21:04'
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -885,7 +874,7 @@ endpoints:
       issue_status_id: consequatur
       name: mqeopfuudtdsufvyvddqa
       description: 'Dolores dolorum amet iste laborum eius est dolor.'
-      date: '2026-05-19T15:14:29'
+      date: '2026-05-19T15:21:04'
       priority_id: consequatur
     fileParameters: []
     responses: []
@@ -979,7 +968,7 @@ endpoints:
         name: date
         description: validation.date.
         required: false
-        example: '2026-05-19T15:14:29'
+        example: '2026-05-19T15:21:04'
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -999,7 +988,7 @@ endpoints:
     cleanBodyParameters:
       name: vmqeopfuudtdsufvyvddq
       description: 'Dolores dolorum amet iste laborum eius est dolor.'
-      date: '2026-05-19T15:14:29'
+      date: '2026-05-19T15:21:04'
     fileParameters: []
     responses: []
     responseFields: []
@@ -1140,7 +1129,7 @@ endpoints:
         name: date
         description: validation.date.
         required: true
-        example: '2026-05-19T15:14:29'
+        example: '2026-05-19T15:21:04'
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -1160,7 +1149,7 @@ endpoints:
     cleanBodyParameters:
       vehicle_id: consequatur
       name: mqeopfuudtdsufvyvddqa
-      date: '2026-05-19T15:14:29'
+      date: '2026-05-19T15:21:04'
       description: 'Dolores dolorum amet iste laborum eius est dolor.'
     fileParameters: []
     responses: []
@@ -1232,7 +1221,7 @@ endpoints:
         name: date
         description: validation.date.
         required: false
-        example: '2026-05-19T15:14:29'
+        example: '2026-05-19T15:21:04'
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -1251,7 +1240,7 @@ endpoints:
         deprecated: false
     cleanBodyParameters:
       name: vmqeopfuudtdsufvyvddq
-      date: '2026-05-19T15:14:29'
+      date: '2026-05-19T15:21:04'
       description: 'Dolores dolorum amet iste laborum eius est dolor.'
     fileParameters: []
     responses: []

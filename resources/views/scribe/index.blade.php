@@ -628,6 +628,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
                     <h2 id="endpoints-GETapi-gasoline-refills">Listado de recargas de gasolina del usuario autenticado.</h2>
 
 <p>
+<small class="badge badge-darkred">requires authentication</small>
 </p>
 
 
@@ -696,7 +697,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 </span>
 <form id="form-GETapi-gasoline-refills" data-method="GET"
       data-path="api/gasoline-refills"
-      data-authed="0"
+      data-authed="1"
       data-hasfiles="0"
       data-isarraybody="0"
       autocomplete="off"
@@ -755,6 +756,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
                     <h2 id="endpoints-POSTapi-gasoline-refills">Almacena una nueva recarga de gasolina.</h2>
 
 <p>
+<small class="badge badge-darkred">requires authentication</small>
 </p>
 
 
@@ -769,11 +771,11 @@ You can check the Dev Tools console for debugging information.</code></pre>
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
-    \"vehicle_id\": \"consequatur\",
-    \"amount\": 45,
-    \"liters\": 56,
-    \"date\": \"2026-05-19T15:14:29\",
-    \"gas_station\": \"eopfuudtdsufvyvddqamn\"
+    \"vehicle_id\": 1,
+    \"amount\": 45.5,
+    \"liters\": 25.4,
+    \"date\": \"2026-05-19\",
+    \"gas_station\": \"Repsol Centro\"
 }"
 </code></pre></div>
 
@@ -789,11 +791,11 @@ const headers = {
 };
 
 let body = {
-    "vehicle_id": "consequatur",
-    "amount": 45,
-    "liters": 56,
-    "date": "2026-05-19T15:14:29",
-    "gas_station": "eopfuudtdsufvyvddqamn"
+    "vehicle_id": 1,
+    "amount": 45.5,
+    "liters": 25.4,
+    "date": "2026-05-19",
+    "gas_station": "Repsol Centro"
 };
 
 fetch(url, {
@@ -823,7 +825,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 </span>
 <form id="form-POSTapi-gasoline-refills" data-method="POST"
       data-path="api/gasoline-refills"
-      data-authed="0"
+      data-authed="1"
       data-hasfiles="0"
       data-isarraybody="0"
       autocomplete="off"
@@ -880,15 +882,15 @@ You can check the Dev Tools console for debugging information.</code></pre>
                                 <h4 class="fancy-heading-panel"><b>Body Parameters</b></h4>
         <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>vehicle_id</code></b>&nbsp;&nbsp;
-<small>string</small>&nbsp;
+<small>integer</small>&nbsp;
  &nbsp;
  &nbsp;
-                <input type="text" style="display: none"
-                              name="vehicle_id"                data-endpoint="POSTapi-gasoline-refills"
-               value="consequatur"
+                <input type="number" style="display: none"
+               step="any"               name="vehicle_id"                data-endpoint="POSTapi-gasoline-refills"
+               value="1"
                data-component="body">
     <br>
-<p>The <code>id</code> of an existing record in the vehicles table. Example: <code>consequatur</code></p>
+<p>ID del vehículo al que pertenece la recarga. Example: <code>1</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>amount</code></b>&nbsp;&nbsp;
@@ -897,10 +899,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="number" style="display: none"
                step="any"               name="amount"                data-endpoint="POSTapi-gasoline-refills"
-               value="45"
+               value="45.5"
                data-component="body">
     <br>
-<p>validation.min. Example: <code>45</code></p>
+<p>Monto total gastado en la recarga. Example: <code>45.5</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>liters</code></b>&nbsp;&nbsp;
@@ -909,10 +911,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="number" style="display: none"
                step="any"               name="liters"                data-endpoint="POSTapi-gasoline-refills"
-               value="56"
+               value="25.4"
                data-component="body">
     <br>
-<p>validation.min. Example: <code>56</code></p>
+<p>Cantidad de litros de gasolina recargados. Example: <code>25.4</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>date</code></b>&nbsp;&nbsp;
@@ -921,10 +923,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="date"                data-endpoint="POSTapi-gasoline-refills"
-               value="2026-05-19T15:14:29"
+               value="2026-05-19"
                data-component="body">
     <br>
-<p>validation.date. Example: <code>2026-05-19T15:14:29</code></p>
+<p>Fecha de la recarga en formato AAAA-MM-DD. Example: <code>2026-05-19</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>gas_station</code></b>&nbsp;&nbsp;
@@ -933,16 +935,17 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="gas_station"                data-endpoint="POSTapi-gasoline-refills"
-               value="eopfuudtdsufvyvddqamn"
+               value="Repsol Centro"
                data-component="body">
     <br>
-<p>validation.max. Example: <code>eopfuudtdsufvyvddqamn</code></p>
+<p>Nombre o ubicación de la gasolinera. Example: <code>Repsol Centro</code></p>
         </div>
         </form>
 
                     <h2 id="endpoints-PUTapi-gasoline-refills--id-">Actualiza una recarga existente.</h2>
 
 <p>
+<small class="badge badge-darkred">requires authentication</small>
 </p>
 
 
@@ -953,21 +956,21 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request PUT \
-    "http://localhost:8000/api/gasoline-refills/17" \
+    "http://localhost:8000/api/gasoline-refills/1" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
-    \"amount\": 73,
-    \"liters\": 45,
-    \"date\": \"2026-05-19T15:14:29\",
-    \"gas_station\": \"qeopfuudtdsufvyvddqam\"
+    \"amount\": 50,
+    \"liters\": 28,
+    \"date\": \"2026-05-19\",
+    \"gas_station\": \"Repsol Centro\"
 }"
 </code></pre></div>
 
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://localhost:8000/api/gasoline-refills/17"
+    "http://localhost:8000/api/gasoline-refills/1"
 );
 
 const headers = {
@@ -976,10 +979,10 @@ const headers = {
 };
 
 let body = {
-    "amount": 73,
-    "liters": 45,
-    "date": "2026-05-19T15:14:29",
-    "gas_station": "qeopfuudtdsufvyvddqam"
+    "amount": 50,
+    "liters": 28,
+    "date": "2026-05-19",
+    "gas_station": "Repsol Centro"
 };
 
 fetch(url, {
@@ -1009,7 +1012,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 </span>
 <form id="form-PUTapi-gasoline-refills--id-" data-method="PUT"
       data-path="api/gasoline-refills/{id}"
-      data-authed="0"
+      data-authed="1"
       data-hasfiles="0"
       data-isarraybody="0"
       autocomplete="off"
@@ -1075,35 +1078,23 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="number" style="display: none"
                step="any"               name="id"                data-endpoint="PUTapi-gasoline-refills--id-"
-               value="17"
+               value="1"
                data-component="url">
     <br>
-<p>The ID of the gasoline refill. Example: <code>17</code></p>
+<p>ID del registro de gasolina. Example: <code>1</code></p>
             </div>
                             <h4 class="fancy-heading-panel"><b>Body Parameters</b></h4>
         <div style=" padding-left: 28px;  clear: unset;">
-            <b style="line-height: 2;"><code>vehicle_id</code></b>&nbsp;&nbsp;
-<small>string</small>&nbsp;
-<i>optional</i> &nbsp;
- &nbsp;
-                <input type="text" style="display: none"
-                              name="vehicle_id"                data-endpoint="PUTapi-gasoline-refills--id-"
-               value=""
-               data-component="body">
-    <br>
-<p>The <code>id</code> of an existing record in the vehicles table.</p>
-        </div>
-                <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>amount</code></b>&nbsp;&nbsp;
 <small>number</small>&nbsp;
 <i>optional</i> &nbsp;
  &nbsp;
                 <input type="number" style="display: none"
                step="any"               name="amount"                data-endpoint="PUTapi-gasoline-refills--id-"
-               value="73"
+               value="50"
                data-component="body">
     <br>
-<p>validation.min. Example: <code>73</code></p>
+<p>Monto total gastado en la recarga. Example: <code>50</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>liters</code></b>&nbsp;&nbsp;
@@ -1112,10 +1103,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="number" style="display: none"
                step="any"               name="liters"                data-endpoint="PUTapi-gasoline-refills--id-"
-               value="45"
+               value="28"
                data-component="body">
     <br>
-<p>validation.min. Example: <code>45</code></p>
+<p>Cantidad de litros de gasolina recargados. Example: <code>28</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>date</code></b>&nbsp;&nbsp;
@@ -1124,10 +1115,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="date"                data-endpoint="PUTapi-gasoline-refills--id-"
-               value="2026-05-19T15:14:29"
+               value="2026-05-19"
                data-component="body">
     <br>
-<p>validation.date. Example: <code>2026-05-19T15:14:29</code></p>
+<p>Fecha de la recarga en formato AAAA-MM-DD. Example: <code>2026-05-19</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>gas_station</code></b>&nbsp;&nbsp;
@@ -1136,16 +1127,17 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="gas_station"                data-endpoint="PUTapi-gasoline-refills--id-"
-               value="qeopfuudtdsufvyvddqam"
+               value="Repsol Centro"
                data-component="body">
     <br>
-<p>validation.max. Example: <code>qeopfuudtdsufvyvddqam</code></p>
+<p>Nombre o ubicación de la gasolinera. Example: <code>Repsol Centro</code></p>
         </div>
         </form>
 
                     <h2 id="endpoints-DELETEapi-gasoline-refills--id-">Elimina una recarga.</h2>
 
 <p>
+<small class="badge badge-darkred">requires authentication</small>
 </p>
 
 
@@ -1156,14 +1148,14 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request DELETE \
-    "http://localhost:8000/api/gasoline-refills/17" \
+    "http://localhost:8000/api/gasoline-refills/1" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre></div>
 
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://localhost:8000/api/gasoline-refills/17"
+    "http://localhost:8000/api/gasoline-refills/1"
 );
 
 const headers = {
@@ -1198,7 +1190,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 </span>
 <form id="form-DELETEapi-gasoline-refills--id-" data-method="DELETE"
       data-path="api/gasoline-refills/{id}"
-      data-authed="0"
+      data-authed="1"
       data-hasfiles="0"
       data-isarraybody="0"
       autocomplete="off"
@@ -1260,10 +1252,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="number" style="display: none"
                step="any"               name="id"                data-endpoint="DELETEapi-gasoline-refills--id-"
-               value="17"
+               value="1"
                data-component="url">
     <br>
-<p>The ID of the gasoline refill. Example: <code>17</code></p>
+<p>ID del registro de gasolina. Example: <code>1</code></p>
             </div>
                     </form>
 
@@ -1413,7 +1405,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
     --data "{
     \"vehicle_id\": \"consequatur\",
     \"name\": \"mqeopfuudtdsufvyvddqa\",
-    \"date\": \"2026-05-19T15:14:29\",
+    \"date\": \"2026-05-19T15:21:04\",
     \"cost\": 45,
     \"is_reminder_enabled\": true,
     \"notes\": \"consequatur\"
@@ -1434,7 +1426,7 @@ const headers = {
 let body = {
     "vehicle_id": "consequatur",
     "name": "mqeopfuudtdsufvyvddqa",
-    "date": "2026-05-19T15:14:29",
+    "date": "2026-05-19T15:21:04",
     "cost": 45,
     "is_reminder_enabled": true,
     "notes": "consequatur"
@@ -1553,10 +1545,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="date"                data-endpoint="POSTapi-maintenances"
-               value="2026-05-19T15:14:29"
+               value="2026-05-19T15:21:04"
                data-component="body">
     <br>
-<p>validation.date. Example: <code>2026-05-19T15:14:29</code></p>
+<p>validation.date. Example: <code>2026-05-19T15:21:04</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>cost</code></b>&nbsp;&nbsp;
@@ -1624,7 +1616,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
     --header "Accept: application/json" \
     --data "{
     \"name\": \"vmqeopfuudtdsufvyvddq\",
-    \"date\": \"2026-05-19T15:14:29\",
+    \"date\": \"2026-05-19T15:21:04\",
     \"cost\": 1,
     \"is_reminder_enabled\": true,
     \"notes\": \"consequatur\"
@@ -1644,7 +1636,7 @@ const headers = {
 
 let body = {
     "name": "vmqeopfuudtdsufvyvddq",
-    "date": "2026-05-19T15:14:29",
+    "date": "2026-05-19T15:21:04",
     "cost": 1,
     "is_reminder_enabled": true,
     "notes": "consequatur"
@@ -1780,10 +1772,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="date"                data-endpoint="PUTapi-maintenances--id-"
-               value="2026-05-19T15:14:29"
+               value="2026-05-19T15:21:04"
                data-component="body">
     <br>
-<p>validation.date. Example: <code>2026-05-19T15:14:29</code></p>
+<p>validation.date. Example: <code>2026-05-19T15:21:04</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>cost</code></b>&nbsp;&nbsp;
@@ -2105,7 +2097,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
     \"issue_status_id\": \"consequatur\",
     \"name\": \"mqeopfuudtdsufvyvddqa\",
     \"description\": \"Dolores dolorum amet iste laborum eius est dolor.\",
-    \"date\": \"2026-05-19T15:14:29\",
+    \"date\": \"2026-05-19T15:21:04\",
     \"priority_id\": \"consequatur\"
 }"
 </code></pre></div>
@@ -2126,7 +2118,7 @@ let body = {
     "issue_status_id": "consequatur",
     "name": "mqeopfuudtdsufvyvddqa",
     "description": "Dolores dolorum amet iste laborum eius est dolor.",
-    "date": "2026-05-19T15:14:29",
+    "date": "2026-05-19T15:21:04",
     "priority_id": "consequatur"
 };
 
@@ -2267,10 +2259,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="date"                data-endpoint="POSTapi-pending-issues"
-               value="2026-05-19T15:14:29"
+               value="2026-05-19T15:21:04"
                data-component="body">
     <br>
-<p>validation.date. Example: <code>2026-05-19T15:14:29</code></p>
+<p>validation.date. Example: <code>2026-05-19T15:21:04</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>priority_id</code></b>&nbsp;&nbsp;
@@ -2305,7 +2297,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
     --data "{
     \"name\": \"vmqeopfuudtdsufvyvddq\",
     \"description\": \"Dolores dolorum amet iste laborum eius est dolor.\",
-    \"date\": \"2026-05-19T15:14:29\"
+    \"date\": \"2026-05-19T15:21:04\"
 }"
 </code></pre></div>
 
@@ -2323,7 +2315,7 @@ const headers = {
 let body = {
     "name": "vmqeopfuudtdsufvyvddq",
     "description": "Dolores dolorum amet iste laborum eius est dolor.",
-    "date": "2026-05-19T15:14:29"
+    "date": "2026-05-19T15:21:04"
 };
 
 fetch(url, {
@@ -2480,10 +2472,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="date"                data-endpoint="PUTapi-pending-issues--id-"
-               value="2026-05-19T15:14:29"
+               value="2026-05-19T15:21:04"
                data-component="body">
     <br>
-<p>validation.date. Example: <code>2026-05-19T15:14:29</code></p>
+<p>validation.date. Example: <code>2026-05-19T15:21:04</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>priority_id</code></b>&nbsp;&nbsp;
@@ -2769,7 +2761,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
     --data "{
     \"vehicle_id\": \"consequatur\",
     \"name\": \"mqeopfuudtdsufvyvddqa\",
-    \"date\": \"2026-05-19T15:14:29\",
+    \"date\": \"2026-05-19T15:21:04\",
     \"description\": \"Dolores dolorum amet iste laborum eius est dolor.\"
 }"
 </code></pre></div>
@@ -2788,7 +2780,7 @@ const headers = {
 let body = {
     "vehicle_id": "consequatur",
     "name": "mqeopfuudtdsufvyvddqa",
-    "date": "2026-05-19T15:14:29",
+    "date": "2026-05-19T15:21:04",
     "description": "Dolores dolorum amet iste laborum eius est dolor."
 };
 
@@ -2905,10 +2897,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="date"                data-endpoint="POSTapi-reminders"
-               value="2026-05-19T15:14:29"
+               value="2026-05-19T15:21:04"
                data-component="body">
     <br>
-<p>validation.date. Example: <code>2026-05-19T15:14:29</code></p>
+<p>validation.date. Example: <code>2026-05-19T15:21:04</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>description</code></b>&nbsp;&nbsp;
@@ -2942,7 +2934,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
     --header "Accept: application/json" \
     --data "{
     \"name\": \"vmqeopfuudtdsufvyvddq\",
-    \"date\": \"2026-05-19T15:14:29\",
+    \"date\": \"2026-05-19T15:21:04\",
     \"description\": \"Dolores dolorum amet iste laborum eius est dolor.\"
 }"
 </code></pre></div>
@@ -2960,7 +2952,7 @@ const headers = {
 
 let body = {
     "name": "vmqeopfuudtdsufvyvddq",
-    "date": "2026-05-19T15:14:29",
+    "date": "2026-05-19T15:21:04",
     "description": "Dolores dolorum amet iste laborum eius est dolor."
 };
 
@@ -3094,10 +3086,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="date"                data-endpoint="PUTapi-reminders--id-"
-               value="2026-05-19T15:14:29"
+               value="2026-05-19T15:21:04"
                data-component="body">
     <br>
-<p>validation.date. Example: <code>2026-05-19T15:14:29</code></p>
+<p>validation.date. Example: <code>2026-05-19T15:21:04</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>description</code></b>&nbsp;&nbsp;
@@ -3903,7 +3895,7 @@ Si se proporciona una foto, la almacena en el disco público.</p>
     --form "oil_type=Sintético 5W-30"\
     --form "model_name=Civic"\
     --form "model_year=2020"\
-    --form "photo=@/tmp/phpglGqvc" </code></pre></div>
+    --form "photo=@/tmp/phpOKFtaM" </code></pre></div>
 
 
 <div class="javascript-example">
@@ -4116,7 +4108,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
                value=""
                data-component="body">
     <br>
-<p>Foto del vehículo (imagen, máx. 2MB). Example: <code>/tmp/phpglGqvc</code></p>
+<p>Foto del vehículo (imagen, máx. 2MB). Example: <code>/tmp/phpOKFtaM</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>model_year</code></b>&nbsp;&nbsp;
@@ -4299,7 +4291,7 @@ Si se sube una nueva foto, reemplaza la anterior eliminándola del almacenamient
     --form "oil_type=Sintético 10W-40"\
     --form "model_name=Accord"\
     --form "model_year=2022"\
-    --form "photo=@/tmp/phpbQFPLp" </code></pre></div>
+    --form "photo=@/tmp/phppw1iyI" </code></pre></div>
 
 
 <div class="javascript-example">
@@ -4529,7 +4521,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
                value=""
                data-component="body">
     <br>
-<p>Nueva foto del vehículo (imagen, máx. 2MB). Example: <code>/tmp/phpbQFPLp</code></p>
+<p>Nueva foto del vehículo (imagen, máx. 2MB). Example: <code>/tmp/phppw1iyI</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>model_year</code></b>&nbsp;&nbsp;

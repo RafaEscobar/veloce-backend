@@ -32,7 +32,6 @@ class UpdateGasolineRefillRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'vehicle_id'  => ['sometimes', 'exists:vehicles,id'],
             'amount'      => ['sometimes', 'numeric', 'min:0'],
             'liters'      => ['sometimes', 'numeric', 'min:0'],
             'date'        => ['sometimes', 'nullable', 'date'],
@@ -46,7 +45,6 @@ class UpdateGasolineRefillRequest extends FormRequest
     public function messages(): array
     {
         return [
-            'vehicle_id.exists'    => 'El vehículo seleccionado no es válido.',
             'amount.numeric'       => 'El monto debe ser un número.',
             'amount.min'           => 'El monto no puede ser negativo.',
             'liters.numeric'       => 'Los litros deben ser un número.',
