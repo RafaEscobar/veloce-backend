@@ -113,7 +113,7 @@ class VehicleController extends Controller
      * Muestra los detalles de un vehículo específico.
      *
      * Devuelve la información de un vehículo junto con todas sus relaciones cargadas
-     * (tipo, estado, cargas de gasolina, mantenimientos, problemas pendientes y recordatorios).
+     * (tipo, estado, cargas de gasolina, mantenimientos y recordatorios).
      *
      * @urlParam id integer required ID del vehículo. Example: 1
      *
@@ -130,7 +130,6 @@ class VehicleController extends Controller
             'vehicleStatus',
             'gasolineRefills',
             'maintenances',
-            'pendingIssues',
             'reminders',
         ]);
 

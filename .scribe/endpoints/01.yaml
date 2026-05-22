@@ -4,48 +4,6 @@ endpoints:
   -
     custom: []
     httpMethods:
-      - GET
-    uri: api/vehicles
-    metadata:
-      custom: []
-      groupName: Vehículos
-      groupDescription: ''
-      subgroup: ''
-      subgroupDescription: ''
-      title: 'Lista los vehículos del usuario autenticado.'
-      description: |-
-        Devuelve una colección paginada de todos los vehículos que pertenecen
-        al usuario que realiza la petición, incluyendo sus relaciones (tipo y estado).
-      authenticated: false
-      deprecated: false
-    headers:
-      Content-Type: application/json
-      Accept: application/json
-    urlParameters: []
-    cleanUrlParameters: []
-    queryParameters: []
-    cleanQueryParameters: []
-    bodyParameters: []
-    cleanBodyParameters: []
-    fileParameters: []
-    responses:
-      -
-        custom: []
-        status: 401
-        content: '{"message":"Unauthenticated."}'
-        headers:
-          cache-control: 'no-cache, private'
-          content-type: application/json
-          access-control-allow-origin: '*'
-        description: null
-    responseFields: []
-    auth: []
-    controller: null
-    method: null
-    route: null
-  -
-    custom: []
-    httpMethods:
       - POST
     uri: api/vehicles
     metadata:
@@ -191,60 +149,6 @@ endpoints:
     fileParameters:
       photo: null
     responses: []
-    responseFields: []
-    auth: []
-    controller: null
-    method: null
-    route: null
-  -
-    custom: []
-    httpMethods:
-      - GET
-    uri: 'api/vehicles/{id}'
-    metadata:
-      custom: []
-      groupName: Vehículos
-      groupDescription: ''
-      subgroup: ''
-      subgroupDescription: ''
-      title: 'Muestra los detalles de un vehículo específico.'
-      description: |-
-        Devuelve la información de un vehículo junto con todas sus relaciones cargadas
-        (tipo, estado, cargas de gasolina, mantenimientos, problemas pendientes y recordatorios).
-      authenticated: false
-      deprecated: false
-    headers:
-      Content-Type: application/json
-      Accept: application/json
-    urlParameters:
-      id:
-        custom: []
-        name: id
-        description: 'ID del vehículo.'
-        required: true
-        example: 1
-        type: integer
-        enumValues: []
-        exampleWasSpecified: true
-        nullable: false
-        deprecated: false
-    cleanUrlParameters:
-      id: 1
-    queryParameters: []
-    cleanQueryParameters: []
-    bodyParameters: []
-    cleanBodyParameters: []
-    fileParameters: []
-    responses:
-      -
-        custom: []
-        status: 401
-        content: '{"message":"Unauthenticated."}'
-        headers:
-          cache-control: 'no-cache, private'
-          content-type: application/json
-          access-control-allow-origin: '*'
-        description: null
     responseFields: []
     auth: []
     controller: null

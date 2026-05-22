@@ -208,23 +208,6 @@ class Vehicle extends Model
 
     /*
     |--------------------------------------------------------------------------
-    | Relación pendingIssues()
-    |--------------------------------------------------------------------------
-    |
-    | Un vehículo puede tener muchos pendientes.
-    |
-    | Ejemplo:
-    | - revisar frenos
-    | - reparar faro
-    |
-    */
-    public function pendingIssues(): HasMany
-    {
-        return $this->hasMany(PendingIssue::class);
-    }
-
-    /*
-    |--------------------------------------------------------------------------
     | Relación reminders()
     |--------------------------------------------------------------------------
     |

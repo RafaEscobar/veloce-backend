@@ -26,7 +26,6 @@ class VehicleResource extends JsonResource
             'vehicleStatus' => $this->whenLoaded('vehicleStatus'),
             'gasolineRefills' => $this->whenLoaded('gasolineRefills'),
             'maintenances' => $this->whenLoaded('maintenances'),
-            'pendingIssues' => $this->whenLoaded('pendingIssues'),
             'reminders' => $this->whenLoaded('reminders'),
         ];
     }

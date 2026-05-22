@@ -1,58 +1,18 @@
-name: 'Problemas pendientes'
+name: Recordatorios
 description: ''
 endpoints:
   -
     custom: []
     httpMethods:
-      - GET
-    uri: api/pending-issues
-    metadata:
-      custom: []
-      groupName: 'Problemas pendientes'
-      groupDescription: ''
-      subgroup: ''
-      subgroupDescription: ''
-      title: 'Listado de problemas pendientes del usuario autenticado.'
-      description: ''
-      authenticated: true
-      deprecated: false
-    headers:
-      Content-Type: application/json
-      Accept: application/json
-    urlParameters: []
-    cleanUrlParameters: []
-    queryParameters: []
-    cleanQueryParameters: []
-    bodyParameters: []
-    cleanBodyParameters: []
-    fileParameters: []
-    responses:
-      -
-        custom: []
-        status: 401
-        content: '{"message":"Unauthenticated."}'
-        headers:
-          cache-control: 'no-cache, private'
-          content-type: application/json
-          access-control-allow-origin: '*'
-        description: null
-    responseFields: []
-    auth: []
-    controller: null
-    method: null
-    route: null
-  -
-    custom: []
-    httpMethods:
       - POST
-    uri: api/pending-issues
+    uri: api/reminders
     metadata:
       custom: []
-      groupName: 'Problemas pendientes'
+      groupName: Recordatorios
       groupDescription: ''
       subgroup: ''
       subgroupDescription: ''
-      title: 'Almacena un nuevo problema pendiente.'
+      title: 'Almacena un nuevo recordatorio.'
       description: ''
       authenticated: true
       deprecated: false
@@ -67,18 +27,7 @@ endpoints:
       vehicle_id:
         custom: []
         name: vehicle_id
-        description: 'ID del vehículo al que pertenece el problema pendiente.'
-        required: true
-        example: 1
-        type: integer
-        enumValues: []
-        exampleWasSpecified: true
-        nullable: false
-        deprecated: false
-      issue_status_id:
-        custom: []
-        name: issue_status_id
-        description: 'ID del estado actual del problema pendiente.'
+        description: 'ID del vehículo al que pertenece el recordatorio.'
         required: true
         example: 1
         type: integer
@@ -89,9 +38,20 @@ endpoints:
       name:
         custom: []
         name: name
-        description: 'Título o nombre corto del problema pendiente.'
+        description: 'Título o nombre corto del recordatorio.'
         required: true
-        example: 'Ruido en la suspensión delantera'
+        example: 'Renovación de seguro'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        deprecated: false
+      date:
+        custom: []
+        name: date
+        description: 'Fecha programada para el recordatorio en formato AAAA-MM-DD.'
+        required: true
+        example: '2026-05-19'
         type: string
         enumValues: []
         exampleWasSpecified: true
@@ -100,43 +60,19 @@ endpoints:
       description:
         custom: []
         name: description
-        description: 'Descripción detallada del problema o fallo detectado.'
+        description: 'Descripción detallada u observaciones del recordatorio.'
         required: false
-        example: 'Se escucha un crujido metálico al pasar baches.'
+        example: 'Renovar póliza anual con cobertura amplia.'
         type: string
         enumValues: []
         exampleWasSpecified: true
         nullable: true
         deprecated: false
-      date:
-        custom: []
-        name: date
-        description: 'Fecha en la que se reporta el problema en formato AAAA-MM-DD.'
-        required: true
-        example: '2026-05-19'
-        type: string
-        enumValues: []
-        exampleWasSpecified: true
-        nullable: false
-        deprecated: false
-      priority_id:
-        custom: []
-        name: priority_id
-        description: 'ID del nivel de prioridad asignado al problema.'
-        required: true
-        example: 2
-        type: integer
-        enumValues: []
-        exampleWasSpecified: true
-        nullable: false
-        deprecated: false
     cleanBodyParameters:
       vehicle_id: 1
-      issue_status_id: 1
-      name: 'Ruido en la suspensión delantera'
-      description: 'Se escucha un crujido metálico al pasar baches.'
+      name: 'Renovación de seguro'
       date: '2026-05-19'
-      priority_id: 2
+      description: 'Renovar póliza anual con cobertura amplia.'
     fileParameters: []
     responses: []
     responseFields: []
@@ -149,14 +85,14 @@ endpoints:
     httpMethods:
       - PUT
       - PATCH
-    uri: 'api/pending-issues/{id}'
+    uri: 'api/reminders/{id}'
     metadata:
       custom: []
-      groupName: 'Problemas pendientes'
+      groupName: Recordatorios
       groupDescription: ''
       subgroup: ''
       subgroupDescription: ''
-      title: 'Actualiza un problema pendiente existente.'
+      title: 'Actualiza un recordatorio existente.'
       description: ''
       authenticated: true
       deprecated: false
@@ -167,7 +103,7 @@ endpoints:
       id:
         custom: []
         name: id
-        description: 'ID del registro de problema pendiente.'
+        description: 'ID del registro de recordatorio.'
         required: true
         example: 1
         type: integer
@@ -183,20 +119,9 @@ endpoints:
       vehicle_id:
         custom: []
         name: vehicle_id
-        description: 'ID del vehículo al que pertenece el problema pendiente.'
+        description: 'ID del vehículo al que pertenece el recordatorio.'
         required: false
         example: 1
-        type: integer
-        enumValues: []
-        exampleWasSpecified: true
-        nullable: false
-        deprecated: false
-      issue_status_id:
-        custom: []
-        name: issue_status_id
-        description: 'ID del estado actual del problema pendiente.'
-        required: false
-        example: 2
         type: integer
         enumValues: []
         exampleWasSpecified: true
@@ -205,9 +130,20 @@ endpoints:
       name:
         custom: []
         name: name
-        description: 'Título o nombre corto del problema pendiente.'
+        description: 'Título o nombre corto del recordatorio.'
         required: false
-        example: 'Ruido en la suspensión delantera'
+        example: 'Renovación de seguro'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        deprecated: false
+      date:
+        custom: []
+        name: date
+        description: 'Fecha programada para el recordatorio en formato AAAA-MM-DD.'
+        required: false
+        example: '2026-05-19'
         type: string
         enumValues: []
         exampleWasSpecified: true
@@ -216,43 +152,19 @@ endpoints:
       description:
         custom: []
         name: description
-        description: 'Descripción detallada del problema o fallo detectado.'
+        description: 'Descripción detallada u observaciones del recordatorio.'
         required: false
-        example: 'Se escucha un crujido metálico al pasar baches.'
+        example: 'Renovar póliza anual con cobertura amplia.'
         type: string
         enumValues: []
         exampleWasSpecified: true
         nullable: true
-        deprecated: false
-      date:
-        custom: []
-        name: date
-        description: 'Fecha en la que se reporta el problema en formato AAAA-MM-DD.'
-        required: false
-        example: '2026-05-19'
-        type: string
-        enumValues: []
-        exampleWasSpecified: true
-        nullable: true
-        deprecated: false
-      priority_id:
-        custom: []
-        name: priority_id
-        description: 'ID del nivel de prioridad asignado al problema.'
-        required: false
-        example: 3
-        type: integer
-        enumValues: []
-        exampleWasSpecified: true
-        nullable: false
         deprecated: false
     cleanBodyParameters:
       vehicle_id: 1
-      issue_status_id: 2
-      name: 'Ruido en la suspensión delantera'
-      description: 'Se escucha un crujido metálico al pasar baches.'
+      name: 'Renovación de seguro'
       date: '2026-05-19'
-      priority_id: 3
+      description: 'Renovar póliza anual con cobertura amplia.'
     fileParameters: []
     responses: []
     responseFields: []
@@ -264,14 +176,14 @@ endpoints:
     custom: []
     httpMethods:
       - DELETE
-    uri: 'api/pending-issues/{id}'
+    uri: 'api/reminders/{id}'
     metadata:
       custom: []
-      groupName: 'Problemas pendientes'
+      groupName: Recordatorios
       groupDescription: ''
       subgroup: ''
       subgroupDescription: ''
-      title: 'Elimina un problema pendiente.'
+      title: 'Elimina un recordatorio.'
       description: ''
       authenticated: true
       deprecated: false
@@ -282,7 +194,7 @@ endpoints:
       id:
         custom: []
         name: id
-        description: 'ID del registro de problema pendiente.'
+        description: 'ID del registro de recordatorio.'
         required: true
         example: 1
         type: integer
