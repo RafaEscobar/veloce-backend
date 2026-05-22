@@ -13,15 +13,21 @@ class Reminder extends Model
     protected $fillable = [
         'vehicle_id',
         'name',
-        'date',
         'description',
+        'date',
+        'reminder_priority_id',
     ];
 
     protected function casts(): array
     {
         return [
-            'date' => 'date',
+            'date' => 'datetime',
         ];
+    }
+
+    public function reminderPriority(): BelongsTo
+    {
+        return $this->belongsTo(ReminderPriority::class);
     }
 
     public function vehicle(): BelongsTo

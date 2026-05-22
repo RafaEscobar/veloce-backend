@@ -222,4 +222,5 @@ class Vehicle extends Model
     {
         return $this->hasMany(Reminder::class);
     }
+
 }

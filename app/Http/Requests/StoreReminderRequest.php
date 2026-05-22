@@ -24,8 +24,9 @@ class StoreReminderRequest extends FormRequest
         return [
             'vehicle_id' => ['required', 'exists:vehicles,id'],
             'name' => ['required', 'string', 'max:255'],
-            'date' => ['required', 'date'],
             'description' => ['nullable', 'string'],
+            'date' => ['required', 'date'],
+            'reminder_priority_id' => ['required', 'exists:reminder_priorities,id'],
         ];
     }
 
@@ -43,8 +44,10 @@ class StoreReminderRequest extends FormRequest
             'name.string' => 'El campo nombre debe ser una cadena de texto.',
             'name.max' => 'El campo nombre no debe superar los 255 caracteres.',
             'date.required' => 'El campo fecha es obligatorio.',
-            'date.date' => 'El campo fecha debe ser una fecha válida.',
+            'date.date' => 'El campo fecha debe ser una fecha y hora válida.',
             'description.string' => 'El campo descripción debe ser una cadena de texto.',
+            'reminder_priority_id.required' => 'El campo prioridad del recordatorio es obligatorio.',
+            'reminder_priority_id.exists' => 'La prioridad del recordatorio seleccionada no existe.',
         ];
     }
 }

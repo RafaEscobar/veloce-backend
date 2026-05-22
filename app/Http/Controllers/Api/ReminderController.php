@@ -40,6 +40,7 @@ class ReminderController extends Controller
     public function index(Request $request): ReminderCollection
     {
         $reminders = Reminder::whereIn('vehicle_id', $request->user()->vehicles()->pluck('id'))
+            ->with(['vehicle', 'reminderPriority'])
             ->latest()
             ->paginate();
 
@@ -55,8 +56,9 @@ class ReminderController extends Controller
      *
      * @bodyParam vehicle_id int required ID del vehículo al que pertenece el recordatorio. Example: 1
      * @bodyParam name string required Título o nombre corto del recordatorio. Example: Renovación de seguro
-     * @bodyParam date string required Fecha programada para el recordatorio en formato AAAA-MM-DD. Example: 2026-05-19
      * @bodyParam description string Descripción detallada u observaciones del recordatorio. Example: Renovar póliza anual con cobertura amplia.
+     * @bodyParam date string required Fecha y hora programada para el recordatorio. Example: 2026-05-19 09:30:00
+     * @bodyParam reminder_priority_id int required ID de la prioridad del recordatorio. Example: 1
      *
      * @param StoreReminderRequest $request Objeto de petición con los datos de recordatorio validados.
      * @return ReminderResource Recurso del recordatorio creado.
@@ -65,10 +67,9 @@ class ReminderController extends Controller
     {
         $validated = $request->validated();
 
-        // Verificar que el vehículo pertenezca al usuario
         $request->user()->vehicles()->findOrFail($validated['vehicle_id']);
 
-        $reminder = Reminder::create($validated);
+        $reminder = Reminder::create($validated)->load(['vehicle', 'reminderPriority']);
 
         return new ReminderResource($reminder);
     }
@@ -84,8 +85,9 @@ class ReminderController extends Controller
      *
      * @bodyParam vehicle_id int ID del vehículo al que pertenece el recordatorio. Example: 1
      * @bodyParam name string Título o nombre corto del recordatorio. Example: Renovación de seguro
-     * @bodyParam date string Fecha programada para el recordatorio en formato AAAA-MM-DD. Example: 2026-05-19
      * @bodyParam description string Descripción detallada u observaciones del recordatorio. Example: Renovar póliza anual con cobertura amplia.
+     * @bodyParam date string Fecha y hora programada para el recordatorio. Example: 2026-05-19 09:30:00
+     * @bodyParam reminder_priority_id int ID de la prioridad del recordatorio. Example: 2
      *
      * @param UpdateReminderRequest $request Objeto de petición con los datos a actualizar.
      * @param Reminder $reminder Modelo del recordatorio a actualizar.
@@ -100,6 +102,7 @@ class ReminderController extends Controller
         }
 
         $reminder->update($validated);
+        $reminder->load(['vehicle', 'reminderPriority']);
 
         return new ReminderResource($reminder);
     }

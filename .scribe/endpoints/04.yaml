@@ -46,17 +46,6 @@ endpoints:
         exampleWasSpecified: true
         nullable: false
         deprecated: false
-      date:
-        custom: []
-        name: date
-        description: 'Fecha programada para el recordatorio en formato AAAA-MM-DD.'
-        required: true
-        example: '2026-05-19'
-        type: string
-        enumValues: []
-        exampleWasSpecified: true
-        nullable: false
-        deprecated: false
       description:
         custom: []
         name: description
@@ -68,11 +57,34 @@ endpoints:
         exampleWasSpecified: true
         nullable: true
         deprecated: false
+      date:
+        custom: []
+        name: date
+        description: 'Fecha y hora programada para el recordatorio.'
+        required: true
+        example: '2026-05-19 09:30:00'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        deprecated: false
+      reminder_priority_id:
+        custom: []
+        name: reminder_priority_id
+        description: 'ID de la prioridad del recordatorio.'
+        required: true
+        example: 1
+        type: integer
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        deprecated: false
     cleanBodyParameters:
       vehicle_id: 1
       name: 'Renovación de seguro'
-      date: '2026-05-19'
       description: 'Renovar póliza anual con cobertura amplia.'
+      date: '2026-05-19 09:30:00'
+      reminder_priority_id: 1
     fileParameters: []
     responses: []
     responseFields: []
@@ -138,17 +150,6 @@ endpoints:
         exampleWasSpecified: true
         nullable: false
         deprecated: false
-      date:
-        custom: []
-        name: date
-        description: 'Fecha programada para el recordatorio en formato AAAA-MM-DD.'
-        required: false
-        example: '2026-05-19'
-        type: string
-        enumValues: []
-        exampleWasSpecified: true
-        nullable: false
-        deprecated: false
       description:
         custom: []
         name: description
@@ -160,11 +161,34 @@ endpoints:
         exampleWasSpecified: true
         nullable: true
         deprecated: false
+      date:
+        custom: []
+        name: date
+        description: 'Fecha y hora programada para el recordatorio.'
+        required: false
+        example: '2026-05-19 09:30:00'
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        deprecated: false
+      reminder_priority_id:
+        custom: []
+        name: reminder_priority_id
+        description: 'ID de la prioridad del recordatorio.'
+        required: false
+        example: 2
+        type: integer
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        deprecated: false
     cleanBodyParameters:
       vehicle_id: 1
       name: 'Renovación de seguro'
-      date: '2026-05-19'
       description: 'Renovar póliza anual con cobertura amplia.'
+      date: '2026-05-19 09:30:00'
+      reminder_priority_id: 2
     fileParameters: []
     responses: []
     responseFields: []

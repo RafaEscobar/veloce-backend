@@ -3,6 +3,7 @@
 use App\Http\Controllers\Api\AuthController;
 use App\Http\Controllers\Api\GasolineRefillController;
 use App\Http\Controllers\Api\MaintenanceController;
+use App\Http\Controllers\Api\ReminderPriorityController;
 use App\Http\Controllers\Api\ReminderController;
 use App\Http\Controllers\Api\VehicleController;
 use App\Http\Controllers\Api\VehicleStatusController;
@@ -22,4 +23,5 @@ Route::middleware('auth:sanctum')->group(function () {
     Route::apiResource('reminders', ReminderController::class)->except(['show']);
     Route::get('vehicle-types', [VehicleTypeController::class, 'index']);
     Route::get('vehicle-statuses', [VehicleStatusController::class, 'index']);
+    Route::get('reminder-priorities', [ReminderPriorityController::class, 'index']);
 });

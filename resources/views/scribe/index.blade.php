@@ -1720,8 +1720,9 @@ You can check the Dev Tools console for debugging information.</code></pre>
     --data "{
     \"vehicle_id\": 1,
     \"name\": \"Renovación de seguro\",
-    \"date\": \"2026-05-19\",
-    \"description\": \"Renovar póliza anual con cobertura amplia.\"
+    \"description\": \"Renovar póliza anual con cobertura amplia.\",
+    \"date\": \"2026-05-19 09:30:00\",
+    \"reminder_priority_id\": 1
 }"
 </code></pre></div>
 
@@ -1739,8 +1740,9 @@ const headers = {
 let body = {
     "vehicle_id": 1,
     "name": "Renovación de seguro",
-    "date": "2026-05-19",
-    "description": "Renovar póliza anual con cobertura amplia."
+    "description": "Renovar póliza anual con cobertura amplia.",
+    "date": "2026-05-19 09:30:00",
+    "reminder_priority_id": 1
 };
 
 fetch(url, {
@@ -1850,18 +1852,6 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <p>Título o nombre corto del recordatorio. Example: <code>Renovación de seguro</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
-            <b style="line-height: 2;"><code>date</code></b>&nbsp;&nbsp;
-<small>string</small>&nbsp;
- &nbsp;
- &nbsp;
-                <input type="text" style="display: none"
-                              name="date"                data-endpoint="POSTapi-reminders"
-               value="2026-05-19"
-               data-component="body">
-    <br>
-<p>Fecha programada para el recordatorio en formato AAAA-MM-DD. Example: <code>2026-05-19</code></p>
-        </div>
-                <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>description</code></b>&nbsp;&nbsp;
 <small>string</small>&nbsp;
 <i>optional</i> &nbsp;
@@ -1872,6 +1862,30 @@ You can check the Dev Tools console for debugging information.</code></pre>
                data-component="body">
     <br>
 <p>Descripción detallada u observaciones del recordatorio. Example: <code>Renovar póliza anual con cobertura amplia.</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>date</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="date"                data-endpoint="POSTapi-reminders"
+               value="2026-05-19 09:30:00"
+               data-component="body">
+    <br>
+<p>Fecha y hora programada para el recordatorio. Example: <code>2026-05-19 09:30:00</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>reminder_priority_id</code></b>&nbsp;&nbsp;
+<small>integer</small>&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="number" style="display: none"
+               step="any"               name="reminder_priority_id"                data-endpoint="POSTapi-reminders"
+               value="1"
+               data-component="body">
+    <br>
+<p>ID de la prioridad del recordatorio. Example: <code>1</code></p>
         </div>
         </form>
 
@@ -1895,8 +1909,9 @@ You can check the Dev Tools console for debugging information.</code></pre>
     --data "{
     \"vehicle_id\": 1,
     \"name\": \"Renovación de seguro\",
-    \"date\": \"2026-05-19\",
-    \"description\": \"Renovar póliza anual con cobertura amplia.\"
+    \"description\": \"Renovar póliza anual con cobertura amplia.\",
+    \"date\": \"2026-05-19 09:30:00\",
+    \"reminder_priority_id\": 2
 }"
 </code></pre></div>
 
@@ -1914,8 +1929,9 @@ const headers = {
 let body = {
     "vehicle_id": 1,
     "name": "Renovación de seguro",
-    "date": "2026-05-19",
-    "description": "Renovar póliza anual con cobertura amplia."
+    "description": "Renovar póliza anual con cobertura amplia.",
+    "date": "2026-05-19 09:30:00",
+    "reminder_priority_id": 2
 };
 
 fetch(url, {
@@ -2042,18 +2058,6 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <p>Título o nombre corto del recordatorio. Example: <code>Renovación de seguro</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
-            <b style="line-height: 2;"><code>date</code></b>&nbsp;&nbsp;
-<small>string</small>&nbsp;
-<i>optional</i> &nbsp;
- &nbsp;
-                <input type="text" style="display: none"
-                              name="date"                data-endpoint="PUTapi-reminders--id-"
-               value="2026-05-19"
-               data-component="body">
-    <br>
-<p>Fecha programada para el recordatorio en formato AAAA-MM-DD. Example: <code>2026-05-19</code></p>
-        </div>
-                <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>description</code></b>&nbsp;&nbsp;
 <small>string</small>&nbsp;
 <i>optional</i> &nbsp;
@@ -2064,6 +2068,30 @@ You can check the Dev Tools console for debugging information.</code></pre>
                data-component="body">
     <br>
 <p>Descripción detallada u observaciones del recordatorio. Example: <code>Renovar póliza anual con cobertura amplia.</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>date</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+<i>optional</i> &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="date"                data-endpoint="PUTapi-reminders--id-"
+               value="2026-05-19 09:30:00"
+               data-component="body">
+    <br>
+<p>Fecha y hora programada para el recordatorio. Example: <code>2026-05-19 09:30:00</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>reminder_priority_id</code></b>&nbsp;&nbsp;
+<small>integer</small>&nbsp;
+<i>optional</i> &nbsp;
+ &nbsp;
+                <input type="number" style="display: none"
+               step="any"               name="reminder_priority_id"                data-endpoint="PUTapi-reminders--id-"
+               value="2"
+               data-component="body">
+    <br>
+<p>ID de la prioridad del recordatorio. Example: <code>2</code></p>
         </div>
         </form>
 
@@ -2222,7 +2250,7 @@ Si se proporciona una foto, la almacena en el disco público.</p>
     --form "oil_type=Sintético 5W-30"\
     --form "model_name=Civic"\
     --form "model_year=2020"\
-    --form "photo=@/tmp/phpZBryha" </code></pre></div>
+    --form "photo=@/tmp/php8jHlZ6" </code></pre></div>
 
 
 <div class="javascript-example">
@@ -2435,7 +2463,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
                value=""
                data-component="body">
     <br>
-<p>Foto del vehículo (imagen, máx. 2MB). Example: <code>/tmp/phpZBryha</code></p>
+<p>Foto del vehículo (imagen, máx. 2MB). Example: <code>/tmp/php8jHlZ6</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>model_year</code></b>&nbsp;&nbsp;
@@ -2477,7 +2505,7 @@ Si se sube una nueva foto, reemplaza la anterior eliminándola del almacenamient
     --form "oil_type=Sintético 10W-40"\
     --form "model_name=Accord"\
     --form "model_year=2022"\
-    --form "photo=@/tmp/php5bp7zO" </code></pre></div>
+    --form "photo=@/tmp/phpwLgy1q" </code></pre></div>
 
 
 <div class="javascript-example">
@@ -2707,7 +2735,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
                value=""
                data-component="body">
     <br>
-<p>Nueva foto del vehículo (imagen, máx. 2MB). Example: <code>/tmp/php5bp7zO</code></p>
+<p>Nueva foto del vehículo (imagen, máx. 2MB). Example: <code>/tmp/phpwLgy1q</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>model_year</code></b>&nbsp;&nbsp;

@@ -24,8 +24,9 @@ class UpdateReminderRequest extends FormRequest
         return [
             'vehicle_id' => ['sometimes', 'exists:vehicles,id'],
             'name' => ['sometimes', 'string', 'max:255'],
-            'date' => ['sometimes', 'date'],
             'description' => ['nullable', 'string'],
+            'date' => ['sometimes', 'date'],
+            'reminder_priority_id' => ['sometimes', 'exists:reminder_priorities,id'],
         ];
     }
 
@@ -40,8 +41,9 @@ class UpdateReminderRequest extends FormRequest
             'vehicle_id.exists' => 'El vehículo seleccionado no existe.',
             'name.string' => 'El campo nombre debe ser una cadena de texto.',
             'name.max' => 'El campo nombre no debe superar los 255 caracteres.',
-            'date.date' => 'El campo fecha debe ser una fecha válida.',
+            'date.date' => 'El campo fecha debe ser una fecha y hora válida.',
             'description.string' => 'El campo descripción debe ser una cadena de texto.',
+            'reminder_priority_id.exists' => 'La prioridad del recordatorio seleccionada no existe.',
         ];
     }
 }
