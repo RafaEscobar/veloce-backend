@@ -18,12 +18,10 @@ class MaintenanceResource extends JsonResource
             'id' => $this->id,
             'vehicle_id' => $this->vehicle_id,
             'name' => $this->name,
-            'date' => $this->date,
+            'date' => $this->date?->format('Y-m-d'),
             'cost' => $this->cost,
             'is_reminder_enabled' => $this->is_reminder_enabled,
             'notes' => $this->notes,
-            'created_at' => $this->created_at,
-            'updated_at' => $this->updated_at,
         ];
     }
 }
