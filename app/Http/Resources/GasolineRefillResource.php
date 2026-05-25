@@ -21,8 +21,6 @@ class GasolineRefillResource extends JsonResource
             'liters'      => $this->liters,
             'date'        => $this->date ? $this->date->format('Y-m-d') : null,
             'gas_station' => $this->gas_station,
-            'created_at'  => $this->created_at,
-            'updated_at'  => $this->updated_at,
         ];
     }
 }
