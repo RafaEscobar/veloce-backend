@@ -19,8 +19,7 @@ class ReminderResource extends JsonResource
             'vehicle_id' => $this->vehicle_id,
             'name' => $this->name,
             'description' => $this->description,
-            'date' => $this->date,
-            'vehicle' => $this->whenLoaded('vehicle'),
+            'date' => $this->date?->format('Y-m-d'),
             'priority' => new ReminderPriorityResource($this->whenLoaded('reminderPriority')),
         ];
     }
