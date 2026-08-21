@@ -25,7 +25,7 @@ User 1 ── N Vehicle
 | `Reminder` | Indirecta por `vehicle_id` | Relación y policy comparan `vehicle.user_id` |
 | Catálogos | Global | Sin `user_id`; endpoints compartidos de solo lectura |
 
-Las reglas HTTP completas se documentarán en el paso 5. La base de datos garantiza referencias, pero no garantiza por sí sola que una petición use un vehículo del usuario autenticado.
+Las reglas HTTP completas están en [Autenticación y seguridad](05-auth-security.md). La base de datos garantiza referencias, pero no garantiza por sí sola que una petición use un vehículo del usuario autenticado.
 
 ## Entidades
 

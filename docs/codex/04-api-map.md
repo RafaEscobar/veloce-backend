@@ -23,7 +23,7 @@ Hay 23 acciones lógicas y 27 combinaciones método/URI porque cada una de las c
 | Login | `AuthController::login` → `LoginRequest` → Auth/`User` → `UserResource` | 200 predeterminado; `{user, token}` |
 | Logout | `AuthController::logout` → usuario/token Sanctum | 200; `{message}`; elimina todos los tokens del usuario |
 
-Registro/login no usan policy. Credenciales incorrectas se expresan como error de validación; las reglas precisas se ampliarán en el paso 5.
+Registro/login no usan policy. Credenciales incorrectas se expresan como error de validación; las reglas precisas están en [Autenticación y seguridad](05-auth-security.md).
 
 ## Vehículos
 

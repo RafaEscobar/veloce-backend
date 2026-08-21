@@ -10,13 +10,13 @@ Este directorio es la entrada técnica para explorar y modificar Veloce. Empieza
 | 2 | [Arquitectura](02-architecture.md) | Para localizar capas y archivos que cambian juntos | Disponible |
 | 3 | [Modelo de dominio](03-domain-model.md) | Antes de cambiar entidades, relaciones o persistencia | Disponible |
 | 4 | [Mapa de la API](04-api-map.md) | Antes de modificar un endpoint o su contrato | Disponible |
-| 5 | `05-auth-security.md` | Para autenticación, autorización y ownership | Pendiente (paso 5) |
+| 5 | [Autenticación y seguridad](05-auth-security.md) | Para autenticación, autorización y ownership | Disponible |
 | 6 | [Ciclo de vida de datos](06-data-lifecycle.md) | Para migraciones, seeders, factories y borrados | Disponible |
 | 7 | `07-local-development.md` | Para instalar, ejecutar y configurar el proyecto | Pendiente (paso 6) |
 | 8 | `08-testing.md` | Para elegir y ejecutar verificaciones | Pendiente (paso 7) |
 | 9 | `09-operations.md` | Para operación, observabilidad y diagnóstico | Pendiente (paso 8) |
 | 10 | `10-change-playbooks.md` | Para cambios recurrentes de extremo a extremo | Pendiente (paso 9) |
-| 11 | `11-known-risks.md` | Para riesgos confirmados y decisiones pendientes | Pendiente (pasos 5 y 10) |
+| 11 | [Riesgos conocidos](11-known-risks.md) | Para riesgos confirmados y decisiones pendientes | Disponible; mantenimiento continuo |
 
 Los [inventarios de componentes](inventories/components.md), [base de datos](inventories/database.md) y [rutas](inventories/routes.md) acompañan a la arquitectura, el dominio y la API. El inventario de configuración se incorporará bajo `inventories/` en los pasos indicados por el [plan de documentación](../CODEX_DOCUMENTATION_PLAN.md).
 
@@ -60,7 +60,7 @@ Scribe es la referencia consumible del contrato de la API, pero no reemplaza las
 
 ## Estado de esta base documental
 
-Esta base cubre los pasos 1 a 4 del plan. Los nombres de archivos pendientes describen la estructura objetivo y no implican que su contenido ya exista.
+Esta base cubre los pasos 1 a 5 del plan. Los nombres de archivos pendientes describen la estructura objetivo y no implican que su contenido ya exista.
 
 Última verificación: 2026-08-21.
 
