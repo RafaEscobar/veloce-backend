@@ -35,7 +35,7 @@ Estas frases describen lo observable en el repositorio al verificar esta ficha; 
 
 `User` es la cuenta autenticable y posee `Vehicle`. Cada `Vehicle` se clasifica mediante `VehicleType` y `VehicleStatus`, y agrupa muchos `GasolineRefill`, `Maintenance` y `Reminder`. Cada `Reminder` referencia una `ReminderPriority`.
 
-Para detalles sobre columnas, cardinalidades, cascadas e invariantes se deberá consultar `03-domain-model.md` cuando se complete el paso 3. Hasta entonces, las migraciones son la fuente de verdad del esquema.
+Para detalles sobre columnas, cardinalidades, cascadas e invariantes se deberá consultar [modelo de dominio](03-domain-model.md). Hasta entonces, las migraciones son la fuente de verdad del esquema.
 
 ## Tecnología y herramientas
 
