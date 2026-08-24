@@ -108,6 +108,6 @@ Las vistas y assets bajo rutas `vendor/scribe` son publicaciones del paquete: an
 
 No hay clases locales de servicios, repositorios, DTOs, actions, jobs, eventos/listeners, observers, middleware propio, notificaciones de dominio ni comandos Artisan propios. Es una observación, no una clasificación como defecto.
 
-Última verificación: 2026-08-21.
+Última verificación: 2026-08-24.
 
 Fuentes consultadas: listados completos de `app/`, `bootstrap/`, `routes/`, `config/`, `database/factories/`, `database/seeders/`, `tests/`, `resources/`, `.scribe/` y `public/vendor/scribe/`.

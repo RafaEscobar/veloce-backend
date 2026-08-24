@@ -100,6 +100,6 @@ No edites una migración ya aplicada en entornos compartidos; añade una migraci
 
 Las tablas `password_reset_tokens`, `sessions`, `cache`, `cache_locks`, `jobs`, `job_batches`, `failed_jobs` y `personal_access_tokens` pertenecen a Laravel/Sanctum. Su existencia configura capacidades, pero no demuestra uso activo de recuperación, sesiones web, caché o colas por código de negocio.
 
-Última verificación: 2026-08-21.
+Última verificación: 2026-08-24.
 
 Fuentes consultadas: `database/migrations/`, `database/seeders/`, `database/factories/`, modelos y controladores API.

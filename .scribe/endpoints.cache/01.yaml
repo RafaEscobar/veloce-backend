@@ -6,6 +6,43 @@ endpoints:
   -
     custom: []
     httpMethods:
+      - GET
+    uri: api/vehicles
+    metadata:
+      custom: []
+      groupName: Vehículos
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Lista los vehículos del usuario autenticado.'
+      description: |-
+        Devuelve una colección paginada de todos los vehículos que pertenecen
+        al usuario que realiza la petición, incluyendo sus relaciones (tipo y estado).
+      authenticated: true
+      deprecated: false
+    headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses: []
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer 6g43cv8PD1aE5beadkZfhV6'
+    controller: null
+    method: null
+    route: null
+  -
+    custom: []
+    httpMethods:
       - POST
     uri: api/vehicles
     metadata:
@@ -18,9 +55,10 @@ endpoints:
       description: |-
         Registra un nuevo vehículo en el sistema asociándolo automáticamente al usuario autenticado.
         Si se proporciona una foto, la almacena en el disco público.
-      authenticated: false
+      authenticated: true
       deprecated: false
     headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
       Content-Type: multipart/form-data
       Accept: application/json
     urlParameters: []
@@ -152,7 +190,59 @@ endpoints:
       photo: null
     responses: []
     responseFields: []
-    auth: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer 6g43cv8PD1aE5beadkZfhV6'
+    controller: null
+    method: null
+    route: null
+  -
+    custom: []
+    httpMethods:
+      - GET
+    uri: 'api/vehicles/{id}'
+    metadata:
+      custom: []
+      groupName: Vehículos
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Muestra los detalles de un vehículo específico.'
+      description: |-
+        Devuelve la información de un vehículo junto con todas sus relaciones cargadas
+        (tipo, estado, cargas de gasolina, mantenimientos y recordatorios).
+      authenticated: true
+      deprecated: false
+    headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      id:
+        custom: []
+        name: id
+        description: 'ID del vehículo.'
+        required: true
+        example: 1
+        type: integer
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        deprecated: false
+    cleanUrlParameters:
+      id: 1
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses: []
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer 6g43cv8PD1aE5beadkZfhV6'
     controller: null
     method: null
     route: null
@@ -172,9 +262,10 @@ endpoints:
       description: |-
         Modifica los datos de un vehículo perteneciente al usuario autenticado.
         Si se sube una nueva foto, reemplaza la anterior eliminándola del almacenamiento.
-      authenticated: false
+      authenticated: true
       deprecated: false
     headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
       Content-Type: multipart/form-data
       Accept: application/json
     urlParameters:
@@ -318,7 +409,10 @@ endpoints:
       photo: null
     responses: []
     responseFields: []
-    auth: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer 6g43cv8PD1aE5beadkZfhV6'
     controller: null
     method: null
     route: null
@@ -337,9 +431,10 @@ endpoints:
       description: |-
         Borra el registro del vehículo especificado. También elimina la foto
         asociada del almacenamiento si existe.
-      authenticated: false
+      authenticated: true
       deprecated: false
     headers:
+      Authorization: 'Bearer {YOUR_AUTH_KEY}'
       Content-Type: application/json
       Accept: application/json
     urlParameters:
@@ -363,7 +458,10 @@ endpoints:
     fileParameters: []
     responses: []
     responseFields: []
-    auth: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer 6g43cv8PD1aE5beadkZfhV6'
     controller: null
     method: null
     route: null

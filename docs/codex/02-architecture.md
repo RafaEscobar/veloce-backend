@@ -118,8 +118,8 @@ No se encontraron servicios, repositorios, DTOs, actions/use cases, jobs propios
 
 ## Verificación y limitaciones
 
-La estructura se contrastó directamente con rutas y clases. `php artisan route:list --path=api` no pudo arrancar porque el runtime no encontró `Laravel\Sanctum\Sanctum`; por ello no se usa una salida de Artisan como evidencia. Antes de depender de nombres o middleware generados, restaura dependencias y vuelve a ejecutar `php artisan route:list`.
+La estructura se contrastó con rutas, clases y `php artisan route:list --path=api --json`. La ejecución del 2026-08-24 confirmó las 23 acciones API, sus nombres, parámetros, middleware Sanctum y middleware de policy.
 
-Última verificación: 2026-08-21.
+Última verificación: 2026-08-24.
 
 Fuentes consultadas: `bootstrap/app.php`, `bootstrap/providers.php`, `routes/api.php`, `routes/web.php`, `app/Http/Controllers/`, `app/Http/Requests/`, `app/Http/Resources/`, `app/Models/`, `app/Policies/`, `app/Providers/AppServiceProvider.php`, `resources/`, `.scribe/` y `config/scribe.php`.

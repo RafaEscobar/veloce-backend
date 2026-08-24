@@ -90,20 +90,17 @@ Son resultados derivados del código y defaults de Laravel. No hay manejador loc
 
 ## Comparación con Scribe
 
-Los YAML de `.scribe/endpoints/` contienen 15 acciones: autenticación y store/update/destroy de los cuatro recursos. Comparados con las 23 acciones de rutas:
+La generación del 2026-08-24 cubre las 23 acciones cuyo URI comienza con `api/` en la salida de `php artisan route:list --path=api`: 21 protegidas y las dos públicas, register y login. La configuración global de Scribe declara autenticación por bearer token y esas dos acciones usan `@unauthenticated`.
 
-| Estado | Acciones |
+| Estado | Resultado |
 | --- | --- |
-| Cubiertas | register, login, logout; store/update/destroy de vehículos, cargas, mantenimientos y recordatorios |
-| Ausentes | index de vehículos, cargas, mantenimientos y recordatorios; show de vehículo; índices de tipos, estados y prioridades |
-| Autenticación incorrecta | store/update/destroy de vehículos aparecen `authenticated: false`, aunque están bajo `auth:sanctum` |
-| Respuestas incompletas | Las 15 entradas tienen `responses: []` y `responseFields: []` |
-| Trazabilidad generada incompleta | Entradas guardadas muestran `controller`, `method` y `route` como `null` |
-| Configuración incompatible | `config/scribe.php` tiene `auth.enabled: false` aunque 21 acciones requieren Sanctum |
+| Cobertura | 23 de 23 acciones lógicas presentes en ocho grupos numerados de `.scribe/endpoints/` |
+| Autenticación | 21 entradas con `authenticated: true` y 2 con `false`, consistente con las rutas |
+| Respuestas | Las entradas conservan `responses: []` y `responseFields: []`; faltan ejemplos y esquemas explícitos |
+| Parámetros | Scribe obtiene las reglas básicas de los Form Requests, pero avisa que no implementan `bodyParameters()` |
+| Artefactos | YAML y vista versionados; OpenAPI y Postman se generan bajo `storage/app/private/scribe/` |
 
-Los recursos hijos presentes sí aparecen como autenticados; logout también. Los ejemplos de body reflejan anotaciones/Requests, incluidas las nulabilidades de vehículo que contradicen la migración.
-
-No se regeneró Scribe en este paso: primero debe restaurarse la instalación de dependencias, pues Artisan no encuentra actualmente `Laravel\\Sanctum\\Sanctum`. Regenerar puede sobrescribir YAML, HTML, Postman y OpenAPI; debe hacerse junto con la corrección de anotaciones/configuración y una revisión del diff.
+Las llamadas automáticas de respuesta están deshabilitadas para evitar dependencia de datos locales y efectos secundarios durante la generación. Cada cambio de contrato debe aportar anotaciones o estrategias seguras que documenten respuestas reales y revisar el diff generado.
 
 ## Checklist para cambiar un endpoint
 
@@ -114,6 +111,6 @@ No se regeneró Scribe en este paso: primero debe restaurarse la instalación de
 5. Actualiza anotaciones Scribe y regenera sus artefactos.
 6. Añade pruebas de éxito, validación, 401, 403/ownership y 404 según aplique.
 
-Última verificación: 2026-08-21.
+Última verificación: 2026-08-24.
 
 Fuentes consultadas: `routes/api.php`, controladores API, Requests, Resources/Collections, modelos, policies, `bootstrap/app.php`, `config/scribe.php` y `.scribe/endpoints/*.yaml`.

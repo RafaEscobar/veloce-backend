@@ -110,7 +110,7 @@ No hay personalización global de excepciones y no existen pruebas Feature de es
 
 ## Scribe y seguridad del contrato
 
-`config/scribe.php` tiene autenticación global deshabilitada. Los YAML marcan correctamente logout y recursos hijos, pero las acciones documentadas de vehículos aparecen no autenticadas, y ocho acciones protegidas ni siquiera están presentes. No deben usarse esos flags para tomar decisiones de acceso; la fuente efectiva es `routes/api.php`.
+`config/scribe.php` declara autenticación bearer global y protegida por defecto. Register y login llevan `@unauthenticated`; la generación del 2026-08-24 refleja 21 acciones autenticadas y 2 públicas, igual que `route:list`. Aun así, las decisiones de acceso se verifican en `routes/api.php`, middleware y policies, no en los metadatos generados. Los ejemplos y esquemas de respuesta continúan vacíos y deben completarse sin incluir tokens reales.
 
 ## Checklist de cambio seguro
 
@@ -126,6 +126,6 @@ No hay personalización global de excepciones y no existen pruebas Feature de es
 
 Los hallazgos accionables están en [Riesgos conocidos](11-known-risks.md).
 
-Última verificación: 2026-08-21.
+Última verificación: 2026-08-24.
 
 Fuentes consultadas: rutas, `AuthController`, Requests, Resources, modelos, policies, `bootstrap/app.php`, `config/auth.php`, `config/sanctum.php`, `config/filesystems.php`, `config/scribe.php`, `.env.example` y migración de tokens.

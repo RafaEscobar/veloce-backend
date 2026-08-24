@@ -88,6 +88,6 @@ Hecho: los módulos, endpoints y relaciones resumidos arriba existen en código.
 
 Si una tarea depende de esas preguntas, debe obtenerse una decisión del responsable del producto en vez de convertir la inferencia en requisito.
 
-Última verificación: 2026-08-21.
+Última verificación: 2026-08-24.
 
 Fuentes consultadas: `routes/api.php`, `app/Http/Controllers/Api/`, `app/Models/`, `database/migrations/`, `database/seeders/`, `composer.json`, `composer.lock`, `package.json`, `package-lock.json`, `config/scribe.php`, `.scribe/` y `tests/`.

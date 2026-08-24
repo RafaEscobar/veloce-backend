@@ -23,12 +23,12 @@ Este registro contiene hallazgos confirmados en código/configuración. “Confi
 - Severidad: condicionada al despliegue; potencialmente media.
 - Estado: pendiente de validar infraestructura. Restringir proxies o garantizar aislamiento/limpieza de headers.
 
-## SEC-004 — Documentación Scribe contradice autenticación efectiva
+## SEC-004 — Contratos de respuesta Scribe incompletos
 
-- Evidencia: `auth.enabled` es `false`; store/update/destroy de vehículos figuran `authenticated: false`; faltan ocho rutas protegidas.
-- Impacto: consumidores pueden implementar llamadas inseguras o asumir que rutas protegidas son públicas; OpenAPI/Postman heredarán un contrato incompleto.
+- Evidencia: la generación cubre las 23 acciones y representa correctamente 21 protegidas y 2 públicas, pero sus bloques `responses` y `responseFields` están vacíos; Scribe también advierte que los Form Requests no implementan `bodyParameters()`.
+- Impacto: OpenAPI, Postman y la documentación HTML no permiten a consumidores comprobar con precisión los esquemas de éxito y error.
 - Severidad: media como riesgo de integración/documentación.
-- Estado: abierto; corregir configuración/anotaciones y regenerar tras restaurar dependencias.
+- Estado: parcialmente resuelto el 2026-08-24: cobertura y autenticación fueron corregidas; faltan ejemplos y esquemas explícitos y seguros.
 
 ## SEC-005 — Diferencia de respuestas revela existencia de vehicle_id
 
@@ -58,10 +58,52 @@ Este registro contiene hallazgos confirmados en código/configuración. “Confi
 - Severidad: baja a media.
 - Estado: abierto; definir lifecycle transaccional/compensatorio y limpieza periódica.
 
+## TEST-002 — SQLite no cubre diferencias del motor MySQL
+
+- Evidencia: `phpunit.xml` usa SQLite `:memory:`, mientras `.env.example` usa MySQL y el esquema contiene `year`, decimales, FKs y unicidad dependiente de collation.
+- Impacto: la suite puede pasar y fallar en MySQL por tipos, constraints, SQL o comparación de strings.
+- Severidad: media para cambios de persistencia.
+- Estado: abierto; mantener rapidez con SQLite y añadir verificación MySQL en CI/entorno desechable para cambios sensibles.
+
+## TEST-003 — La suite no configura una clave de aplicación
+
+- Evidencia: `composer test` ejecuta el ejemplo Unit, pero el ejemplo Feature falla con `MissingAppKeyException`; `phpunit.xml` no define `APP_KEY`.
+- Impacto: la línea base de pruebas está roja antes de añadir cobertura del dominio y puede ocultar regresiones posteriores.
+- Severidad: media.
+- Estado: abierto; definir una clave exclusiva de testing, sin reutilizar secretos, y comprobar la suite completa.
+
+## CODE-001 — Pint reporta deuda de formato existente
+
+- Evidencia: `./vendor/bin/pint --test` reporta cambios requeridos en 27 archivos PHP.
+- Impacto: una comprobación de estilo global no puede actuar como puerta de CI hasta acordar o aplicar una línea base.
+- Severidad: baja.
+- Estado: abierto; resolver en un cambio mecánico separado para no mezclar formato con comportamiento.
+
+## OPS-001 — Health check no valida dependencias
+
+- Evidencia: `bootstrap/app.php` registra el health estándar en `/up` sin checks propios.
+- Impacto: puede responder 200 con DB, Storage o workers indisponibles.
+- Severidad: media para readiness/monitoreo.
+- Estado: abierto; separar liveness y readiness según infraestructura real.
+
+## OPS-002 — Sin telemetría específica del dominio
+
+- Evidencia: no hay llamadas propias de Log, métricas, tracing, auditoría ni reporter de excepciones; `withExceptions` está vacío.
+- Impacto: investigar fallos de negocio, abuso o regresiones depende de logs genéricos y reproducción manual.
+- Severidad: media.
+- Estado: abierto; definir eventos auditables, correlación, métricas y alertas sin registrar datos sensibles.
+
+## OPS-003 — Canal single sin rotación como default local
+
+- Evidencia: `.env.example` selecciona `stack` con `single`; `single` escribe un archivo continuo.
+- Impacto: si se hereda fuera de local, el log puede crecer sin límite y agotar disco.
+- Severidad: condicionada al despliegue.
+- Estado: pendiente de infraestructura; usar rotación externa, `daily` o logging centralizado.
+
 ## Mantenimiento del registro
 
 Cada entrada nueva debe incluir evidencia reproducible, impacto, severidad contextual y estado. Al corregirla, enlaza pruebas de regresión y conserva una nota breve de resolución o archívala según la política que se defina en el paso 10. No registres posibilidades genéricas sin evidencia en este repositorio.
 
-Última verificación: 2026-08-21.
+Última verificación: 2026-08-24.
 
 Fuentes consultadas: `routes/api.php`, `bootstrap/app.php`, configuración Sanctum/filesystem/Scribe, AuthController, Requests, Resources, policies, migraciones y tests.

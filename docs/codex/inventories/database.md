@@ -63,6 +63,6 @@ Solo `users.email` tiene unicidad de dominio declarada. No hay unique para texto
 
 Las discrepancias entre este esquema, modelos, Requests, Resources y factories están centralizadas en [Modelo de dominio](../03-domain-model.md#discrepancias-confirmadas). El ciclo de migración, seed y borrado está en [Ciclo de vida](../06-data-lifecycle.md).
 
-Última verificación: 2026-08-21.
+Última verificación: 2026-08-24.
 
 Fuentes consultadas: las once migraciones actuales, los ocho modelos, Requests, Resources, factories y seeders.

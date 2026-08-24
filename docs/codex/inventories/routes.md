@@ -12,7 +12,7 @@ Inventario expandido desde `routes/api.php`. Base: `/api`. `Auth` significa `aut
 
 ## Vehículos
 
-| Método | URI | Nombre esperado | Middleware | Acción | Request | Policy | Modelo/salida | Scribe |
+| Método | URI | Nombre | Middleware | Acción | Request | Policy | Modelo/salida | Scribe |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- |
 | GET | `/api/vehicles` | `vehicles.index` | Auth | `VehicleController::index` | `Request` | `viewAny` | `Vehicle` → `VehicleCollection` | No |
 | POST | `/api/vehicles` | `vehicles.store` | Auth | `VehicleController::store` | `StoreVehicleRequest` | `create` | `Vehicle` → `VehicleResource` | Sí; auth incorrecta |
@@ -22,7 +22,7 @@ Inventario expandido desde `routes/api.php`. Base: `/api`. `Auth` significa `aut
 
 ## Cargas de gasolina
 
-| Método | URI | Nombre esperado | Middleware | Acción | Request | Policy | Modelo/salida | Scribe |
+| Método | URI | Nombre | Middleware | Acción | Request | Policy | Modelo/salida | Scribe |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- |
 | GET | `/api/gasoline-refills` | `gasoline-refills.index` | Auth | `GasolineRefillController::index` | `Request` | `viewAny` | `GasolineRefill` → Collection | No |
 | POST | `/api/gasoline-refills` | `gasoline-refills.store` | Auth | `GasolineRefillController::store` | `StoreGasolineRefillRequest` | `create` | `GasolineRefill` → Resource | Sí |
@@ -31,7 +31,7 @@ Inventario expandido desde `routes/api.php`. Base: `/api`. `Auth` significa `aut
 
 ## Mantenimientos
 
-| Método | URI | Nombre esperado | Middleware | Acción | Request | Policy | Modelo/salida | Scribe |
+| Método | URI | Nombre | Middleware | Acción | Request | Policy | Modelo/salida | Scribe |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- |
 | GET | `/api/maintenances` | `maintenances.index` | Auth | `MaintenanceController::index` | `Request` | `viewAny` | `Maintenance` → Collection | No |
 | POST | `/api/maintenances` | `maintenances.store` | Auth | `MaintenanceController::store` | `StoreMaintenanceRequest` | `create` | `Maintenance` → Resource | Sí |
@@ -40,7 +40,7 @@ Inventario expandido desde `routes/api.php`. Base: `/api`. `Auth` significa `aut
 
 ## Recordatorios
 
-| Método | URI | Nombre esperado | Middleware | Acción | Request | Policy | Modelo/salida | Scribe |
+| Método | URI | Nombre | Middleware | Acción | Request | Policy | Modelo/salida | Scribe |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- |
 | GET | `/api/reminders` | `reminders.index` | Auth | `ReminderController::index` | `Request` | `viewAny` | `Reminder` → Collection | No |
 | POST | `/api/reminders` | `reminders.store` | Auth | `ReminderController::store` | `StoreReminderRequest` | `create` | `Reminder` → Resource | Sí |
@@ -76,6 +76,6 @@ No se implementan otros query parameters. En particular no hay búsqueda, filtro
 
 Los nombres marcados “esperado” y los parámetros resource se derivan de las convenciones de `Route::apiResource`. No pudieron confirmarse con `php artisan route:list`: la instalación actual no carga `Laravel\\Sanctum\\Sanctum`. Las rutas manuales no tienen `->name()` explícito.
 
-Última verificación: 2026-08-21.
+Última verificación: 2026-08-24.
 
 Fuentes consultadas: `routes/api.php`, controladores, Requests, Resources/Collections, policies y `.scribe/endpoints/*.yaml`.

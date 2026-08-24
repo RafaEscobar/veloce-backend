@@ -101,6 +101,6 @@ No hay soft deletes. Las cascadas son físicas y no ejecutan `VehicleController:
 
 Estas discrepancias se documentan como evidencia y no se corrigen dentro del paso 3.
 
-Última verificación: 2026-08-21.
+Última verificación: 2026-08-24.
 
 Fuentes consultadas: migraciones de `database/migrations/`, `app/Models/`, `app/Http/Requests/`, `app/Http/Resources/`, `app/Policies/`, controladores API, factories y seeders.
