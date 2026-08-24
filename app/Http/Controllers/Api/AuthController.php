@@ -24,6 +24,7 @@ class AuthController extends Controller
 {
     /**
      * Registra un nuevo usuario en el sistema.
+     * @unauthenticated
      *
      * Crea un nuevo registro de usuario en la base de datos, encripta su contraseña
      * y genera un token de acceso personal (PAT) para el nuevo usuario.
@@ -57,6 +58,7 @@ class AuthController extends Controller
 
     /**
      * Inicia sesión para un usuario existente en la aplicación.
+     * @unauthenticated
      *
      * Verifica las credenciales de acceso (email y contraseña). Si son válidas,
      * autentica al usuario y genera un nuevo token de acceso. Si las credenciales

@@ -35,7 +35,7 @@ Estas frases describen lo observable en el repositorio al verificar esta ficha; 
 
 `User` es la cuenta autenticable y posee `Vehicle`. Cada `Vehicle` se clasifica mediante `VehicleType` y `VehicleStatus`, y agrupa muchos `GasolineRefill`, `Maintenance` y `Reminder`. Cada `Reminder` referencia una `ReminderPriority`.
 
-Para detalles sobre columnas, cardinalidades, cascadas e invariantes se deberá consultar `03-domain-model.md` cuando se complete el paso 3. Hasta entonces, las migraciones son la fuente de verdad del esquema.
+Para detalles sobre columnas, cardinalidades, cascadas e invariantes se deberá consultar [modelo de dominio](03-domain-model.md). Hasta entonces, las migraciones son la fuente de verdad del esquema.
 
 ## Tecnología y herramientas
 
@@ -88,6 +88,6 @@ Hecho: los módulos, endpoints y relaciones resumidos arriba existen en código.
 
 Si una tarea depende de esas preguntas, debe obtenerse una decisión del responsable del producto en vez de convertir la inferencia en requisito.
 
-Última verificación: 2026-08-21.
+Última verificación: 2026-08-24.
 
 Fuentes consultadas: `routes/api.php`, `app/Http/Controllers/Api/`, `app/Models/`, `database/migrations/`, `database/seeders/`, `composer.json`, `composer.lock`, `package.json`, `package-lock.json`, `config/scribe.php`, `.scribe/` y `tests/`.
